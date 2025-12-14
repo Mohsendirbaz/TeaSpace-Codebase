@@ -2813,13 +2813,13 @@ const HomePageContent = () => {
                             onClick={() => setActiveTab('CodeEntityAnalysis')}
                         >
                             Code Entity Analysis
-                        </button>*/}
+                        </button>
                         <button
                             className={`tab-button ${activeTab === 'Climate' ? 'active' : ''}`}
                             onClick={() => setActiveTab('Climate')}
                         >
                             Climate Management
-                        </button>
+                        </button>*/}
                     </div>
                 </nav>
                 <div className="content-container">

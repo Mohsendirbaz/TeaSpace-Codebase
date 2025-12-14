@@ -199,6 +199,7 @@ const EfficacyMapContainer = ({
 
   return (
     <div className="efficacy-map-container">
+      {/*
       <div className="map-header">
         <h2>Efficacy Time and Degree of Freedom Map</h2>
         <p className="map-description">
@@ -305,7 +306,7 @@ const EfficacyMapContainer = ({
           </p>
         </div>
       </div>
-
+*/}
       <div className="map-content">
         <TimeParameterMatrix 
           parameters={parameters}
