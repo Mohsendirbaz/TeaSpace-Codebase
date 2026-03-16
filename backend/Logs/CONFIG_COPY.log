@@ -22,3 +22,11 @@
 2026-03-16 09:19:07,481 INFO Logging configured correctly - Config copy logs going to: C:\Users\Mohsen Dirbaz\IdeaProjects\TeaSpace-Codebase\backend\Logs\CONFIG_COPY.log
 2026-03-16 09:19:07,514 WARNING  * Debugger is active!
 2026-03-16 09:19:07,514 INFO  * Debugger PIN: 939-198-847
+2026-03-16 09:38:10,555 INFO Logging configured correctly - Config copy logs going to: C:\Users\Mohsen Dirbaz\IdeaProjects\TeaSpace-Codebase\backend\Logs\CONFIG_COPY.log
+2026-03-16 09:38:10,602 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:2600
+2026-03-16 09:38:10,602 INFO [33mPress CTRL+C to quit[0m
+2026-03-16 09:38:10,602 INFO  * Restarting with stat
+2026-03-16 09:38:11,054 INFO Logging configured correctly - Config copy logs going to: C:\Users\Mohsen Dirbaz\IdeaProjects\TeaSpace-Codebase\backend\Logs\CONFIG_COPY.log
+2026-03-16 09:38:11,076 WARNING  * Debugger is active!
+2026-03-16 09:38:11,091 INFO  * Debugger PIN: 939-198-847
