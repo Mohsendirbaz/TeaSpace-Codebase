@@ -1,6 +1,0 @@
-start,end,length,filtered_values
-1,6,6,"[{""id"": ""initialSellingPriceAmount13"", ""value"": ""2"", ""remarks"": ""b""}]"
-6,8,3,"[{""id"": ""initialSellingPriceAmount13"", ""value"": ""2"", ""remarks"": ""b""}]"
-8,13,6,"[{""id"": ""initialSellingPriceAmount13"", ""value"": ""2"", ""remarks"": ""b""}, {""id"": ""initialSellingPriceAmount13"", ""value"": ""2"", ""remarks"": ""bb""}, {""id"": ""initialSellingPriceAmount13"", ""value"": ""2.4"", ""remarks"": ""bv""}]"
-13,16,4,"[{""id"": ""initialSellingPriceAmount13"", ""value"": ""2"", ""remarks"": ""bb""}, {""id"": ""initialSellingPriceAmount13"", ""value"": ""2.4"", ""remarks"": ""bv""}]"
-16,20,5,"[{""id"": ""initialSellingPriceAmount13"", ""value"": ""2"", ""remarks"": ""bb""}, {""id"": ""initialSellingPriceAmount13"", ""value"": ""2.4"", ""remarks"": ""bv""}]"

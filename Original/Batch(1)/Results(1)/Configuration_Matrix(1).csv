@@ -1,4 +1,0 @@
-start,end,length,filtered_values
-1,5,5,"[{""id"": ""initialSellingPriceAmount13"", ""value"": ""5.4"", ""remarks"": ""3x higher prices in years 5-10""}]"
-5,10,6,"[{""id"": ""initialSellingPriceAmount13"", ""value"": ""5.4"", ""remarks"": ""3x higher prices in years 5-10""}, {""id"": ""initialSellingPriceAmount13"", ""value"": ""8.8"", ""remarks"": ""5x higher multiplier in years 10-20""}]"
-10,20,11,"[{""id"": ""initialSellingPriceAmount13"", ""value"": ""5.4"", ""remarks"": ""3x higher prices in years 5-10""}, {""id"": ""initialSellingPriceAmount13"", ""value"": ""8.8"", ""remarks"": ""5x higher multiplier in years 10-20""}]"
