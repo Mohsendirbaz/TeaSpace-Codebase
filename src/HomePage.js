@@ -102,7 +102,7 @@ const FeatureUnavailable = ({ title, description }) => (
 
 const HomePageContent = () => {
     const { selectedVersions, version, setVersion } = useVersionState();
-    const [activeTab, setActiveTab] = useState('Scaling');
+    const [activeTab, setActiveTab] = useState('Input');
     const [activeSubTab, setActiveSubTab] = useState('ProjectConfig');
     const [selectedProperties, setSelectedProperties] = useState([]);
 
@@ -115,7 +115,7 @@ const HomePageContent = () => {
     useEffect(() => {
         console.log('selectedVersions changed:', selectedVersions);
     }, [selectedVersions]);
-    const [season, setSeason] = useState('dark');
+    const [season, setSeason] = useState('light');
     const [loadingStates, setLoadingStates] = useState({
         html: false,
         csv: false,

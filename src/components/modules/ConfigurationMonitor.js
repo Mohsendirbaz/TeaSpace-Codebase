@@ -11,7 +11,7 @@ const ConfigurationMonitor = ({ version }) => {
   // Import property mapping from useFormValues
   const { propertyMapping } = useMatrixFormValues();
   // Component state
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [filterByGroup, setFilterByGroup] = useState('all');
   const [configData, setConfigData] = useState([]); // Baseline parameters (filteredValues)
