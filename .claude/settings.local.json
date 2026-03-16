@@ -2,7 +2,11 @@
   "permissions": {
     "allow": [
       "Bash(grep:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(__NEW_LINE_bc36105976939d53__ echo:*)",
+      "Read(//tmp/**)",
+      "Bash(echo:*)",
+      "Bash(cat:*)"
     ],
     "deny": []
   }
