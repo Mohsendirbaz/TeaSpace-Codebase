@@ -51,6 +51,7 @@ typings/
 .lock-wscript
 .node_repl_history
 *.tgz
+package-lock.json
 
 # Environment files
 .env

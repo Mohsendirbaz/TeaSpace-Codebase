@@ -6,7 +6,9 @@
       "Bash(__NEW_LINE_bc36105976939d53__ echo:*)",
       "Read(//tmp/**)",
       "Bash(echo:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Read(//mnt/c/**)",
+      "Read(//c/Users//**)"
     ],
     "deny": []
   }
