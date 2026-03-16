@@ -53,7 +53,6 @@ import CustomizableImage from './components/modules/CustomizableImage';
 import CustomizableTable from './components/modules/CustomizableTable';
 import Popup from './components/modules/Efficacy';
 import SensitivityMonitor, { sensitivityActionRef } from './components/modules/SensitivityMonitor';
-import SensitivityPlotsTabs from './components/modules/SensitivityPlotsTabs';
 import EfficacyMapContainer from './components/modules/EfficacyMapContainer';
 
 // Import styling
@@ -481,6 +480,7 @@ const PlotsTabs = ({ version, sensitivity = false }) => {
         </div>
     );
 };
+
 
 /**
  * Integrated MatrixApp Component
@@ -1048,11 +1048,6 @@ const MatrixApp = () => {
                                             version={currentRunVersion}
                                             activeTab={activeSubTab}
                                         />
-
-                                        <SensitivityPlotsTabs
-                                            version={currentRunVersion}
-                                            S={S}
-                                        />
                                     </div>
                                 </div>
                             )}
@@ -1123,7 +1118,6 @@ export {
     PropertySelector,
     VersionSelector,
     PlotsTabs,
-    SensitivityPlotsTabs,
     CalculationMonitor,
     ConfigurationMonitor,
     CustomizableImage,
@@ -1138,3 +1132,7 @@ export {
 };
 
 export default MatrixApp;
+
+
+
+

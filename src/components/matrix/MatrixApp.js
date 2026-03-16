@@ -10,7 +10,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import MatrixSubmissionService from '../../services/MatrixSubmissionService';
-import ExtendedScaling from '../truly_extended_scaling/ExtendedScaling';
+import SimpleScalingEditor from '../scaling/SimpleScalingEditor';
 import GeneralFormConfig from '../forms/GeneralFormConfig';
 import '../../styles/HomePage.CSS/HCSS.css';
 
@@ -312,7 +312,7 @@ const MatrixApp = ({
                                         setVersion={version => {/* Version update handler */}}
                                         summaryItems={finalResults.Amount4}
                                     />
-                                    <ExtendedScaling
+                                    <SimpleScalingEditor
                                         baseCosts={scalingBaseCosts.Amount4 || []}
                                         onScaledValuesChange={(scaledValues) => {/* Scaled values handler */}}
                                         initialScalingGroups={getFilteredScalingGroups('Amount4')}
@@ -352,7 +352,7 @@ const MatrixApp = ({
                                         setVersion={version => {/* Version update handler */}}
                                         summaryItems={finalResults.Amount5}
                                     />
-                                    <ExtendedScaling
+                                    <SimpleScalingEditor
                                         baseCosts={scalingBaseCosts.Amount5 || []}
                                         onScaledValuesChange={(scaledValues) => {/* Scaled values handler */}}
                                         initialScalingGroups={getFilteredScalingGroups('Amount5')}

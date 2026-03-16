@@ -4,33 +4,17 @@ import 'react-tabs/style/react-tabs.css';
 import { VersionStateProvider, useVersionState } from './contexts/VersionStateContext';
 import CustomizableImage from './components/modules/CustomizableImage';
 import CustomizableTable from './components/modules/CustomizableTable';
-import ExtendedScaling from './components/truly_extended_scaling/ExtendedScaling';
-import ClimateModuleEnhanced from './components/truly_extended_scaling/climate-module-enhanced';
-import { MatrixProvider } from './MatrixStateManager';
-import FactEngine from './components/modules/FactEngine';
-import FactEngineAdmin from './components/modules/FactEngineAdmin';
 import GeneralFormConfig from './GeneralFormConfig';
 import './styles/HomePage.CSS/HCSS.css';
 import './styles/Themes/dark-theme.css';
 import './styles/Themes/light-theme.css';
 import './styles/Themes/creative-theme.css';
-import StyledProcessEconomicsLibrary from './components/process_economics_pilot/process-economics-library';
-// Import PropertySelector and VersionSelector from Consolidated3.js instead of separate files
-import { PropertySelector, VersionSelector } from './Consolidated3';
-import SpatialTransformComponent from './Naturalmotion.js'
-import TestingZone from './components/modules/TestingZone';
 import CalculationMonitor from './components/modules/CalculationMonitor';
 import SensitivityMonitor from './components/modules/SensitivityMonitor';
 import ConfigurationMonitor from './components/modules/ConfigurationMonitor';
 import ThemeButton from './components/modules/ThemeButton';
-import PlotsTabs from './components/modules/PlotsTabs';
-import SensitivityPlotsTabs from './components/modules/SensitivityPlotsTabs';
-import CentralScalingTab from './components/truly_extended_scaling/CentralScalingTab';
-import StickerHeader from './components/modules/HeaderBackground';
-import ProcessEconomicsLibrary from './components/process_economics_pilot/integration-module';
 import CFAConsolidationUI from './components/cfa/CFAConsolidationUI';
-import tabIntegrationModule from './code-entity-analyzer/integration/tab_integration';
-import EfficacyMapContainer from './components/modules/EfficacyMapContainer';
+import SimpleScalingEditor from './components/scaling/SimpleScalingEditor';
 import './styles/HomePage.CSS/HomePage1.css';
 import './styles/HomePage.CSS/HomePage2.css';
 import './styles/HomePage.CSS/HomePage3.css';
@@ -46,55 +30,81 @@ import './styles/HomePage.CSS/HomePage_neumorphic-tabs.css';
 import './styles/HomePage.CSS/ResetOptionsPopup.css';
 import './styles/HomePage.CSS/RunOptionsPopup.css';
 import './styles/HomePage.CSS/HomePage_scaling_t.css';
-// Import from Consolidated.js
-import { MatrixSubmissionService, ExtendedScaling as ConsolidatedExtendedScaling, GeneralFormConfig as ConsolidatedGeneralFormConfig, MatrixApp } from './Consolidated';
+import { useMatrixFormValues } from './Consolidated2';
 
-// Import from Consolidated2.js
-import { 
-    useMatrixFormValues,
-    EfficacyManager,
-    VersionZoneManager,
-    MatrixValueEditor,
-    EfficacyPeriodEditor,
-    MatrixConfigExporter,
-    MatrixHistoryManager,
-    MatrixInheritanceManager,
-    MatrixValidator,
-    MatrixSummaryGenerator,
-    SensitivityConfigGenerator,
-    MatrixSyncService,
-    MatrixScalingManager
-} from './Consolidated2';
+const SCALING_SECTIONS = [
+    { filterKeyword: 'Amount4', title: 'Process Quantities (Vs, units)' },
+    { filterKeyword: 'Amount5', title: 'Process Costs (Vs, $ / unit)' },
+    { filterKeyword: 'Amount6', title: 'Additional Revenue Quantities (Rs, units)' },
+    { filterKeyword: 'Amount7', title: 'Additional Revenue Prices (Rs, $ / unit)' }
+];
 
-// Import Consolidated3.js
-import MatrixApp3 from './Consolidated3';
+const PropertySelector = ({ selectedProperties, setSelectedProperties, formValues = {} }) => {
+    const formEntries = Object.entries(formValues || {}).filter(([, value]) => value?.label);
 
+    const handlePropertyChange = (event) => {
+        const selectedOptions = Array.from(event.target.selectedOptions, (option) => option.value);
+        setSelectedProperties(selectedOptions);
+    };
+
+    return (
+        <select
+            id="property-selector"
+            multiple
+            value={selectedProperties}
+            onChange={handlePropertyChange}
+            className="form-item"
+        >
+            {formEntries.map(([key, value]) => (
+                <option key={key} value={key}>
+                    {value.label}
+                </option>
+            ))}
+        </select>
+    );
+};
+
+const VersionSelector = ({ maxVersions = 20 }) => {
+    const { selectedVersions, setSelectedVersions } = useVersionState();
+
+    const toggleVersion = (candidate) => {
+        setSelectedVersions((previous) => {
+            if (previous.includes(candidate)) {
+                return previous.filter((versionId) => versionId !== candidate);
+            }
+
+            return [...previous, candidate].sort((left, right) => Number(left) - Number(right));
+        });
+    };
+
+    return (
+        <div className="version-selector" style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+            {Array.from({ length: maxVersions }, (_, index) => String(index + 1)).map((candidate) => (
+                <button
+                    key={candidate}
+                    type="button"
+                    className={`sub-tab-button ${selectedVersions.includes(candidate) ? 'active' : ''}`}
+                    onClick={() => toggleVersion(candidate)}
+                >
+                    V{candidate}
+                </button>
+            ))}
+        </div>
+    );
+};
+
+const FeatureUnavailable = ({ title, description }) => (
+    <div className="results-panel">
+        <h2>{title}</h2>
+        <p>{description}</p>
+    </div>
+);
 
 const HomePageContent = () => {
     const { selectedVersions, version, setVersion } = useVersionState();
     const [activeTab, setActiveTab] = useState('Scaling');
     const [activeSubTab, setActiveSubTab] = useState('ProjectConfig');
     const [selectedProperties, setSelectedProperties] = useState([]);
-
-    // Initialize the tab integration module when the CodeEntityAnalysis tab is selected
-    useEffect(() => {
-        if (activeTab === 'CodeEntityAnalysis') {
-            // Initialize the tab integration, but don't render it directly
-            const tabIntegration = tabIntegrationModule.createTabIntegration(window.tabSystem || {}, {
-                tabPrefix: 'code-entity-',
-                defaultTabTitle: 'Code Analysis',
-                tabIcon: 'code',
-                showCloseButton: true,
-                persistTabs: true,
-                maxTabs: 10
-            });
-
-            // Store the tab integration in a global variable if needed for later access
-            window.codeEntityAnalysisTabIntegration = tabIntegration;
-        }
-    }, [activeTab]);
-
-
 
     // Diagnostic logging for selectedProperties
     useEffect(() => {
@@ -1985,7 +1995,7 @@ const HomePageContent = () => {
                             setVersion={setVersion}
                             summaryItems={finalResults.Amount4} // Pass the stored results
                         />
-                        <ExtendedScaling
+                        <SimpleScalingEditor
                             baseCosts={scalingBaseCosts.Amount4 || []}
                             onScaledValuesChange={handleScaledValuesChange}
                             initialScalingGroups={scalingGroups.filter(g => g._scalingType === 'Amount4')}
@@ -2023,7 +2033,7 @@ const HomePageContent = () => {
                             setVersion={setVersion}
                             summaryItems={finalResults.Amount5} // Pass the stored results
                         />
-                        <ExtendedScaling
+                        <SimpleScalingEditor
                             baseCosts={scalingBaseCosts.Amount5 || []}
                             onScaledValuesChange={handleScaledValuesChange}
                             initialScalingGroups={scalingGroups.filter(g => g._scalingType === 'Amount5')}
@@ -2061,7 +2071,7 @@ const HomePageContent = () => {
                             setVersion={setVersion}
                             summaryItems={finalResults.Amount6} // Pass the stored results
                         />
-                        <ExtendedScaling
+                        <SimpleScalingEditor
                             baseCosts={scalingBaseCosts.Amount6 || []}
                             onScaledValuesChange={handleScaledValuesChange}
                             initialScalingGroups={scalingGroups.filter(g => g._scalingType === 'Amount6')}
@@ -2099,7 +2109,7 @@ const HomePageContent = () => {
                             setVersion={setVersion}
                             summaryItems={finalResults.Amount7} // Pass the stored results
                         />
-                        <ExtendedScaling
+                        <SimpleScalingEditor
                             baseCosts={scalingBaseCosts.Amount7 || []}
                             onScaledValuesChange={handleScaledValuesChange}
                             initialScalingGroups={scalingGroups.filter(g => g._scalingType === 'Amount7')}
@@ -2122,33 +2132,31 @@ const HomePageContent = () => {
 
                 {activeSubTab === 'Scaling' && (
                     <>
-                        <CentralScalingTab
-                            formValues={formValues}
-                            V={V}
-                            R={R}
-                            toggleV={toggleV}
-                            toggleR={toggleR}
-
-                            scalingBaseCosts={scalingBaseCosts}
-                            setScalingBaseCosts={setScalingBaseCosts}
-                            scalingGroups={scalingGroups}
-
-                            onScalingGroupsChange={handleScalingGroupsChange}
-                            onScaledValuesChange={handleScaledValuesChange}
-                        />
-
-                        {/* Integrate EfficacyMapContainer */}
-                        <EfficacyMapContainer
-                            parameters={formValues}
-                            plantLifetime={formValues.plantLifetimeAmount10?.value || 20}
-                            configurableVersions={20}
-                            scalingGroups={scalingGroups.length || 5}
-                            onParameterUpdate={(paramId, updatedParam) => {
-                                handleInputChange(
-                                    { target: { value: updatedParam.value } },
-                                    paramId
-                                );
-                            }}
+                        {SCALING_SECTIONS.map(({ filterKeyword, title }) => (
+                            <SimpleScalingEditor
+                                key={filterKeyword}
+                                title={title}
+                                baseCosts={scalingBaseCosts[filterKeyword] || []}
+                                onScaledValuesChange={handleScaledValuesChange}
+                                initialScalingGroups={scalingGroups.filter(g => g._scalingType === filterKeyword)}
+                                onScalingGroupsChange={(newGroups) => {
+                                    const otherGroups = scalingGroups.filter(g => g._scalingType !== filterKeyword);
+                                    const updatedGroups = newGroups.map(g => ({ ...g, _scalingType: filterKeyword }));
+                                    handleScalingGroupsChange([...otherGroups, ...updatedGroups]);
+                                }}
+                                filterKeyword={filterKeyword}
+                                V={V}
+                                R={R}
+                                toggleV={toggleV}
+                                toggleR={toggleR}
+                                onFinalResultsGenerated={handleFinalResultsGenerated}
+                                activeGroupIndex={activeScalingGroups[filterKeyword] || 0}
+                                onActiveGroupChange={handleActiveGroupChange}
+                            />
+                        ))}
+                        <FeatureUnavailable
+                            title='Capacity and Efficacy Map'
+                            description='This visualization depended on supporting panels that were removed from the workspace.'
                         />
                     </>
                 )}
@@ -2506,13 +2514,6 @@ const HomePageContent = () => {
                         renderForm()
                 );
 
-            case 'NaturalMotion':
-                return (
-                    <div className="model-selection">
-                        <SpatialTransformComponent />
-                    </div>
-                );
-
             case 'Case1':
                 return renderCase1Content();
 
@@ -2525,9 +2526,8 @@ const HomePageContent = () => {
             case 'Scaling':
                 return (
                     <>
-                        {/* Process Economics Library Button */}
                         <div className="library-button-container" style={{ margin: '10px 0', textAlign: 'right' }}>
-                            <button 
+                            <button
                                 className="open-library-button"
                                 style={{
                                     padding: '8px 16px',
@@ -2550,33 +2550,31 @@ const HomePageContent = () => {
                             </button>
                         </div>
 
-                        <CentralScalingTab
-                            formValues={formValues}
-                            V={V}
-                            R={R}
-                            toggleV={toggleV}
-                            toggleR={toggleR}
-
-                            scalingBaseCosts={scalingBaseCosts}
-                            setScalingBaseCosts={setScalingBaseCosts}
-                            scalingGroups={scalingGroups}
-
-                            onScalingGroupsChange={handleScalingGroupsChange}
-                            onScaledValuesChange={handleScaledValuesChange}
-                        />
-
-                        {/* Integrate EfficacyMapContainer */}
-                        <EfficacyMapContainer
-                            parameters={formValues}
-                            plantLifetime={formValues.plantLifetimeAmount10?.value || 20}
-                            configurableVersions={20}
-                            scalingGroups={scalingGroups.length || 5}
-                            onParameterUpdate={(paramId, updatedParam) => {
-                                handleInputChange(
-                                    { target: { value: updatedParam.value } },
-                                    paramId
-                                );
-                            }}
+                        {SCALING_SECTIONS.map(({ filterKeyword, title }) => (
+                            <SimpleScalingEditor
+                                key={filterKeyword}
+                                title={title}
+                                baseCosts={scalingBaseCosts[filterKeyword] || []}
+                                onScaledValuesChange={handleScaledValuesChange}
+                                initialScalingGroups={scalingGroups.filter(g => g._scalingType === filterKeyword)}
+                                onScalingGroupsChange={(newGroups) => {
+                                    const otherGroups = scalingGroups.filter(g => g._scalingType !== filterKeyword);
+                                    const updatedGroups = newGroups.map(g => ({ ...g, _scalingType: filterKeyword }));
+                                    handleScalingGroupsChange([...otherGroups, ...updatedGroups]);
+                                }}
+                                filterKeyword={filterKeyword}
+                                V={V}
+                                R={R}
+                                toggleV={toggleV}
+                                toggleR={toggleR}
+                                onFinalResultsGenerated={handleFinalResultsGenerated}
+                                activeGroupIndex={activeScalingGroups[filterKeyword] || 0}
+                                onActiveGroupChange={handleActiveGroupChange}
+                            />
+                        ))}
+                        <FeatureUnavailable
+                            title='Capacity and Efficacy Map'
+                            description='This visualization depended on supporting panels that were removed from the workspace.'
                         />
                     </>
                 );
@@ -2584,105 +2582,29 @@ const HomePageContent = () => {
             case 'CFAConsolidation':
                 return <CFAConsolidationUI />;
 
-            case 'TestingZone':
-                return <TestingZone />;
-
-            case 'FactAdmin':
-                return (
-                    <div>
-                        <FactEngine />
-                        <FactEngineAdmin />
-                        <StickerHeader />
-                    </div>
-                );
-
-            case 'PlotGallery':
-                return (
-                    <PlotsTabs
-                        version={version}
-                    />
-                );
-
-            case 'SensitivityPlots':
-                return (
-                    <SensitivityPlotsTabs
-                        version={version}
-                        S={S}
-                    />
-                );
-
-            case 'Consolidated1':
-                return <MatrixApp />;
-
-            case 'Consolidated2':
-                return (
-                    <div className="consolidated2-container">
-                        <h2>Consolidated2 Components</h2>
-                        <div className="consolidated2-content">
-                            <VersionZoneManager 
-                                versions={{}} 
-                                zones={{}} 
-                                createVersion={() => {}} 
-                                setActiveVersion={() => {}} 
-                                createZone={() => {}} 
-                                setActiveZone={() => {}}
-                            />
-                        </div>
-                    </div>
-                );
-
-            case 'Consolidated3':
-                return <MatrixApp3 />;
-
-            case 'CodeEntityAnalysis':
-                return <div className="code-entity-analysis-container">
-                    <h2>Code Entity Analysis</h2>
-                    <div className="code-entity-analysis-content">
-                        {/* The tab integration is initialized in useEffect, not rendered directly */}
-                        <div id="code-entity-analysis-container">
-                            <p>Code Entity Analysis visualization will appear here.</p>
-                        </div>
-                    </div>
-                </div>;
             case 'StyledProcessEconomicsLibrary':
-                return <StyledProcessEconomicsLibrary />;
+                return (
+                    <FeatureUnavailable
+                        title='Process Economics Library'
+                        description='This library depended on files that are no longer in the workspace.'
+                    />
+                );
 
+            case 'NaturalMotion':
+            case 'TestingZone':
+            case 'FactAdmin':
+            case 'PlotGallery':
+            case 'SensitivityPlots':
+            case 'Consolidated1':
+            case 'Consolidated2':
+            case 'Consolidated3':
+            case 'CodeEntityAnalysis':
             case 'Climate':
                 return (
-                    <div className="climate-management-container">
-                        <h2>Climate Management</h2>
-                        <div className="climate-content">
-                            <MatrixProvider initialData={{
-                                formMatrix: formValues || {},
-                                versions: { 
-                                    active: version || 'v1', 
-                                    list: selectedVersions ? Object.keys(selectedVersions) : ['v1'],
-                                    metadata: {}
-                                },
-                                zones: { 
-                                    active: 'z1', 
-                                    list: ['z1', 'z2', 'z3'],
-                                    metadata: {}
-                                }
-                            }}>
-                                <ClimateModuleEnhanced 
-                                    scalingGroups={formValues || []}
-                                    versions={{ 
-                                        active: version || 'v1', 
-                                        list: selectedVersions ? Object.keys(selectedVersions) : ['v1'] 
-                                    }}
-                                    zones={{ 
-                                        active: 'z1', 
-                                        list: ['z1', 'z2', 'z3'] 
-                                    }}
-                                    onCarbonFootprintChange={(footprints) => {
-                                        console.log('Carbon footprint changed:', footprints);
-                                    }}
-                                    showCoordinateComponent={true}
-                                />
-                            </MatrixProvider>
-                        </div>
-                    </div>
+                    <FeatureUnavailable
+                        title={activeTab}
+                        description="This legacy workspace depended on files that were removed. The active homepage now uses the consolidated in-file alternatives instead."
+                    />
                 );
 
             default:
@@ -2857,3 +2779,16 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+
+
+
+
+
+
+
+
+
+
+
+

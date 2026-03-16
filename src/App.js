@@ -2,8 +2,6 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './HomePage';
 import ErrorBoundary from './utils/ErrorBoundary';
-import './components/process_economics/styles/LibrarySystem.css'
-import './components/find_factual_precedence/styles/FactualPrecedence.css'
 import './styles/HomePage.CSS/UIComponentStyles.css'
 
 function getColorFromTheme(themeClass, varName) {
@@ -91,3 +89,4 @@ function App() {
 }
 
 export default App;
+
