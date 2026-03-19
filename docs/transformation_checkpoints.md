@@ -552,6 +552,62 @@ Key acceptance criteria verified:
 
 ---
 
+---
+
+## Reductionist Step — Parallel State Elimination
+
+**Date:** 2026-03-19
+**Directive:** "we do not tolerate unnecessary design nor we intend to serve legacy consumers"
+
+---
+
+### Eliminated parallel state
+
+| Eliminated | Replacement |
+|-----------|-------------|
+| `S` useMemo in Consolidated2 | Removed — consumers derive S locally if needed |
+| `setS` useCallback in Consolidated2 | Removed — consumers write to `setScopedMutations` directly |
+| `V` useState in Consolidated2 | Removed — participation lives in `formMatrix[id].dynamicAppendix.itemState.status` |
+| `setV`, `toggleV` (old) | New `toggleV` writes to `formMatrix` directly via `setFormMatrix` |
+| `R` useState in Consolidated2 | Removed — same as V |
+| `setR`, `toggleR` (old) | New `toggleR` writes to `formMatrix` directly |
+
+### Contract changes
+
+- `useMatrixFormValues()` no longer exports `S`, `setS`, `V`, `setV`, `R`, `setR`
+- `useMatrixFormValues()` now exports `setScopedMutations` directly
+- `SensitivityMonitor` prop interface: `{S, setS}` → `{scopedMutations, setScopedMutations}`
+  - S and setS are now component-local, derived from `scopedMutations`
+- `GeneralFormConfig` prop interface: `V/R/toggleV/toggleR` removed; reads `item.dynamicAppendix.itemState.status`
+- `HomePage.js`: derives `derivedV`/`derivedR` maps for `SimpleScalingEditor` (legacy consumer, not rewritten)
+- `sensitivityActionRef` changed from module-level const to named export
+
+### Build verification
+
+`PASS` — `npm run build` compiled successfully, zero errors.
+Bundle: 486.62 kB gzipped (approx same size — parallel state overhead removed, no new code added).
+
+### Regression scan
+
+| Check | Result |
+|-------|--------|
+| No `S` state variable in `useMatrixFormValues` return | ✓ |
+| No `V` / `R` useState in Consolidated2 | ✓ |
+| `toggleV` updates `formMatrix.dynamicAppendix.itemState.status` | ✓ |
+| `assembleBaseline` reads `itemState.status` | ✓ |
+| `buildRunPayload` derives `selectedV`/`selectedR` from `formMatrix` | ✓ |
+| `SensitivityMonitor` derives S locally from scopedMutations | ✓ |
+| `GeneralFormConfig` V/R checkbox reads `item.dynamicAppendix.itemState.status` | ✓ |
+| Build passes | ✓ |
+
+### Gate decision
+
+`PASS: unified model is now the sole source of truth for S, V, R`
+
+No parallel state remains for mutations or participation toggles.
+
+---
+
 ## Final Transformation Summary
 
 All 5 phases are complete and verified. The TEA-MD platform now has:
