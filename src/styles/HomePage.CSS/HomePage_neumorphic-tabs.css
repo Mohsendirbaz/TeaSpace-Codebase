@@ -1,0 +1,148 @@
+.HomePageTabs .tab-button{
+  background: linear-gradient(145deg, #e6e6e6, #ffffff);
+  border-radius: 10px;
+  
+  padding: 15px 25px;
+  margin: 10px;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.sub-tab-buttons .sub-tab-button {
+  background: linear-gradient(145deg, #e6e6e6, #ffffff);
+  border-radius: 10px;
+  
+  padding: 15px 25px;
+  margin: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.HomePageTabs .tab-button::before,
+.sub-tab-buttons .sub-tab-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.3)
+  );
+  pointer-events: none;
+}
+
+.HomePageTabs .tab-button:hover,
+.sub-tab-buttons .sub-tab-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 10px 10px 20px #c3c3c3,
+              -10px -10px 20px #ffffff;
+}
+
+.HomePageTabs .tab-button:focus,
+.sub-tab-buttons .sub-tab-button:focus {
+  outline: none;
+  box-shadow: 0px 15px 24px #b8b8b8,
+              0px -15px 24px #ffffff;
+  transform: translateY(-3px);
+}
+
+.HomePageTabs .tab-button.active,
+.sub-tab-buttons .sub-tab-button.active {
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  box-shadow: 0px 15px 24px #b8b8b8,
+  0px -15px 24px #ffffff;
+  transform: translateY(0);
+  color:darkblue;
+  box-shadow: 0px 15px 24px #b8b8b8,
+  0px -15px 24px #ffffff;
+  font-weight: bolder;
+}
+
+.HomePageTabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px;
+  background: var(--primary-color);
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.sub-tab-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+/* Ensure uniform text size */
+.HomePageTabs .tab-button *,
+.sub-tab-buttons .sub-tab-button * {
+  font-size: 16px !important;
+  line-height: 1.5;
+}
+
+/* Sub tabs container */
+.sub-tab-button {
+  padding: 12px 20px;
+  margin: 8px;
+  font-size: 14px;
+  flex-wrap: wrap;
+}
+
+/* Remove default button styles */
+.tab-button,
+.sub-tab-button {
+  border: none;
+  background-color: transparent;
+}
+.sub-tab-buttons {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to next line */
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+/* Optionally, adjust the button width to better control wrapping */
+.sub-tab-buttons .sub-tab-button {
+  flex: 0 0 auto; /* Don't grow or shrink, respect the button's natural width */
+  min-width: 150px; /* Optional: minimum width to ensure consistent appearance */
+  max-width: 250px; /* Optional: maximum width to prevent overly wide buttons */
+}
+
+/* Make active subtab buttons more visible when wrapped */
+.sub-tab-buttons .sub-tab-button.active {
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  box-shadow: var(--neu-shadow-md);
+  transform: translateY(0);
+  color: var(--dark-blue);
+  font-weight: bolder;
+  position: relative;
+  z-index: 1; /* Ensure active buttons appear above others */
+}
+
+/* Enhance hover state for better interaction when wrapped */
+.sub-tab-buttons .sub-tab-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--neu-shadow-sm);
+  z-index: 2; /* Raise hovered buttons above others */
+}

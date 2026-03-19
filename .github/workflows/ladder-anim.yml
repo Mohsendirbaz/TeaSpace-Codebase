@@ -1,0 +1,42 @@
+name: Build Ladder Animation
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install deps
+        run: npm install
+
+      - name: Install ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Render frames
+        run: npm run render:frames
+
+      - name: Encode MP4
+        run: npm run make:video
+
+      - name: Encode GIF
+        run: npm run make:gif
+
+      - name: Upload animation artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ladder-animation
+          if-no-files-found: warn
+          path: |
+            assets/why/ladder.mp4
+            assets/why/ladder.gif
+            frames/

@@ -1,0 +1,206 @@
+/* Enhanced Table Styling with Theme Variable Support */
+
+/* Base Table Structure */
+.custom-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-bottom: 1.5rem;
+  border-radius: var(--neu-border-radius-md);
+  overflow: hidden;
+  box-shadow: var(--neu-shadow-sm);
+  background-color: var(--card-background);
+  border: 1px solid var(--border-color);
+}
+
+/* Table Header */
+.custom-table th {
+  background: var(--neu-gradient-basic);
+  color: var(--text-color);
+  font-weight: 600;
+  text-align: left;
+  padding: 12px 16px;
+  border-bottom: 2px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.custom-table th:first-child {
+  border-top-left-radius: var(--neu-border-radius-sm);
+}
+
+.custom-table th:last-child {
+  border-top-right-radius: var(--neu-border-radius-sm);
+}
+
+/* Table Header on Hover */
+.custom-table th:hover {
+  background: var(--primary-color);
+  color: white;
+  transition: all var(--neu-transition-fast);
+}
+
+/* Year columns styling */
+.custom-table th.year-column {
+  background: var(--primary-color);
+  color: white;
+  position: relative;
+}
+
+.custom-table th.year-column::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: var(--secondary-color);
+}
+
+.custom-table th.year-column:hover {
+  background: var(--secondary-color);
+}
+
+.custom-table td.year-column {
+  background-color: rgba(var(--primary-color-rgb), 0.08);
+  position: relative;
+}
+
+.custom-table td.year-column::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: rgba(var(--secondary-color-rgb), 0.3);
+}
+
+/* Informational year indicator */
+.year-info {
+  margin-left: 10px;
+  font-size: 0.85em;
+  color: var(--text-secondary);
+  font-style: italic;
+  padding: 2px 8px;
+  background-color: rgba(var(--primary-color-rgb), 0.1);
+  border-radius: 4px;
+}
+
+/* Table Cells */
+.custom-table td {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-color);
+  transition: background-color var(--neu-transition-fast);
+}
+
+/* Row Hover Effect */
+.custom-table tr:hover td {
+  background-color: rgba(var(--primary-color-rgb, 100, 100, 100), 0.1);
+}
+
+/* Row hover should preserve year column styling */
+.custom-table tr:hover td.year-column {
+  background-color: rgba(var(--primary-color-rgb), 0.15);
+}
+
+/* Alternating Row Colors */
+.custom-table tr:nth-child(even) {
+  background-color: rgba(var(--border-color-rgb, 200, 200, 200), 0.2);
+}
+
+/* Numerical Value Formatting */
+.custom-table td span {
+  font-family: 'Consolas', 'Monaco', monospace;
+  padding: 2px 4px;
+  border-radius: 3px;
+  display: inline-block;
+  text-align: right;
+  min-width: 60px;
+}
+
+/* Negative Values */
+.custom-table td span[style*="color: red"] {
+  color: var(--danger-color) !important;
+  background-color: rgba(var(--danger-color-rgb, 220, 53, 69), 0.1);
+}
+
+/* Large Values (Millions/Billions) */
+.custom-table td span[style*="font-weight: bold"] {
+  font-weight: 600 !important;
+  color: var(--primary-color);
+  background-color: rgba(var(--primary-color-rgb, 100, 100, 100), 0.1);
+}
+
+/* Tooltip Styling */
+.tooltip2 {
+  visibility: hidden;
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--card-background);
+  color: var(--text-color);
+  padding: 8px 12px;
+  border-radius: var(--neu-border-radius-sm);
+  box-shadow: var(--neu-shadow-md);
+  width: max-content;
+  max-width: 250px;
+  border: 1px solid var(--border-color);
+  z-index: 100;
+  transition: visibility 0.2s, opacity 0.2s;
+  opacity: 0;
+}
+
+th:hover .tooltip2 {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Table container styling */
+.table-container {
+  border-radius: var(--neu-border-radius-md);
+  background-color: var(--card-background);
+  box-shadow: var(--neu-shadow-sm);
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.table-title {
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+}
+
+/* Dark theme enhancements */
+:root.dark-theme .custom-table td.year-column {
+  background-color: rgba(var(--primary-color-rgb), 0.15);
+}
+
+:root.dark-theme .custom-table tr:hover td.year-column {
+  background-color: rgba(var(--primary-color-rgb), 0.25);
+}
+
+/* Light theme enhancements */
+:root.light-theme .custom-table td.year-column {
+  background-color: rgba(var(--primary-color-rgb), 0.08);
+}
+
+:root.light-theme .custom-table tr:hover td.year-column {
+  background-color: rgba(var(--primary-color-rgb), 0.15);
+}
+
+/* Creative theme enhancements */
+:root.creative-theme .custom-table td.year-column {
+  background-color: rgba(var(--primary-color-rgb), 0.1);
+}
+
+:root.creative-theme .custom-table tr:hover td.year-column {
+  background-color: rgba(var(--primary-color-rgb), 0.2);
+}

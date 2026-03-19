@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep:*)",
+      "Bash(grep:*)",
+      "Bash(__NEW_LINE_bc36105976939d53__ echo:*)",
+      "Read(//tmp/**)",
+      "Bash(echo:*)",
+      "Bash(cat:*)",
+      "Read(//mnt/c/**)",
+      "Read(//c/Users//**)",
+      "Bash(node:*)",
+      "Bash(mkdir -p \"C:/Users/Mohsen Dirbaz/IdeaProjects/TEA-MD/docs/architecture\")",
+      "Bash(mkdir -p \"C:/Users/Mohsen Dirbaz/IdeaProjects/TEA-MD/src/model\")",
+      "Bash(mkdir -p \"C:/Users/Mohsen Dirbaz/IdeaProjects/TEA-MD/src/adapters\")",
+      "Bash(npm run:*)",
+      "Bash(cd:*)",
+      "Bash(rm -f src/Consolidated3.js src/ConsolidatedRefactored.js src/Consolidated.js src/MatrixStateManager.js src/state/MatrixStateAtoms.js)",
+      "Bash(rm -rf src/components/truly_extended_scaling)",
+      "Bash(rm -rf src/components/matrix src/hooks)",
+      "Bash(rm -f src/components/modules/EfficacyMapContainer.js src/components/modules/TimeParameterMatrix.js)",
+      "Bash(rm -rf src/services)",
+      "Bash(rm -rf src/managers src/components/tabs src/components/forms)",
+      "Bash(rm -f src/utils/component_graph.js src/utils/insight_generator.js src/utils/react_parser.js src/utils/dependency_mapper.js src/utils/scalingImportExport.js src/utils/serverUtils.js src/utils/historyUtils.js src/centered-perspective-demo.js)"
+    ],
+    "deny": []
+  }
+}

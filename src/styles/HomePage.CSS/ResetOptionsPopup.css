@@ -1,0 +1,84 @@
+/* Reset Options Popup Styling */
+.reset-options-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.reset-options-popup {
+  background-color: var(--background-color, #fff);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 400px;
+  max-width: 90%;
+}
+
+.reset-options-popup h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: var(--text-color, #333);
+  font-size: 18px;
+  text-align: center;
+}
+
+.reset-options-popup .checkbox-row {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.reset-option-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: var(--text-color, #333);
+  font-size: 16px;
+}
+
+.reset-option-label input[type="checkbox"] {
+  margin-right: 10px;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+}
+
+.reset-options-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.reset-confirm-button,
+.reset-cancel-button {
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  border: 1px solid var(--border-color, #ccc);
+}
+
+.reset-confirm-button {
+  background-color: var(--primary-color, #007bff);
+  color: white;
+}
+
+.reset-confirm-button:hover {
+  background-color: #0056b3;
+}
+
+.reset-cancel-button {
+  background-color: var(--background-color, #fff);
+  color: var(--text-color, #333);
+}
+
+.reset-cancel-button:hover {
+  background-color: #f0f0f0;
+}

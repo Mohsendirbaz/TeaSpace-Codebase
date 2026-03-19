@@ -1,0 +1,70 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch Edge DevTools",
+            "type": "msedge",
+            "request": "launch",
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceFolder}/src",
+            "sourceMaps": true,
+            "sourceMapPathOverrides": {
+                "webpack:///src/*": "${workspaceFolder}/src/*"
+            },
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "port": 9222,
+            "userDataDir": false,
+            "presentation": {
+                "hidden": false,
+                "group": "Edge",
+                "order": 1
+            }
+        },
+        {
+            "name": "Launch Chrome against localhost",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceFolder}/src",
+            "sourceMapPathOverrides": {
+                "webpack:///src/*": "${workspaceFolder}/src/*"
+            },
+            "sourceMaps": true,
+            "skipFiles": [
+                "<node_internals>/**"
+            ]
+        },
+        {
+            "name": "Debug React App",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": ["start"],
+            "console": "integratedTerminal",
+            "env": {
+                "BROWSER": "none"
+            }
+        },
+        {
+            "name": "Debug Backend",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/start_servers.py",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Full Stack: Frontend + Backend (Edge)",
+            "configurations": ["Launch Edge DevTools", "Debug React App", "Debug Backend"]
+        },
+        {
+            "name": "Full Stack: Frontend + Backend (Chrome)",
+            "configurations": ["Launch Chrome against localhost", "Debug React App", "Debug Backend"]
+        }
+    ]
+}

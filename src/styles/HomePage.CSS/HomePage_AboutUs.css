@@ -1,0 +1,239 @@
+/* HomePage_AboutUs.css - Fixed CSS variables and visibility issues */
+
+:root {
+  /* Define missing variables */
+  --about-background: #f8f9fa;
+  --about-text-primary: #2c3e50;
+  --about-text-secondary: #34495e;
+  --about-accent: #3498db;
+  --about-border: #bdc3c7;
+  --about-spacing-xs: 0.5rem;
+  --about-spacing-sm: 1rem;
+  --about-spacing-md: 1.5rem;
+  --about-spacing-lg: 2rem;
+  --about-spacing-xl: 3rem;
+  --about-font-sm: 0.875rem;
+  --about-font-md: 1rem;
+  --about-font-lg: 1.125rem;
+  --about-font-xl: 1.25rem;
+  --about-font-2xl: 1.5rem;
+  --about-font-3xl: 2rem;
+  --about-container-width: 800px;
+}
+
+.about-us-container {
+  background-color: var(--about-background);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--about-spacing-lg) var(--about-spacing-md);
+  min-height: 100vh;
+  color: var(--about-text-primary);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+.about-us-content {
+  padding: var(--about-spacing-md);
+  text-align: left;
+  margin: 0 auto;
+  max-width: var(--about-container-width);
+}
+
+/* Heading styles */
+.about-us-container h1 {
+  font-size: var(--about-font-3xl);
+  text-align: center;
+  margin-bottom: var(--about-spacing-lg);
+  color: var(--about-accent);
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  border-bottom: 3px solid var(--about-border);
+  padding-bottom: var(--about-spacing-md);
+  line-height: 1.2;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.about-us-container h2 {
+  font-size: var(--about-font-xl);
+  color: var(--about-accent);
+  margin-top: var(--about-spacing-xl);
+  margin-bottom: var(--about-spacing-md);
+  font-weight: 600;
+  text-align: left;
+  border-left: 4px solid var(--about-accent);
+  padding-left: var(--about-spacing-md);
+}
+
+.about-us-container h3 {
+  font-size: var(--about-font-lg);
+  color: var(--about-text-primary);
+  margin-top: var(--about-spacing-lg);
+  margin-bottom: var(--about-spacing-sm);
+  font-weight: 600;
+}
+
+/* Paragraph styles */
+.about-us-container p {
+  font-size: var(--about-font-md);
+  line-height: 1.8;
+  margin-bottom: var(--about-spacing-md);
+  text-align: left;
+  color: var(--about-text-secondary);
+  text-indent: 0;
+}
+
+.about-us-container p strong {
+  color: var(--about-text-primary);
+  font-weight: 600;
+}
+
+/* First letter styling (drop cap) */
+.about-us-container .about-us-content p:first-of-type::first-letter {
+  font-size: 4rem;
+  float: left;
+  line-height: 1;
+  margin-right: var(--about-spacing-xs);
+  margin-top: 0.2rem;
+  color: var(--about-accent);
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+}
+
+/* Signature section */
+.signature-section {
+  text-align: center;
+  margin-top: var(--about-spacing-xl);
+  font-style: italic;
+  font-size: var(--about-font-sm);
+  color: var(--about-text-secondary);
+  border-top: 1px solid var(--about-border);
+  padding-top: var(--about-spacing-lg);
+}
+
+/* Decorative elements */
+.decorative-divider {
+  text-align: center;
+  margin: var(--about-spacing-xl) 0;
+  color: var(--about-accent);
+  font-size: var(--about-font-lg);
+  font-weight: bold;
+  letter-spacing: 0.5rem;
+}
+
+/* Seal/logo styling */
+.about-us-seal {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto var(--about-spacing-lg);
+  display: block;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='none' stroke='%233498db' stroke-width='3'/%3E%3Ccircle cx='50' cy='50' r='35' fill='none' stroke='%233498db' stroke-width='1'/%3E%3Ctext x='50' y='45' text-anchor='middle' font-family='serif' font-size='10' font-weight='bold' fill='%233498db'%3ETEA%3C/text%3E%3Ctext x='50' y='58' text-anchor='middle' font-family='serif' font-size='10' font-weight='bold' fill='%233498db'%3ESpace%3C/text%3E%3Ctext x='50' y='75' text-anchor='middle' font-family='serif' font-size='6' fill='%233498db'%3E2025%3C/text%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 1;
+  transition: transform 0.3s ease;
+}
+
+.about-us-seal:hover {
+  transform: scale(1.05);
+}
+
+/* Lists */
+.about-us-container ul {
+  margin-bottom: var(--about-spacing-md);
+  padding-left: var(--about-spacing-lg);
+}
+
+.about-us-container li {
+  margin-bottom: var(--about-spacing-xs);
+  color: var(--about-text-secondary);
+}
+
+/* Special styling for when the About Us tab is active */
+.tab-button.active[data-tab="AboutUs"] {
+  background-color: var(--about-accent);
+  border-bottom: 3px solid var(--about-accent);
+  color: white;
+  box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3);
+}
+
+/* Feature boxes */
+.feature-box {
+  background: white;
+  border: 1px solid var(--about-border);
+  border-radius: 8px;
+  padding: var(--about-spacing-md);
+  margin-bottom: var(--about-spacing-md);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.feature-box:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Code blocks */
+.about-us-container code {
+  background: #f4f4f4;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+  color: var(--about-text-primary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .about-us-container {
+    padding: var(--about-spacing-md) var(--about-spacing-sm);
+  }
+
+  .about-us-content {
+    padding: var(--about-spacing-sm);
+  }
+
+  .about-us-container h1 {
+    font-size: var(--about-font-2xl);
+    text-align: center;
+  }
+
+  .about-us-container h2 {
+    font-size: var(--about-font-lg);
+  }
+
+  .about-us-container h3 {
+    font-size: var(--about-font-md);
+  }
+
+  .about-us-container p {
+    font-size: var(--about-font-sm);
+    line-height: 1.6;
+  }
+
+  .about-us-seal {
+    width: 80px;
+    height: 80px;
+  }
+
+  .decorative-divider {
+    font-size: var(--about-font-md);
+    letter-spacing: 0.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-us-container {
+    padding: var(--about-spacing-sm);
+  }
+
+  .about-us-container h1 {
+    font-size: var(--about-font-xl);
+    letter-spacing: 0.5px;
+  }
+
+  .about-us-container .about-us-content p:first-of-type::first-letter {
+    font-size: 3rem;
+    margin-top: 0.1rem;
+  }
+}

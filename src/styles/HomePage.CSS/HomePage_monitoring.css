@@ -1,0 +1,148 @@
+/* HomePage_monitoring.css - Ultra Compact Edition */
+.content-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  height: 100%;
+  overflow: hidden;
+  gap: 4px;
+}
+
+
+
+/* Compact styles for monitors layout */
+.sensitivity-monitor,
+.config-monitor {
+  flex-shrink: 0;
+  font-size: 12px;
+  border-radius: 4px;
+  box-shadow: none;
+  background-color: var(--sidebar-background);
+}
+
+/* Monitor headers */
+.monitor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 4px;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 2px;
+}
+
+.monitor-header h3 {
+  font-size: 12px;
+  margin: 0;
+  font-weight: bold;
+}
+
+/* Monitor body compactness */
+.monitor-body {
+  padding: 3px;
+}
+
+/* Monitor items within a section */
+.monitor-item {
+  margin: 2px 0;
+  padding: 2px;
+  border-radius: 2px;
+  background-color: var(--input-background);
+}
+
+/* Monitor labels */
+.monitor-label {
+  font-size: 11px;
+  font-weight: bold;
+  margin-right: 3px;
+}
+
+.monitor-value {
+  font-size: 11px;
+}
+
+/* Toggle buttons for monitors */
+.monitor-toggle {
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+}
+
+/* Calculation monitor specific */
+.calculation-monitor {
+  padding: 3px;
+  margin: 2px 0;
+  font-size: 11px;
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+}
+
+.calculation-monitor-header {
+  font-size: 12px;
+  font-weight: bold;
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 3px;
+}
+
+.calculation-monitor table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 10px;
+}
+
+.calculation-monitor th,
+.calculation-monitor td {
+  padding: 1px 3px;
+  border: 1px solid var(--border-color);
+  text-align: left;
+}
+
+.calculation-monitor th {
+  background-color: var(--sidebar-background);
+  font-weight: bold;
+}
+
+/* Responsive behavior */
+@media screen and (max-width: 1200px) {
+  .content-container {
+    flex-wrap: wrap;
+  }
+  
+  .sensitivity-monitor.expanded,
+  .config-monitor.expanded {
+    width: 520px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .content-container {
+    flex-direction: column;
+  }
+  
+  .sensitivity-monitor.expanded,
+  .config-monitor.expanded {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  
+  .HomePageTabContent {
+    padding: 5px;
+  }
+  
+  .sensitivity-monitor.expanded {
+    height: 150px;
+  }
+  
+  .sensitivity-monitor.collapsed {
+    width: 100%;
+    height: 24px;
+  }
+}

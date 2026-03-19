@@ -1,0 +1,414 @@
+/* Todo List Styles */
+.todo-list {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: var(--sidebar-background);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.todo-item:last-child {
+    border-bottom: none;
+}
+
+.todo-checkbox {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.todo-text {
+    flex: 1;
+    color: var(--text-color);
+}
+
+.todo-text.completed {
+    text-decoration: line-through;
+    color: var(--text-secondary);
+}
+
+.todo-actions {
+    display: flex;
+    gap: 5px;
+}
+
+.todo-button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.todo-button.edit {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.todo-button.delete {
+    background-color: #ef4444;
+    color: white;
+}
+
+/* Add Todo Form */
+.add-todo-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.add-todo-input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--sidebar-background);
+    color: var(--text-color);
+}
+
+.add-todo-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.add-todo-button:hover {
+    opacity: 0.9;
+}
+
+/* Natural Motion */
+.natural-motion {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: var(--sidebar-background);
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.motion-element {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0.6;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Version Control - Compact */
+.version-control {
+    margin-top: 10px;
+    padding: 8px;
+    background-color: var(--sidebar-background);
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+}
+
+.version-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 4px;
+}
+
+.version-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px;
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    background-color: var(--app-background);
+}
+
+.version-number {
+    font-weight: 600;
+    color: var(--text-color);
+    font-size: 12px;
+}
+
+.version-date {
+    color: var(--text-secondary);
+    font-size: 11px;
+}
+
+.version-actions {
+    margin-left: auto;
+    display: flex;
+    gap: 3px;
+}
+
+.version-button {
+    padding: 3px 6px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 11px;
+}
+
+.version-button.load {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.version-button.delete {
+    background-color: #ef4444;
+    color: white;
+}
+
+/* Version Selector - Compact */
+.version-selector-container {
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 4px;
+  max-width: 200px;
+  background-color: var(--card-background);
+  box-shadow: var(--model-shadow-sm);
+  margin: 0;
+}
+
+.version-selector-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2px;
+  padding: 0 4px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.version-selector-header h3 {
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0;
+  padding: 2px 0;
+}
+
+
+
+.version-selector-box {
+  max-height: 100px;
+  overflow-y: auto;
+  padding: 2px 0;
+}
+
+.version-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.version-item {
+  padding: 2px 6px;
+  background-color: var(--input-background);
+  color: var(--text-color);
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.version-item.selected {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Selector Container Compaction */
+.selectors-container {
+  margin-top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 2px;
+}
+
+.property-selector-container, 
+.version-selector-container {
+  margin: 0;
+}
+
+/* Monitor Components - Compact */
+.monitor-component {
+  margin: 4px 0;
+  padding: 5px;
+  border-radius: 4px;
+  background-color: var(--sidebar-background);
+  border: 1px solid var(--border-color);
+  font-size: 12px;
+}
+
+.monitor-component h3 {
+  font-size: 13px;
+  margin: 0 0 4px 0;
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.monitor-data {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+}
+
+.monitor-item {
+  padding: 2px 4px;
+  background-color: var(--app-background);
+  border-radius: 2px;
+  border: 1px solid var(--border-color);
+}
+
+
+
+/* Label management styles */
+.labels-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    gap: 10px;
+  }
+  
+  .update-button, .reset-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 16px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    background-color: var(--primary-color);
+  }
+  
+ 
+  
+  .reset-button {
+    background-color: #6c757d;
+  }
+  
+  .update-button:hover {
+    background-color: #3a7bc8;
+  }
+  
+  .reset-button:hover {
+    background-color: #5a6268;
+  }
+  
+  .update-button:active, .reset-button:active {
+    transform: translateY(1px);
+  }
+  
+  .update-status {
+    margin-left: 12px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  .update-status:empty {
+    display: none;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Different status colors */
+  .update-status.success {
+    background-color: #d4edda;
+    color: #155724;
+  }
+  
+  .update-status.error {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+  
+  .update-status.loading {
+    background-color: #e9ecef;
+    color: #495057;
+  }
+.connection-status {
+    display: inline-block;
+    margin-right: 8px;
+}
+.connection-status[data-status="connected"] {
+    color: green;
+}
+.connection-status[data-status="error"] {
+    color: red;
+}
+.connection-status[data-status="disconnected"] {
+    color: orange;
+}
+/* Add to your VersionSelector.css */
+.version-selector-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.version-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.refresh-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: 2px 5px;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.refresh-button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    transform: scale(1.1);
+}
+
+.refresh-button:active {
+    transform: scale(0.9);
+}
+
+.refresh-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}

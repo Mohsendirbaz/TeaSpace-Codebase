@@ -1,0 +1,32 @@
+{
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "comment.block",
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": "comment.block.active",
+        "settings": {
+          "foreground": "#4CAF50",
+          "fontStyle": "italic bold"
+        }
+      },
+      {
+        "scope": "comment.block.inactive",
+        "settings": {
+          "foreground": "#F44336",
+          "fontStyle": "italic bold"
+        }
+      }
+    ]
+  },
+  "commentTaggedTemplates.tags": {
+    "@active": "comment.block.active",
+    "@inactive": "comment.block.inactive"
+  },
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000
+}

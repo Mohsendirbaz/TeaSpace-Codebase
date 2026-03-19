@@ -1,0 +1,423 @@
+.fact-admin-container {
+  padding: var(--spacing-md);
+  background-color: var(--neu-background);
+  border-radius: var(--neu-border-radius-md);
+  box-shadow: var(--neu-shadow-md);
+  transition: var(--neu-transition-medium);
+}
+
+.fact-admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.fact-admin-title {
+  font-size: var(--model-font-size-lg);
+  font-weight: 600;
+  color: var(--secondary-color);
+  margin: 0;
+}
+.add-fact-section h3 {
+  color: var(--text-color);
+}
+.facts-summary {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+.add-fact-btn {
+  color: var(--text-color);
+}
+.add-fact-icon {
+  margin-right: var(--spacing-xs);
+  color: var(--text-color);
+}
+.summary-card {
+  flex: 1;
+  background: var(--neu-gradient-basic);
+  border-radius: var(--neu-border-radius-md);
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--neu-shadow-sm);
+  transition: var(--neu-transition-fast);
+  color:var(--text-color);
+}
+
+.h3 {
+  color: var(--text-color);
+}
+
+.summary-card:hover {
+  box-shadow: var(--neu-shadow-lg);
+}
+
+.summary-card:active, 
+.summary-card:focus-within {
+  box-shadow: var(--neu-pressed-shadow);
+  background: var(--neu-gradient-pressed);
+}
+
+.summary-number {
+  font-size: calc(var(--model-font-size-lg) * 1.2);
+  font-weight: 700;
+  color: var(--secondary-color);
+}
+
+.summary-label {
+  font-size: var(--model-font-size-sm);
+  color: var(--text-secondary);
+  margin-top: var(--spacing-xs);
+}
+
+.reset-all-btn {
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--neu-gradient-basic);
+  color: var(--danger-color);
+  border: none;
+  border-radius: var(--neu-border-radius-sm);
+  cursor: pointer;
+  font-weight: 500;
+  transition: var(--neu-transition-fast);
+  box-shadow: var(--neu-shadow-sm);
+  position: relative;
+}
+
+.reset-all-btn:hover {
+  box-shadow: var(--neu-shadow-md);
+}
+
+.reset-all-btn:active, 
+.reset-all-btn:focus {
+  box-shadow: var(--neu-pressed-shadow);
+  background: var(--neu-gradient-pressed);
+  outline: none;
+}
+
+.reset-all-btn:focus-visible {
+  outline: 2px solid var(--danger-color);
+  outline-offset: 2px;
+}
+
+.reset-all-btn:target {
+  animation: pulse 1s ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.add-fact-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.add-fact-form {
+  display: flex;
+  gap: var(--spacing-sm);
+  align-items: flex-start;
+}
+
+.add-fact-form textarea {
+  flex: 1;
+  padding: var(--spacing-md);
+  border: 1px solid var(--border-color);
+  border-radius: var(--neu-border-radius-sm);
+  resize: vertical;
+  min-height: 80px;
+  font-family: inherit;
+  font-size: var(--model-font-size-sm);
+  background-color: var(--neu-background);
+  color: var(--text-color);
+  box-shadow: var(--neu-pressed-shadow);
+  transition: var(--neu-transition-fast);
+}
+
+.add-fact-form textarea:hover {
+  border-color: var(--secondary-color);
+}
+
+.add-fact-form textarea:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: var(--neu-pressed-shadow), 0 0 0 2px rgba(var(--secondary-color), 0.2);
+}
+
+.add-fact-form textarea:focus-visible {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 2px;
+}
+
+.add-fact-btn {
+  padding: var(--spacing-md) var(--spacing-md);
+  background: var(--neu-gradient-basic);
+  color: var(--secondary-color);
+  border: none;
+  border-radius: var(--neu-border-radius-sm);
+  cursor: pointer;
+  font-weight: 600;
+  height: 80px;
+  transition: var(--neu-transition-fast);
+  box-shadow: var(--neu-shadow-sm);
+  position: relative;
+}
+
+.add-fact-btn:hover {
+  box-shadow: var(--neu-shadow-md);
+  color: var(--secondary-color);
+}
+
+.add-fact-btn:active, 
+.add-fact-btn:focus {
+  box-shadow: var(--neu-pressed-shadow);
+  background: var(--neu-gradient-pressed);
+  outline: none;
+}
+
+.add-fact-btn:focus-visible {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 2px;
+}
+
+.add-fact-btn:target {
+  animation: pulse 1s ease-in-out;
+}
+
+.facts-list-section h3 {
+  font-size: var(--model-font-size-md);
+  margin-bottom: var(--spacing-md);
+  color: var(--secondary-color);
+}
+
+.fact-admin-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.fact-admin-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md);
+  background: var(--neu-gradient-basic);
+  border-radius: var(--neu-border-radius-md);
+  margin-bottom: var(--spacing-sm);
+  box-shadow: var(--neu-shadow-sm);
+  transition: var(--neu-transition-fast);
+  position: relative;
+}
+
+.fact-admin-item:hover {
+  box-shadow: var(--neu-shadow-md);
+}
+
+.fact-admin-item:focus-within {
+  box-shadow: var(--neu-shadow-md);
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 2px;
+}
+
+.fact-admin-item:target {
+  animation: highlight-target 2s ease;
+}
+
+@keyframes highlight-target {
+  0%, 100% { background: var(--neu-gradient-basic); }
+  50% { background: var(--neu-gradient-highlight); }
+}
+
+.fact-admin-content {
+  flex: 1;
+  margin-right: var(--spacing-md);
+}
+
+.fact-admin-text {
+  margin: 0 0 var(--spacing-sm) 0;
+  font-size: var(--model-font-size-md);
+  line-height: 1.4;
+  color: var(--text-color);
+}
+
+.fact-admin-stats {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  font-size: var(--model-font-size-sm);
+  color: var(--text-secondary);
+}
+
+.fact-admin-agrees {
+  display: flex;
+  align-items: center;
+}
+
+.fact-admin-agrees-icon {
+  margin-right: var(--spacing-xs);
+  color: var(--secondary-color);
+}
+
+.fact-admin-pinned {
+  display: flex;
+  align-items: center;
+  color: var(--secondary-color);
+}
+
+.fact-admin-pinned-icon {
+  margin-right: var(--spacing-xs);
+}
+
+.fact-admin-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.fact-admin-btn {
+  padding: var(--model-spacing-xs) var(--model-spacing-sm);
+  border: none;
+  border-radius: var(--neu-border-radius-sm);
+  cursor: pointer;
+  font-size: var(--model-font-size-sm);
+  transition: var(--neu-transition-fast);
+  box-shadow: var(--neu-shadow-sm);
+  background: var(--neu-gradient-basic);
+  position: relative;
+}
+
+.fact-admin-btn:hover {
+  box-shadow: var(--neu-shadow-md);
+}
+
+.fact-admin-btn:active {
+  box-shadow: var(--neu-pressed-shadow);
+  background: var(--neu-gradient-pressed);
+}
+
+.fact-admin-btn:focus {
+  outline: none;
+  box-shadow: var(--neu-shadow-md);
+}
+
+.fact-admin-btn:focus-visible {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 2px;
+}
+
+.fact-admin-btn:target {
+  animation: pulse 1s ease-in-out;
+}
+
+.fact-admin-edit-btn {
+  color: var(--secondary-color);
+}
+
+.fact-admin-edit-btn:hover,
+.fact-admin-edit-btn:focus {
+  color: var(--model-color-primary);
+}
+
+.fact-admin-reset-btn {
+  color: var(--info-color);
+}
+
+.fact-admin-reset-btn:hover,
+.fact-admin-reset-btn:focus {
+  color: var(--model-color-primary);
+}
+
+.fact-admin-delete-btn {
+  color: var(--danger-color);
+}
+
+.fact-admin-delete-btn:hover,
+.fact-admin-delete-btn:focus {
+  color: var(--model-color-danger);
+}
+
+.fact-edit-form {
+  display: flex;
+  width: 100%;
+  gap: var(--spacing-sm);
+}
+
+.fact-edit-form textarea {
+  flex: 1;
+  padding: var(--spacing-sm);
+  border: 1px solid var(--border-color);
+  border-radius: var(--neu-border-radius-sm);
+  resize: vertical;
+  font-family: inherit;
+  font-size: var(--model-font-size-sm);
+  box-shadow: var(--neu-pressed-shadow);
+  background-color: var(--neu-background);
+  transition: var(--neu-transition-fast);
+}
+
+.fact-edit-form textarea:hover {
+  border-color: var(--secondary-color);
+}
+
+.fact-edit-form textarea:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: var(--neu-pressed-shadow), 0 0 0 2px rgba(var(--secondary-color), 0.2);
+}
+
+.fact-edit-form textarea:focus-visible {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 2px;
+}
+
+.fact-edit-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.fact-save-btn {
+  color: var(--secondary-color);
+}
+
+.fact-save-btn:hover,
+.fact-save-btn:focus {
+  color: var(--model-color-success);
+}
+
+.fact-cancel-btn {
+  color: var(--text-secondary);
+}
+
+.fact-cancel-btn:hover,
+.fact-cancel-btn:focus {
+  color: var(--dark-color);
+}
+
+/* No facts message */
+.no-facts-message {
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+
+
+/* Animation for item changes */
+@keyframes highlight {
+  0% { background: var(--neu-gradient-highlight); }
+  100% { background: var(--neu-gradient-basic); }
+}
+
+.fact-admin-item.highlight {
+  animation: highlight 2s ease;
+}
+
+.dark-theme .fact-admin-item.highlight {
+  animation: highlight 2s ease;
+}

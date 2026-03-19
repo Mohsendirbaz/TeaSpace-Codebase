@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "structure_explanation": {
+      "S35,S13": "Key format: 'enabledParam,compareToKey' where S35 is enabled parameter and S13 is comparison key",
+      "baseline": "Reference point measurement",
+      "baseline:key": "Numerical measurement point for baseline (e.g., 10000)",
+      "baseline:value": "Reference measurement value to compare against",
+      "info": "Position indicator: '+' (all above), '-' (all below), or 'b#' (# variations below baseline)",
+      "data": "Collection of variation measurements",
+      "data:keys": "Numerical measurement points using actual modified values",
+      "data:values": "Actual measurements. Must be initially null/empty when created by sense_config_base.py"
+    }
+  }
+}

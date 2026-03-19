@@ -1,0 +1,542 @@
+/* Action Button Palette */
+
+/* Form container layout - ultra compact */
+.form-panel-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.form-action-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  gap: 8px;
+  font-size:24px;
+}
+
+/* Row layout for all button rows */
+.button-row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  gap: calc(var(--model-spacing-sm) * 2);
+  padding: 8px 0;
+  flex-wrap: wrap;
+  
+}
+
+/* Config row */
+.config-row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 8px !important;
+  
+}
+
+/* Checkbox row */
+.checkbox-row {
+  display: flex;
+  justify-content: flex-start;
+  gap: calc(var(--model-spacing-md) * 2);
+  align-items: center;
+  margin: 8px 0 !important;
+  
+}
+
+/* Visualization row */
+.visualization-row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  margin: 8px 0 !important;
+  font-size:24px;
+}
+
+/* Step content - batch operations */
+.step-content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  padding: calc(var(--model-spacing-xs) * 2) 0;
+  gap: calc(var(--model-spacing-sm) * 2);
+  margin: 8px 0 !important;
+}
+
+/* Practical row */
+.practical-row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  margin: 8px 0 !important;
+  gap: 12px;
+}
+/* Compact Selectors Styling */
+.selectors-container {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  margin-top: 4px;
+  width: 100%;
+  padding: 2px;
+}
+
+
+
+/* Form elements compaction */
+.calculation-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 4px;
+}
+
+.calculation-input-group {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.radio-label {
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  color:var(--text-color)
+}
+
+.target-row-input {
+  width: 50px;
+  height: 20px;
+  font-size:24px;
+  text-align: center;
+  padding: 2px 4px;
+  border-radius: 3px;
+  border: 1px solid var(--border-color);
+  background-color: var(--input-background);
+  color: var(--text-color);
+}
+
+
+
+/* Make buttons in practical row more evenly spaced */
+.practical-row .tooltip-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-right: 10px;
+  font-size:24px;
+}
+
+.form-action-buttons button {
+  font-weight: bold;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 150px;
+  min-height: calc(16px * 2 + 1.2em);
+  position: relative;
+  overflow: hidden;
+  line-height: 1.2;
+  margin: 0 10px 0 0 !important;
+  height: auto;
+  white-space: nowrap;
+}
+
+/* Force inline style overrides */
+.form-action-buttons button[style*="padding"] {
+  padding: 16px 20px !important;
+  font-size:24px;
+}
+
+/* Configuration Row */
+.form-action-buttons .config-row button {
+  background-color: var(--primary-color);
+  color: var(--button-text);
+  margin-right: 10px !important;
+}
+
+.form-action-buttons .config-row button:hover {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  transform: translateY(-2px);
+  box-shadow: var(--model-shadow-sm);
+}
+
+.form-action-buttons .config-row button:focus {
+  outline: none;
+  box-shadow: var(--model-shadow-md);
+}
+
+/* Visualization Row */
+.form-action-buttons .visualization-row button {
+  background-color: var(--info-color);
+  color: var(--button-text);
+  margin-right: 10px !important;
+  flex: 0 0 auto;
+  font-size:24px;
+}
+
+.form-action-buttons .visualization-row button:hover {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  transform: translateY(-2px);
+  box-shadow: var(--model-shadow-sm);
+}
+
+.form-action-buttons .visualization-row button:focus {
+  outline: none;
+  box-shadow: var(--model-shadow-md);
+}
+
+/* Practical Row */
+.form-action-buttons .practical-row button {
+  position: relative;
+  margin-right: 10px !important;
+  flex: 0 0 auto;
+}
+
+/* Run CFA Button */
+.form-action-buttons .practical-row button:nth-child(1) {
+  background-color: var(--warning-color);
+  color: var(--button-text);
+}
+
+.form-action-buttons .practical-row button:nth-child(1):hover {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  transform: translateY(-2px);
+  box-shadow: var(--model-shadow-sm);
+}
+
+.form-action-buttons .practical-row button:nth-child(1):focus {
+  outline: none;
+  box-shadow: var(--model-shadow-md);
+}
+
+/* Submit Complete Set Button */
+.form-action-buttons .practical-row button:nth-child(2) {
+  background-color: var(--success-color);
+  color: var(--button-text);
+}
+
+.form-action-buttons .practical-row button:nth-child(2):hover {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  transform: translateY(-2px);
+  box-shadow: var(--model-shadow-sm);
+}
+
+.form-action-buttons .practical-row button:nth-child(2):focus {
+  outline: none;
+  box-shadow: var(--model-shadow-md);
+}
+
+/* Reset Button */
+.form-action-buttons .practical-row button:nth-child(3) {
+  background-color: var(--danger-color);
+  color: var(--button-text);
+}
+
+.form-action-buttons .practical-row button:nth-child(3):hover {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  transform: translateY(-2px);
+  box-shadow: var(--model-shadow-sm);
+}
+
+.form-action-buttons .practical-row button:nth-child(3):focus {
+  outline: none;
+  box-shadow: var(--model-shadow-md);
+}
+
+/* Batch Operation Buttons */
+.step-content button {
+  margin: 0 20px 0 0 !important;
+  min-width: 180px;
+  flex: 0 0 auto;
+}
+
+/* Create New Batch Button */
+.step-content .primary-action {
+  background-color: var(--danger-color);
+  color: var(--button-text);
+}
+
+.step-content .primary-action:hover {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  transform: translateY(-2px);
+  box-shadow: var(--model-shadow-sm);
+}
+
+.step-content .primary-action:focus {
+  outline: none;
+  box-shadow: var(--model-shadow-md);
+}
+
+/* Remove Current Batch Button */
+.step-content .secondary-action {
+  background-color: var(--model-color-text);
+  color: var(--button-text);
+}
+
+.step-content .secondary-action:hover {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  transform: translateY(-2px);
+  box-shadow: var(--model-shadow-sm);
+}
+
+.step-content .secondary-action:focus {
+  outline: none;
+  box-shadow: var(--model-shadow-md);
+}
+
+/* Disabled State */
+.form-action-buttons button:disabled,
+.step-content button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Loading Animation for Run CFA */
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+.form-action-buttons .practical-row button:nth-child(1)[disabled] {
+  animation: pulse 1.5s infinite;
+}
+
+.tooltip1 {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  visibility: hidden;
+}
+
+/* Version input container */
+.version-input-container {
+  display: flex;
+  align-items: center;
+  min-width: 100px;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-right: auto;
+}
+
+.version-input {
+  min-height: 35px !important;
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  width: 80px;
+  padding: 6px 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #333;
+  height: 22px;
+  width: 60px;
+  font-size: 18px;
+  padding: 0 5px;
+  border-radius: 40px;
+  text-align: center;
+}
+
+
+
+/* Fixes for inline styles */
+.form-panel-container[style*="gap: 0"],
+.form-action-buttons[style*="gap: 0"] {
+  gap: 8px !important;
+}
+
+.button-row[style*="padding: 0"],
+.button-row[style*="margin: 0"] {
+  padding: 8px 0 !important;
+  margin: 8px 0 !important;
+}
+
+.form-action-buttons button[style*="padding: 5px 8px"] {
+  padding: 16px 20px !important;
+  color: var(--text-color)
+}
+
+/* Fix for checkbox row alignment */
+.checkbox-row label {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  color:var(--text-color);
+  font-size:24px;
+}
+
+.checkbox-row input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .form-action-buttons button {
+    min-width: 120px;
+    padding: 12px 16px;
+    margin-bottom: 8px;
+  }
+  
+  .button-row {
+    flex-wrap: wrap;
+  }
+  
+  .practical-row .tooltip-container {
+    flex: 1 1 45%;
+  }
+}
+
+/* Ensure buttons don't shrink too much */
+.form-action-buttons button{
+  flex-shrink: 0;
+}
+
+/* Fix for button icons on mobile devices */
+.form-action-buttons button svg,
+.action-button svg,
+.action-button-efficacy svg,
+.action-button-factual svg,
+.action-button-sensitivity svg {
+    width: 16px;
+    height: 16px;
+    max-width: 16px;
+    max-height: 16px;
+    vertical-align: middle;
+}
+
+/* iOS-specific adjustments */
+@supports (-webkit-touch-callout: none) {
+    .form-action-buttons button svg,
+    .action-button svg,
+    .action-button-efficacy svg,
+    .action-button-factual svg,
+    .action-button-sensitivity svg {
+        transform: scale(0.9);
+    }
+}
+
+
+.sensitivity-btn1 {
+  height: 36px;
+  display: flex;
+  align-items: center;
+}
+
+.action-button.primary {
+  background-color: var(--primary-color);
+  color: white;
+  border: 2px solid #2a70c2;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2), -3px -3px 6px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.action-button.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25), -4px -4px 8px rgba(255, 255, 255, 0.15);
+  border-color: #1a60b2;
+}
+
+.action-button.primary:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.25);
+}
+
+
+
+/* Action button styles */
+.sensitivity-btn1 {
+  padding: var(--spacing-sm, 8px) var(--spacing-md, 16px);
+  cursor: pointer;
+  font-weight: bold;
+  border: 1px solid var(--border-color);
+  border-radius: var(--neu-border-radius-sm);
+  transition: all var(--model-transition-medium, 0.3s ease);
+}
+.sensitivity-btn1:hover {
+  background: var(--model-color-primary-dark);
+
+}
+
+.primary-btn1 {
+  background-color: var(--sidbar-background, #007bff);
+  color: white;
+  border: 1px solid var(--border-color);
+  border-radius: var(--neu-border-radius-sm);
+  box-shadow: var(--model-shadow-md, 3px 3px 6px var(--shadow-dark), -3px -3px 6px var(--shadow-light));
+  transition: all var(--model-transition-medium, 0.3s ease);
+}
+
+.action-button-sensitivity{
+  padding: var(--model-spacing-sm) var(--model-spacing-md);
+  background: var(--primary-color);
+  color:var(--text-color);
+  border: none;
+  border-radius: var(--model-border-radius-sm);
+  font-size: var(--model-font-size-sm);
+  cursor: pointer;
+  transition: background var(--model-transition-fast) ease;
+}
+
+.action-button-sensitivity:hover {
+  background: var(--model-color-primary-dark);
+  color: var(--text-color);
+}
+
+.action-button-efficacy{
+  padding: var(--model-spacing-sm) var(--model-spacing-md);
+  background: var(--primary-color);
+  color:var(--text-color);
+  border: none;
+  border-radius: var(--model-border-radius-sm);
+  font-size: var(--model-font-size-sm);
+  cursor: pointer;
+  transition: background var(--model-transition-fast) ease;
+}
+
+.action-button-efficacy:hover {
+  background: var(--model-color-primary-dark);
+  color: var(--text-color);
+}
+
+.action-button-factual{
+  padding: var(--model-spacing-sm) var(--model-spacing-md);
+  background: var(--primary-color);
+  color:var(--text-color);
+  border: none;
+  border-radius: var(--model-border-radius-sm);
+  font-size: var(--model-font-size-sm);
+  cursor: pointer;
+  transition: background var(--model-transition-fast) ease;
+}
+
+.action-button-factual:hover {
+  background: var(--model-color-primary-dark);
+  color: var(--text-color);
+}

@@ -1,0 +1,540 @@
+{
+  "project_name": "Backend Structure",
+  "analysis_date": "2025-04-19 22:25:51",
+  "version": 1,
+  "directories": {
+    "aggregated_data": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\aggregated_data",
+      "files": [
+        "aggregated_data\\all_annual_cash_flows_net.csv",
+        "aggregated_data\\all_annual_operating_expenses.csv",
+        "aggregated_data\\all_annual_revenues.csv",
+        "aggregated_data\\all_cumulative_cash_flows.csv",
+        "aggregated_data\\all_depreciation_schedules.csv",
+        "aggregated_data\\all_federal_taxes.csv",
+        "aggregated_data\\all_state_taxes.csv",
+        "aggregated_data\\cumulative_legend_items.json"
+      ],
+      "import_count": 8
+    },
+    "Batch(0)": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(0)",
+      "files": [],
+      "import_count": 0
+    },
+    "Batch(0)\\ConfigurationPlotSpec(0)": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(0)\\ConfigurationPlotSpec(0)",
+      "files": [
+        "Batch(0)\\ConfigurationPlotSpec(0)\\configurations(0).py",
+        "Batch(0)\\ConfigurationPlotSpec(0)\\plot_generations(0).py",
+        "Batch(0)\\ConfigurationPlotSpec(0)\\U_configurations(0).py"
+      ],
+      "import_count": 3
+    },
+    "Batch(0)\\Results(0)": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(0)\\Results(0)",
+      "files": [
+        "Batch(0)\\Results(0)\\CFA(0).csv",
+        "Batch(0)\\Results(0)\\Economic_Summary(0).csv",
+        "Batch(0)\\Results(0)\\Variable_Table(0).csv"
+      ],
+      "import_count": 3
+    },
+    "Batch(0)\\Results(0)\\0_2_AnnotatedStaticPlots": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(0)\\Results(0)\\0_2_AnnotatedStaticPlots",
+      "files": [
+        "Batch(0)\\Results(0)\\0_2_AnnotatedStaticPlots\\aggregated_annual_cash_flow_net_0_1.png"
+      ],
+      "import_count": 1
+    },
+    "Batch(0)\\Results(0)\\0_PieStaticPlots": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(0)\\Results(0)\\0_PieStaticPlots",
+      "files": [
+        "Batch(0)\\Results(0)\\0_PieStaticPlots\\Operational_Cost_Breakdown_Pie_Chart(0).png"
+      ],
+      "import_count": 1
+    },
+    "Batch(0)\\Results(0)\\HTML_v0_Annual_Cash_Flows": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(0)\\Results(0)\\HTML_v0_Annual_Cash_Flows",
+      "files": [
+        "Batch(0)\\Results(0)\\HTML_v0_Annual_Cash_Flows\\album_metadata.json",
+        "Batch(0)\\Results(0)\\HTML_v0_Annual_Cash_Flows\\Annual_Cash_Flows_Plot.html"
+      ],
+      "import_count": 2
+    },
+    "Batch(0)\\Results(0)\\HTML_v0_Cumulative": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(0)\\Results(0)\\HTML_v0_Cumulative",
+      "files": [
+        "Batch(0)\\Results(0)\\HTML_v0_Cumulative\\album_metadata.json",
+        "Batch(0)\\Results(0)\\HTML_v0_Cumulative\\Annual_Cash_Flows_Cumulative_Plot.html",
+        "Batch(0)\\Results(0)\\HTML_v0_Cumulative\\Annual_Operating_Expenses_Cumulative_Plot.html",
+        "Batch(0)\\Results(0)\\HTML_v0_Cumulative\\Annual_Revenues_Cumulative_Plot.html",
+        "Batch(0)\\Results(0)\\HTML_v0_Cumulative\\Cumulative_Cash_Flows_Cumulative_Plot.html",
+        "Batch(0)\\Results(0)\\HTML_v0_Cumulative\\Depreciation_Schedules_Cumulative_Plot.html",
+        "Batch(0)\\Results(0)\\HTML_v0_Cumulative\\Federal_Taxes_Cumulative_Plot.html",
+        "Batch(0)\\Results(0)\\HTML_v0_Cumulative\\Loan_Repayment_Terms_Cumulative_Plot.html",
+        "Batch(0)\\Results(0)\\HTML_v0_Cumulative\\State_Taxes_Cumulative_Plot.html"
+      ],
+      "import_count": 9
+    },
+    "Batch(0)\\Results(0)\\v0_Annual_Cash_Flows_Plot": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(0)\\Results(0)\\v0_Annual_Cash_Flows_Plot",
+      "files": [
+        "Batch(0)\\Results(0)\\v0_Annual_Cash_Flows_Plot\\Annual_Cash_Flows_Plot.html"
+      ],
+      "import_count": 1
+    },
+    "Batch(0)\\Results(0)\\v0_Cumulative_Plot": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(0)\\Results(0)\\v0_Cumulative_Plot",
+      "files": [
+        "Batch(0)\\Results(0)\\v0_Cumulative_Plot\\Annual_Cash_Flows_Cumulative_Plot.html",
+        "Batch(0)\\Results(0)\\v0_Cumulative_Plot\\Annual_Operating_Expenses_Cumulative_Plot.html",
+        "Batch(0)\\Results(0)\\v0_Cumulative_Plot\\Annual_Revenues_Cumulative_Plot.html",
+        "Batch(0)\\Results(0)\\v0_Cumulative_Plot\\Cumulative_Cash_Flows_Cumulative_Plot.html",
+        "Batch(0)\\Results(0)\\v0_Cumulative_Plot\\Depreciation_Schedules_Cumulative_Plot.html",
+        "Batch(0)\\Results(0)\\v0_Cumulative_Plot\\Federal_Taxes_Cumulative_Plot.html",
+        "Batch(0)\\Results(0)\\v0_Cumulative_Plot\\Loan_Repayment_Terms_Cumulative_Plot.html",
+        "Batch(0)\\Results(0)\\v0_Cumulative_Plot\\State_Taxes_Cumulative_Plot.html"
+      ],
+      "import_count": 8
+    },
+    "Batch(1)": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(1)",
+      "files": [],
+      "import_count": 0
+    },
+    "Batch(1)\\ConfigurationPlotSpec(1)": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(1)\\ConfigurationPlotSpec(1)",
+      "files": [
+        "Batch(1)\\ConfigurationPlotSpec(1)\\configurations(1).py",
+        "Batch(1)\\ConfigurationPlotSpec(1)\\plot_generations(1).py",
+        "Batch(1)\\ConfigurationPlotSpec(1)\\U_configurations(1).py"
+      ],
+      "import_count": 3
+    },
+    "Batch(1)\\ConfigurationPlotSpec(1)\\__pycache__": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(1)\\ConfigurationPlotSpec(1)\\__pycache__",
+      "files": [
+        "Batch(1)\\ConfigurationPlotSpec(1)\\__pycache__\\configurations(1).cpython-312.pyc"
+      ],
+      "import_count": 1
+    },
+    "Batch(1)\\Results(1)": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(1)\\Results(1)",
+      "files": [
+        "Batch(1)\\Results(1)\\1_config_module_1.json",
+        "Batch(1)\\Results(1)\\1_config_module_10.json",
+        "Batch(1)\\Results(1)\\1_config_module_11.json",
+        "Batch(1)\\Results(1)\\1_config_module_12.json",
+        "Batch(1)\\Results(1)\\1_config_module_13.json",
+        "Batch(1)\\Results(1)\\1_config_module_14.json",
+        "Batch(1)\\Results(1)\\1_config_module_15.json",
+        "Batch(1)\\Results(1)\\1_config_module_16.json",
+        "Batch(1)\\Results(1)\\1_config_module_17.json",
+        "Batch(1)\\Results(1)\\1_config_module_18.json",
+        "Batch(1)\\Results(1)\\1_config_module_19.json",
+        "Batch(1)\\Results(1)\\1_config_module_2.json",
+        "Batch(1)\\Results(1)\\1_config_module_20.json",
+        "Batch(1)\\Results(1)\\1_config_module_3.json",
+        "Batch(1)\\Results(1)\\1_config_module_4.json",
+        "Batch(1)\\Results(1)\\1_config_module_5.json",
+        "Batch(1)\\Results(1)\\1_config_module_6.json",
+        "Batch(1)\\Results(1)\\1_config_module_7.json",
+        "Batch(1)\\Results(1)\\1_config_module_8.json",
+        "Batch(1)\\Results(1)\\1_config_module_9.json",
+        "Batch(1)\\Results(1)\\Annual_Cash_Flows_Plot.html",
+        "Batch(1)\\Results(1)\\Annual_Revenues_Plot.html",
+        "Batch(1)\\Results(1)\\CFA(1).csv",
+        "Batch(1)\\Results(1)\\Configuration_Matrix(1).csv",
+        "Batch(1)\\Results(1)\\Cumulative_Opex_Table_(1).csv",
+        "Batch(1)\\Results(1)\\Distance_From_Paying_Taxes(1).csv",
+        "Batch(1)\\Results(1)\\Economic_Summary(1).csv",
+        "Batch(1)\\Results(1)\\Filtered_Value_Intervals(1).csv",
+        "Batch(1)\\Results(1)\\Fixed_Opex_Table_(1).csv",
+        "Batch(1)\\Results(1)\\General_Configuration_Matrix(1).csv",
+        "Batch(1)\\Results(1)\\Sorted_Points(1).csv",
+        "Batch(1)\\Results(1)\\Variable_Opex_Table_(1).csv",
+        "Batch(1)\\Results(1)\\Variable_Table(1).csv"
+      ],
+      "import_count": 33
+    },
+    "Batch(1)\\Results(1)\\1_1_AnnotatedStaticPlots": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(1)\\Results(1)\\1_1_AnnotatedStaticPlots",
+      "files": [
+        "Batch(1)\\Results(1)\\1_1_AnnotatedStaticPlots\\aggregated_annual_cash_flow_net_1_1.png",
+        "Batch(1)\\Results(1)\\1_1_AnnotatedStaticPlots\\aggregated_cumulative_cash_flow_1_1.png",
+        "Batch(1)\\Results(1)\\1_1_AnnotatedStaticPlots\\aggregated_depreciation_1_1.png",
+        "Batch(1)\\Results(1)\\1_1_AnnotatedStaticPlots\\aggregated_federal_taxes_1_1.png",
+        "Batch(1)\\Results(1)\\1_1_AnnotatedStaticPlots\\aggregated_operating_expenses_1_1.png",
+        "Batch(1)\\Results(1)\\1_1_AnnotatedStaticPlots\\aggregated_revenue_1_1.png",
+        "Batch(1)\\Results(1)\\1_1_AnnotatedStaticPlots\\aggregated_state_taxes_1_1.png"
+      ],
+      "import_count": 7
+    },
+    "Batch(1)\\Results(1)\\1_2_3_AnnotatedStaticPlots": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(1)\\Results(1)\\1_2_3_AnnotatedStaticPlots",
+      "files": [
+        "Batch(1)\\Results(1)\\1_2_3_AnnotatedStaticPlots\\aggregated_annual_cash_flow_net_1_2_3.png",
+        "Batch(1)\\Results(1)\\1_2_3_AnnotatedStaticPlots\\aggregated_cumulative_cash_flow_1_2_3.png",
+        "Batch(1)\\Results(1)\\1_2_3_AnnotatedStaticPlots\\aggregated_depreciation_1_2_3.png",
+        "Batch(1)\\Results(1)\\1_2_3_AnnotatedStaticPlots\\aggregated_federal_taxes_1_2_3.png",
+        "Batch(1)\\Results(1)\\1_2_3_AnnotatedStaticPlots\\aggregated_operating_expenses_1_2_3.png",
+        "Batch(1)\\Results(1)\\1_2_3_AnnotatedStaticPlots\\aggregated_revenue_1_2_3.png",
+        "Batch(1)\\Results(1)\\1_2_3_AnnotatedStaticPlots\\aggregated_state_taxes_1_2_3.png"
+      ],
+      "import_count": 7
+    },
+    "Batch(1)\\Results(1)\\1_2_AnnotatedStaticPlots": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(1)\\Results(1)\\1_2_AnnotatedStaticPlots",
+      "files": [
+        "Batch(1)\\Results(1)\\1_2_AnnotatedStaticPlots\\aggregated_annual_cash_flow_net_1_2.png",
+        "Batch(1)\\Results(1)\\1_2_AnnotatedStaticPlots\\aggregated_cumulative_cash_flow_1_2.png",
+        "Batch(1)\\Results(1)\\1_2_AnnotatedStaticPlots\\aggregated_depreciation_1_2.png",
+        "Batch(1)\\Results(1)\\1_2_AnnotatedStaticPlots\\aggregated_federal_taxes_1_2.png",
+        "Batch(1)\\Results(1)\\1_2_AnnotatedStaticPlots\\aggregated_operating_expenses_1_2.png",
+        "Batch(1)\\Results(1)\\1_2_AnnotatedStaticPlots\\aggregated_revenue_1_2.png",
+        "Batch(1)\\Results(1)\\1_2_AnnotatedStaticPlots\\aggregated_state_taxes_1_2.png"
+      ],
+      "import_count": 7
+    },
+    "Batch(1)\\Results(1)\\1_PieStaticPlots": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(1)\\Results(1)\\1_PieStaticPlots",
+      "files": [
+        "Batch(1)\\Results(1)\\1_PieStaticPlots\\Operational_Cost_Breakdown_Pie_Chart(1).png"
+      ],
+      "import_count": 1
+    },
+    "Batch(1)\\Results(1)\\HTML_v1_Annual_Cash_Flows": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(1)\\Results(1)\\HTML_v1_Annual_Cash_Flows",
+      "files": [
+        "Batch(1)\\Results(1)\\HTML_v1_Annual_Cash_Flows\\album_metadata.json",
+        "Batch(1)\\Results(1)\\HTML_v1_Annual_Cash_Flows\\Annual_Cash_Flows_Plot.html"
+      ],
+      "import_count": 2
+    },
+    "Batch(1)\\Results(1)\\HTML_v1_Annual_Operating_Expenses": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(1)\\Results(1)\\HTML_v1_Annual_Operating_Expenses",
+      "files": [
+        "Batch(1)\\Results(1)\\HTML_v1_Annual_Operating_Expenses\\album_metadata.json",
+        "Batch(1)\\Results(1)\\HTML_v1_Annual_Operating_Expenses\\Annual_Operating_Expenses_Plot.html"
+      ],
+      "import_count": 2
+    },
+    "Batch(1)\\Results(1)\\HTML_v1_Annual_Revenues": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(1)\\Results(1)\\HTML_v1_Annual_Revenues",
+      "files": [
+        "Batch(1)\\Results(1)\\HTML_v1_Annual_Revenues\\album_metadata.json",
+        "Batch(1)\\Results(1)\\HTML_v1_Annual_Revenues\\Annual_Revenues_Plot.html"
+      ],
+      "import_count": 2
+    },
+    "Batch(1)\\Results(1)\\HTML_v1_Cumulative": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(1)\\Results(1)\\HTML_v1_Cumulative",
+      "files": [
+        "Batch(1)\\Results(1)\\HTML_v1_Cumulative\\album_metadata.json",
+        "Batch(1)\\Results(1)\\HTML_v1_Cumulative\\Annual_Cash_Flows_Cumulative_Plot.html",
+        "Batch(1)\\Results(1)\\HTML_v1_Cumulative\\Annual_Operating_Expenses_Cumulative_Plot.html",
+        "Batch(1)\\Results(1)\\HTML_v1_Cumulative\\Annual_Revenues_Cumulative_Plot.html",
+        "Batch(1)\\Results(1)\\HTML_v1_Cumulative\\Cumulative_Cash_Flows_Cumulative_Plot.html",
+        "Batch(1)\\Results(1)\\HTML_v1_Cumulative\\Depreciation_Schedules_Cumulative_Plot.html",
+        "Batch(1)\\Results(1)\\HTML_v1_Cumulative\\Federal_Taxes_Cumulative_Plot.html",
+        "Batch(1)\\Results(1)\\HTML_v1_Cumulative\\Loan_Repayment_Terms_Cumulative_Plot.html",
+        "Batch(1)\\Results(1)\\HTML_v1_Cumulative\\State_Taxes_Cumulative_Plot.html"
+      ],
+      "import_count": 9
+    },
+    "Batch(1)\\Results(1)\\HTML_v1_Cumulative_Cash_Flows": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(1)\\Results(1)\\HTML_v1_Cumulative_Cash_Flows",
+      "files": [
+        "Batch(1)\\Results(1)\\HTML_v1_Cumulative_Cash_Flows\\album_metadata.json",
+        "Batch(1)\\Results(1)\\HTML_v1_Cumulative_Cash_Flows\\Cumulative_Cash_Flows_Plot.html"
+      ],
+      "import_count": 2
+    },
+    "Batch(1)\\Results(1)\\HTML_v1_Depreciation_Schedules": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(1)\\Results(1)\\HTML_v1_Depreciation_Schedules",
+      "files": [],
+      "import_count": 0
+    },
+    "Batch(1)\\Results(1)\\v1_Annual_Cash_Flows_Plot": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(1)\\Results(1)\\v1_Annual_Cash_Flows_Plot",
+      "files": [],
+      "import_count": 0
+    },
+    "Batch(1)\\Results(1)\\v1_Annual_Operating_Expenses_Plot": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(1)\\Results(1)\\v1_Annual_Operating_Expenses_Plot",
+      "files": [
+        "Batch(1)\\Results(1)\\v1_Annual_Operating_Expenses_Plot\\Annual_Operating_Expenses_Plot.html"
+      ],
+      "import_count": 1
+    },
+    "Batch(1)\\Results(1)\\v1_Annual_Revenues_Plot": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(1)\\Results(1)\\v1_Annual_Revenues_Plot",
+      "files": [],
+      "import_count": 0
+    },
+    "Batch(1)\\Results(1)\\v1_Cumulative_Cash_Flows_Plot": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(1)\\Results(1)\\v1_Cumulative_Cash_Flows_Plot",
+      "files": [
+        "Batch(1)\\Results(1)\\v1_Cumulative_Cash_Flows_Plot\\Cumulative_Cash_Flows_Plot.html"
+      ],
+      "import_count": 1
+    },
+    "Batch(1)\\Results(1)\\v1_Cumulative_Plot": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(1)\\Results(1)\\v1_Cumulative_Plot",
+      "files": [
+        "Batch(1)\\Results(1)\\v1_Cumulative_Plot\\Annual_Cash_Flows_Cumulative_Plot.html",
+        "Batch(1)\\Results(1)\\v1_Cumulative_Plot\\Annual_Operating_Expenses_Cumulative_Plot.html",
+        "Batch(1)\\Results(1)\\v1_Cumulative_Plot\\Annual_Revenues_Cumulative_Plot.html",
+        "Batch(1)\\Results(1)\\v1_Cumulative_Plot\\Cumulative_Cash_Flows_Cumulative_Plot.html",
+        "Batch(1)\\Results(1)\\v1_Cumulative_Plot\\Depreciation_Schedules_Cumulative_Plot.html",
+        "Batch(1)\\Results(1)\\v1_Cumulative_Plot\\Federal_Taxes_Cumulative_Plot.html",
+        "Batch(1)\\Results(1)\\v1_Cumulative_Plot\\Loan_Repayment_Terms_Cumulative_Plot.html",
+        "Batch(1)\\Results(1)\\v1_Cumulative_Plot\\State_Taxes_Cumulative_Plot.html"
+      ],
+      "import_count": 8
+    },
+    "Batch(1)\\Results(1)\\v1_Depreciation_Schedules_Plot": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(1)\\Results(1)\\v1_Depreciation_Schedules_Plot",
+      "files": [
+        "Batch(1)\\Results(1)\\v1_Depreciation_Schedules_Plot\\Depreciation_Schedules_Plot.html"
+      ],
+      "import_count": 1
+    },
+    "Batch(1)\\Results(1)\\v1_Federal_Taxes_Plot": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(1)\\Results(1)\\v1_Federal_Taxes_Plot",
+      "files": [
+        "Batch(1)\\Results(1)\\v1_Federal_Taxes_Plot\\Federal_Taxes_Plot.html"
+      ],
+      "import_count": 1
+    },
+    "Batch(1)\\Results(1)\\v1_Loan_Repayment_Terms_Plot": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(1)\\Results(1)\\v1_Loan_Repayment_Terms_Plot",
+      "files": [
+        "Batch(1)\\Results(1)\\v1_Loan_Repayment_Terms_Plot\\Loan_Repayment_Terms_Plot.html"
+      ],
+      "import_count": 1
+    },
+    "Batch(1)\\Results(1)\\v1_State_Taxes_Plot": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(1)\\Results(1)\\v1_State_Taxes_Plot",
+      "files": [
+        "Batch(1)\\Results(1)\\v1_State_Taxes_Plot\\State_Taxes_Plot.html"
+      ],
+      "import_count": 1
+    },
+    "Batch(2)": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(2)",
+      "files": [],
+      "import_count": 0
+    },
+    "Batch(2)\\ConfigurationPlotSpec(2)": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(2)\\ConfigurationPlotSpec(2)",
+      "files": [
+        "Batch(2)\\ConfigurationPlotSpec(2)\\configurations(2).py",
+        "Batch(2)\\ConfigurationPlotSpec(2)\\plot_generations(2).py",
+        "Batch(2)\\ConfigurationPlotSpec(2)\\U_configurations(2).py"
+      ],
+      "import_count": 3
+    },
+    "Batch(2)\\ConfigurationPlotSpec(2)\\__pycache__": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(2)\\ConfigurationPlotSpec(2)\\__pycache__",
+      "files": [
+        "Batch(2)\\ConfigurationPlotSpec(2)\\__pycache__\\configurations(2).cpython-312.pyc"
+      ],
+      "import_count": 1
+    },
+    "Batch(2)\\Results(2)": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(2)\\Results(2)",
+      "files": [
+        "Batch(2)\\Results(2)\\2_config_module_1.json",
+        "Batch(2)\\Results(2)\\2_config_module_10.json",
+        "Batch(2)\\Results(2)\\2_config_module_11.json",
+        "Batch(2)\\Results(2)\\2_config_module_12.json",
+        "Batch(2)\\Results(2)\\2_config_module_13.json",
+        "Batch(2)\\Results(2)\\2_config_module_14.json",
+        "Batch(2)\\Results(2)\\2_config_module_15.json",
+        "Batch(2)\\Results(2)\\2_config_module_16.json",
+        "Batch(2)\\Results(2)\\2_config_module_17.json",
+        "Batch(2)\\Results(2)\\2_config_module_18.json",
+        "Batch(2)\\Results(2)\\2_config_module_19.json",
+        "Batch(2)\\Results(2)\\2_config_module_2.json",
+        "Batch(2)\\Results(2)\\2_config_module_20.json",
+        "Batch(2)\\Results(2)\\2_config_module_3.json",
+        "Batch(2)\\Results(2)\\2_config_module_4.json",
+        "Batch(2)\\Results(2)\\2_config_module_5.json",
+        "Batch(2)\\Results(2)\\2_config_module_6.json",
+        "Batch(2)\\Results(2)\\2_config_module_7.json",
+        "Batch(2)\\Results(2)\\2_config_module_8.json",
+        "Batch(2)\\Results(2)\\2_config_module_9.json",
+        "Batch(2)\\Results(2)\\CFA(2).csv",
+        "Batch(2)\\Results(2)\\Configuration_Matrix(2).csv",
+        "Batch(2)\\Results(2)\\Cumulative_Opex_Table_(2).csv",
+        "Batch(2)\\Results(2)\\Distance_From_Paying_Taxes(2).csv",
+        "Batch(2)\\Results(2)\\Economic_Summary(2).csv",
+        "Batch(2)\\Results(2)\\Filtered_Value_Intervals(2).csv",
+        "Batch(2)\\Results(2)\\Fixed_Opex_Table_(2).csv",
+        "Batch(2)\\Results(2)\\General_Configuration_Matrix(2).csv",
+        "Batch(2)\\Results(2)\\Sorted_Points(2).csv",
+        "Batch(2)\\Results(2)\\Variable_Opex_Table_(2).csv",
+        "Batch(2)\\Results(2)\\Variable_Table(2).csv"
+      ],
+      "import_count": 31
+    },
+    "Batch(2)\\Results(2)\\2_PieStaticPlots": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(2)\\Results(2)\\2_PieStaticPlots",
+      "files": [
+        "Batch(2)\\Results(2)\\2_PieStaticPlots\\Operational_Cost_Breakdown_Pie_Chart(2).png"
+      ],
+      "import_count": 1
+    },
+    "Batch(3)": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(3)",
+      "files": [],
+      "import_count": 0
+    },
+    "Batch(3)\\ConfigurationPlotSpec(3)": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(3)\\ConfigurationPlotSpec(3)",
+      "files": [
+        "Batch(3)\\ConfigurationPlotSpec(3)\\configurations(3).py",
+        "Batch(3)\\ConfigurationPlotSpec(3)\\plot_generations(3).py",
+        "Batch(3)\\ConfigurationPlotSpec(3)\\U_configurations(3).py"
+      ],
+      "import_count": 3
+    },
+    "Batch(3)\\ConfigurationPlotSpec(3)\\__pycache__": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(3)\\ConfigurationPlotSpec(3)\\__pycache__",
+      "files": [
+        "Batch(3)\\ConfigurationPlotSpec(3)\\__pycache__\\configurations(3).cpython-312.pyc"
+      ],
+      "import_count": 1
+    },
+    "Batch(3)\\Results(3)": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(3)\\Results(3)",
+      "files": [
+        "Batch(3)\\Results(3)\\3_config_module_1.json",
+        "Batch(3)\\Results(3)\\3_config_module_10.json",
+        "Batch(3)\\Results(3)\\3_config_module_11.json",
+        "Batch(3)\\Results(3)\\3_config_module_12.json",
+        "Batch(3)\\Results(3)\\3_config_module_13.json",
+        "Batch(3)\\Results(3)\\3_config_module_14.json",
+        "Batch(3)\\Results(3)\\3_config_module_15.json",
+        "Batch(3)\\Results(3)\\3_config_module_16.json",
+        "Batch(3)\\Results(3)\\3_config_module_17.json",
+        "Batch(3)\\Results(3)\\3_config_module_18.json",
+        "Batch(3)\\Results(3)\\3_config_module_19.json",
+        "Batch(3)\\Results(3)\\3_config_module_2.json",
+        "Batch(3)\\Results(3)\\3_config_module_20.json",
+        "Batch(3)\\Results(3)\\3_config_module_3.json",
+        "Batch(3)\\Results(3)\\3_config_module_4.json",
+        "Batch(3)\\Results(3)\\3_config_module_5.json",
+        "Batch(3)\\Results(3)\\3_config_module_6.json",
+        "Batch(3)\\Results(3)\\3_config_module_7.json",
+        "Batch(3)\\Results(3)\\3_config_module_8.json",
+        "Batch(3)\\Results(3)\\3_config_module_9.json",
+        "Batch(3)\\Results(3)\\CFA(3).csv",
+        "Batch(3)\\Results(3)\\Configuration_Matrix(3).csv",
+        "Batch(3)\\Results(3)\\Cumulative_Opex_Table_(3).csv",
+        "Batch(3)\\Results(3)\\Distance_From_Paying_Taxes(3).csv",
+        "Batch(3)\\Results(3)\\Economic_Summary(3).csv",
+        "Batch(3)\\Results(3)\\Filtered_Value_Intervals(3).csv",
+        "Batch(3)\\Results(3)\\Fixed_Opex_Table_(3).csv",
+        "Batch(3)\\Results(3)\\General_Configuration_Matrix(3).csv",
+        "Batch(3)\\Results(3)\\Sorted_Points(3).csv",
+        "Batch(3)\\Results(3)\\Variable_Opex_Table_(3).csv",
+        "Batch(3)\\Results(3)\\Variable_Table(3).csv"
+      ],
+      "import_count": 31
+    },
+    "Batch(3)\\Results(3)\\3_PieStaticPlots": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(3)\\Results(3)\\3_PieStaticPlots",
+      "files": [
+        "Batch(3)\\Results(3)\\3_PieStaticPlots\\Operational_Cost_Breakdown_Pie_Chart(3).png"
+      ],
+      "import_count": 1
+    },
+    "Batch(4)": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(4)",
+      "files": [],
+      "import_count": 0
+    },
+    "Batch(4)\\ConfigurationPlotSpec(4)": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(4)\\ConfigurationPlotSpec(4)",
+      "files": [
+        "Batch(4)\\ConfigurationPlotSpec(4)\\configurations(4).py",
+        "Batch(4)\\ConfigurationPlotSpec(4)\\plot_generations(4).py",
+        "Batch(4)\\ConfigurationPlotSpec(4)\\U_configurations(4).py"
+      ],
+      "import_count": 3
+    },
+    "Batch(4)\\ConfigurationPlotSpec(4)\\__pycache__": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(4)\\ConfigurationPlotSpec(4)\\__pycache__",
+      "files": [
+        "Batch(4)\\ConfigurationPlotSpec(4)\\__pycache__\\configurations(4).cpython-312.pyc"
+      ],
+      "import_count": 1
+    },
+    "Batch(4)\\Results(4)": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(4)\\Results(4)",
+      "files": [
+        "Batch(4)\\Results(4)\\4_config_module_1.json",
+        "Batch(4)\\Results(4)\\4_config_module_10.json",
+        "Batch(4)\\Results(4)\\4_config_module_11.json",
+        "Batch(4)\\Results(4)\\4_config_module_12.json",
+        "Batch(4)\\Results(4)\\4_config_module_13.json",
+        "Batch(4)\\Results(4)\\4_config_module_14.json",
+        "Batch(4)\\Results(4)\\4_config_module_15.json",
+        "Batch(4)\\Results(4)\\4_config_module_16.json",
+        "Batch(4)\\Results(4)\\4_config_module_17.json",
+        "Batch(4)\\Results(4)\\4_config_module_18.json",
+        "Batch(4)\\Results(4)\\4_config_module_19.json",
+        "Batch(4)\\Results(4)\\4_config_module_2.json",
+        "Batch(4)\\Results(4)\\4_config_module_20.json",
+        "Batch(4)\\Results(4)\\4_config_module_3.json",
+        "Batch(4)\\Results(4)\\4_config_module_4.json",
+        "Batch(4)\\Results(4)\\4_config_module_5.json",
+        "Batch(4)\\Results(4)\\4_config_module_6.json",
+        "Batch(4)\\Results(4)\\4_config_module_7.json",
+        "Batch(4)\\Results(4)\\4_config_module_8.json",
+        "Batch(4)\\Results(4)\\4_config_module_9.json",
+        "Batch(4)\\Results(4)\\CFA(4).csv",
+        "Batch(4)\\Results(4)\\Configuration_Matrix(4).csv",
+        "Batch(4)\\Results(4)\\Cumulative_Opex_Table_(4).csv",
+        "Batch(4)\\Results(4)\\Distance_From_Paying_Taxes(4).csv",
+        "Batch(4)\\Results(4)\\Economic_Summary(4).csv",
+        "Batch(4)\\Results(4)\\Filtered_Value_Intervals(4).csv",
+        "Batch(4)\\Results(4)\\Fixed_Opex_Table_(4).csv",
+        "Batch(4)\\Results(4)\\General_Configuration_Matrix(4).csv",
+        "Batch(4)\\Results(4)\\Sorted_Points(4).csv",
+        "Batch(4)\\Results(4)\\Variable_Opex_Table_(4).csv",
+        "Batch(4)\\Results(4)\\Variable_Table(4).csv"
+      ],
+      "import_count": 31
+    },
+    "Batch(4)\\Results(4)\\4_PieStaticPlots": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(4)\\Results(4)\\4_PieStaticPlots",
+      "files": [
+        "Batch(4)\\Results(4)\\4_PieStaticPlots\\Operational_Cost_Breakdown_Pie_Chart(4).png"
+      ],
+      "import_count": 1
+    },
+    "Batch(5)": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(5)",
+      "files": [],
+      "import_count": 0
+    },
+    "Batch(5)\\ConfigurationPlotSpec(5)": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(5)\\ConfigurationPlotSpec(5)",
+      "files": [
+        "Batch(5)\\ConfigurationPlotSpec(5)\\configurations(5).py",
+        "Batch(5)\\ConfigurationPlotSpec(5)\\plot_generations(5).py",
+        "Batch(5)\\ConfigurationPlotSpec(5)\\U_configurations(5).py"
+      ],
+      "import_count": 3
+    },
+    "Batch(5)\\Results(5)": {
+      "absolute_path": "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\Original\\Batch(5)\\Results(5)",
+      "files": [],
+      "import_count": 0
+    }
+  }
+}

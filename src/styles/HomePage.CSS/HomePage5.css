@@ -1,0 +1,127 @@
+/* Table Styles */
+.customizable-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: var(--sidebar-background);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.customizable-table th,
+.customizable-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+.customizable-table th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+}
+
+.customizable-table tr:nth-child(even) {
+    background-color: var(--app-background);
+}
+
+.customizable-table tr:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Image Styles */
+.customizable-image {
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.customizable-image:hover {
+    transform: scale(1.02);
+}
+
+/* Scaling Controls */
+.scaling-controls {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: var(--sidebar-background);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.scaling-group {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+.scaling-group-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.scaling-group-title {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.scaling-group-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.scaling-input {
+    width: 80px;
+    padding: 5px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--sidebar-background);
+    color: var(--text-color);
+}
+
+/* Editable List */
+.editable-list {
+    margin-top: 20px;
+}
+
+.editable-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    margin-bottom: 5px;
+    background-color: var(--sidebar-background);
+}
+
+.editable-item input {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--sidebar-background);
+    color: var(--text-color);
+}
+
+.editable-item button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.editable-item button.edit {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.editable-item button.delete {
+    background-color: #ef4444;
+    color: white;
+}

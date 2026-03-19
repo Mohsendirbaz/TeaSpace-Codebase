@@ -1,0 +1,1643 @@
+{
+  "activeFiles": [
+    "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\start_servers.py",
+    "backend\\Data_processors_and_transformers\\Front_Subtab_Table.py",
+    "backend\\Data_processors_and_transformers\\Front_Subtab_Plot.py",
+    "backend\\Data_processors_and_transformers\\Front_Subtab_HTML.py",
+    "backend\\API_endpoints_and_controllers\\Create_new_batch.py",
+    "backend\\API_endpoints_and_controllers\\Remove_batch.py",
+    "backend\\API_endpoints_and_controllers\\Calculations.py",
+    "backend\\API_endpoints_and_controllers\\Calculations_and_Sensitivity.py",
+    "backend\\API_endpoints_and_controllers\\sense_config_base.py",
+    "backend\\API_endpoints_and_controllers\\IND2751.py",
+    "backend\\API_endpoints_and_controllers\\PNG.py",
+    "backend\\API_endpoints_and_controllers\\Sub.py",
+    "backend\\Utility_functions\\property_mapping_service.py",
+    "backend\\API_endpoints_and_controllers\\Load.py",
+    "backend\\API_endpoints_and_controllers\\ConfigurationAPI.py",
+    "backend\\API_endpoints_and_controllers\\CalSen.py",
+    "backend\\cfa_list.py",
+    "backend\\API_endpoints_and_controllers\\Version_service.py",
+    "backend\\flask_api\\routes\\theme_routes.py",
+    "backend\\API_endpoints_and_controllers\\subplot_metadata.py",
+    "backend\\Configuration_management\\formatter.py",
+    "backend\\Configuration_management\\module1.py",
+    "backend\\Configuration_management\\config_modules.py",
+    "backend\\Configuration_management\\Table.py",
+    "backend\\API_endpoints_and_controllers\\Sensitivity_monitor.py",
+    "backend\\sensitivity_logging.py",
+    "backend\\API_endpoints_and_controllers\\sensitivity_Routes.py",
+    "backend\\API_endpoints_and_controllers\\script_econ.py",
+    "backend\\API_endpoints_and_controllers\\add_axis_labels.py",
+    "backend\\API_endpoints_and_controllers\\generate_plots.py",
+    "backend\\API_endpoints_and_controllers\\Sen_Config.py",
+    "backend\\Visualization_generators\\PNG_PLOT.py",
+    "backend\\API_endpoints_and_controllers\\html_album_organizer.py",
+    "backend\\Visualization_generators\\AggregatedSubPlots.py",
+    "backend\\Utility_functions\\common_utils.py",
+    "backend\\API_endpoints_and_controllers\\Sensitivity_File_Manager.py",
+    "backend\\Configuration_management\\formatter_extension.py",
+    "backend\\Configuration_management\\module1_extension.py",
+    "backend\\Configuration_management\\update_config_modules_with_CFA_extension.py",
+    "backend\\Core_calculation_engines\\CFA-b.py",
+    "backend\\Core_calculation_engines\\CFA.py",
+    "backend\\Core_calculation_engines\\CFA_Sensitivity.py",
+    "backend\\Core_calculation_engines\\consolidated_cfa.py",
+    "backend\\Core_calculation_engines\\consolidated_cfa_new.py",
+    "backend\\Core_calculation_engines\\keyword_constants.py",
+    "backend\\Core_calculation_engines\\Old_Script.py",
+    "backend\\Core_calculation_engines\\CFA_operations\\config_operations.py",
+    "backend\\Core_calculation_engines\\CFA_operations\\expense_operations.py",
+    "backend\\Core_calculation_engines\\CFA_operations\\revenue_operations.py",
+    "backend\\Core_calculation_engines\\CFA_operations\\tax_operations.py",
+    "backend\\Core_calculation_engines\\CFA_operations\\utility.py",
+    "backend\\Core_calculation_engines\\CFA_operations\\visualization_operations.py",
+    "backend\\Core_calculation_engines\\CFA_operations\\__init__.py"
+  ],
+  "inactiveFiles": [
+    "backend\\API_endpoints_and_controllers\\DeleteCustomParam.py",
+    "backend\\API_endpoints_and_controllers\\sensitivity_api.py",
+    "backend\\API_endpoints_and_controllers\\sensitivity_orchestrator.py",
+    "backend\\API_endpoints_and_controllers\\version_service.py",
+    "backend\\API_endpoints_and_controllers\\Refactorization\\Calculations_and_Sensitivity-LL.py",
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\app.py",
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\config.py",
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\decorators.py",
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\logging_config.py",
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\middleware.py",
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\pipeline.py",
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\state.py",
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\utils.py",
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\advanced_sensitivity.py",
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\baseline.py",
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\health.py",
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\payload.py",
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\runs.py",
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\sensitivity.py",
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\__init__.py",
+    "backend\\Python-Active-Inactive-Marking\\analyze_frontend_ports.py",
+    "backend\\Python-Active-Inactive-Marking\\analyze_python_files.py",
+    "backend\\Visualization_generators\\cfa_plotting.py"
+  ],
+  "standaloneFiles": [
+    "backend\\cfa_list.py",
+    "backend\\sensitivity_logging.py",
+    "backend\\API_endpoints_and_controllers\\Calculations.py",
+    "backend\\API_endpoints_and_controllers\\CalSen.py",
+    "backend\\API_endpoints_and_controllers\\ConfigurationAPI.py",
+    "backend\\API_endpoints_and_controllers\\Create_new_batch.py",
+    "backend\\API_endpoints_and_controllers\\DeleteCustomParam.py",
+    "backend\\API_endpoints_and_controllers\\Load.py",
+    "backend\\API_endpoints_and_controllers\\PNG.py",
+    "backend\\API_endpoints_and_controllers\\Remove_batch.py",
+    "backend\\API_endpoints_and_controllers\\Sensitivity_File_Manager.py",
+    "backend\\API_endpoints_and_controllers\\Sensitivity_monitor.py",
+    "backend\\API_endpoints_and_controllers\\sensitivity_orchestrator.py",
+    "backend\\API_endpoints_and_controllers\\Sub.py",
+    "backend\\API_endpoints_and_controllers\\subplot_metadata.py",
+    "backend\\API_endpoints_and_controllers\\version_service.py",
+    "backend\\API_endpoints_and_controllers\\Refactorization\\Calculations_and_Sensitivity-LL.py",
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\config.py",
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\logging_config.py",
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\middleware.py",
+    "backend\\Configuration_management\\formatter_extension.py",
+    "backend\\Configuration_management\\update_config_modules_with_CFA_extension.py",
+    "backend\\Core_calculation_engines\\CFA_Sensitivity.py",
+    "backend\\Core_calculation_engines\\keyword_constants.py",
+    "backend\\Core_calculation_engines\\Old_Script.py",
+    "backend\\Core_calculation_engines\\CFA_operations\\config_operations.py",
+    "backend\\Core_calculation_engines\\CFA_operations\\tax_operations.py",
+    "backend\\Core_calculation_engines\\CFA_operations\\utility.py",
+    "backend\\Core_calculation_engines\\CFA_operations\\__init__.py",
+    "backend\\Data_processors_and_transformers\\Front_Subtab_HTML.py",
+    "backend\\Data_processors_and_transformers\\Front_Subtab_Plot.py",
+    "backend\\Data_processors_and_transformers\\Front_Subtab_Table.py",
+    "backend\\flask_api\\routes\\theme_routes.py",
+    "backend\\Python-Active-Inactive-Marking\\analyze_python_files.py",
+    "backend\\Utility_functions\\property_mapping_service.py",
+    "backend\\Visualization_generators\\cfa_plotting.py"
+  ],
+  "dependencyLayers": {
+    "0": [
+      "C:\\Users\\Mohse\\IdeaProjects2\\codebase\\start_servers.py"
+    ]
+  },
+  "importedBy": {
+    "backend\\API_endpoints_and_controllers\\Sensitivity_monitor.py": [
+      "backend\\API_endpoints_and_controllers\\Calculations_and_Sensitivity.py"
+    ],
+    "backend\\sensitivity_logging.py": [
+      "backend\\API_endpoints_and_controllers\\Calculations_and_Sensitivity.py"
+    ],
+    "backend\\API_endpoints_and_controllers\\sensitivity_Routes.py": [
+      "backend\\API_endpoints_and_controllers\\Calculations_and_Sensitivity.py",
+      "backend\\API_endpoints_and_controllers\\sensitivity_api.py"
+    ],
+    "backend\\API_endpoints_and_controllers\\Sen_Config.py": [
+      "backend\\API_endpoints_and_controllers\\IND2751.py",
+      "backend\\API_endpoints_and_controllers\\sense_config_base.py"
+    ],
+    "backend\\API_endpoints_and_controllers\\sensitivity_orchestrator.py": [
+      "backend\\API_endpoints_and_controllers\\sensitivity_api.py"
+    ],
+    "backend\\API_endpoints_and_controllers\\Sensitivity_File_Manager.py": [
+      "backend\\API_endpoints_and_controllers\\sensitivity_Routes.py"
+    ],
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\config.py": [
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\app.py",
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\utils.py",
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\advanced_sensitivity.py",
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\baseline.py",
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\payload.py",
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\runs.py",
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\sensitivity.py"
+    ],
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\logging_config.py": [
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\app.py",
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\decorators.py",
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\pipeline.py",
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\state.py",
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\utils.py",
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\advanced_sensitivity.py",
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\health.py"
+    ],
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\health.py": [
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\app.py",
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\__init__.py"
+    ],
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\payload.py": [
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\app.py",
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\__init__.py"
+    ],
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\baseline.py": [
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\app.py",
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\__init__.py"
+    ],
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\sensitivity.py": [
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\app.py",
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\__init__.py"
+    ],
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\runs.py": [
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\app.py",
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\__init__.py"
+    ],
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\advanced_sensitivity.py": [
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\app.py",
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\__init__.py"
+    ],
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\middleware.py": [
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\app.py"
+    ],
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\pipeline.py": [
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\app.py",
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\payload.py",
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\runs.py"
+    ],
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\state.py": [
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\app.py",
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\decorators.py",
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\pipeline.py",
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\utils.py",
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\advanced_sensitivity.py",
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\baseline.py",
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\health.py",
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\payload.py",
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\runs.py",
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\sensitivity.py"
+    ],
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\decorators.py": [
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\advanced_sensitivity.py",
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\baseline.py",
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\payload.py",
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\runs.py",
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\sensitivity.py"
+    ],
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\utils.py": [
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\advanced_sensitivity.py",
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\baseline.py",
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\payload.py",
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\runs.py",
+      "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\sensitivity.py"
+    ],
+    "backend\\Utility_functions\\common_utils.py": [
+      "backend\\Configuration_management\\module1_extension.py",
+      "backend\\Visualization_generators\\PNG_PLOT.py"
+    ],
+    "backend\\Core_calculation_engines\\CFA_operations\\utility.py": [
+      "backend\\Core_calculation_engines\\CFA.py",
+      "backend\\Core_calculation_engines\\consolidated_cfa.py",
+      "backend\\Core_calculation_engines\\consolidated_cfa_new.py",
+      "backend\\Core_calculation_engines\\CFA_operations\\expense_operations.py",
+      "backend\\Core_calculation_engines\\CFA_operations\\revenue_operations.py",
+      "backend\\Core_calculation_engines\\CFA_operations\\visualization_operations.py"
+    ],
+    "backend\\Core_calculation_engines\\consolidated_cfa_new.py": [
+      "backend\\Core_calculation_engines\\CFA.py"
+    ],
+    "backend\\Core_calculation_engines\\CFA_operations\\revenue_operations.py": [
+      "backend\\Core_calculation_engines\\consolidated_cfa.py",
+      "backend\\Core_calculation_engines\\consolidated_cfa_new.py"
+    ],
+    "backend\\Core_calculation_engines\\CFA_operations\\expense_operations.py": [
+      "backend\\Core_calculation_engines\\consolidated_cfa.py",
+      "backend\\Core_calculation_engines\\consolidated_cfa_new.py"
+    ],
+    "backend\\Core_calculation_engines\\CFA_operations\\tax_operations.py": [
+      "backend\\Core_calculation_engines\\consolidated_cfa.py",
+      "backend\\Core_calculation_engines\\consolidated_cfa_new.py"
+    ],
+    "backend\\Core_calculation_engines\\CFA_operations\\config_operations.py": [
+      "backend\\Core_calculation_engines\\consolidated_cfa.py",
+      "backend\\Core_calculation_engines\\consolidated_cfa_new.py"
+    ],
+    "backend\\Core_calculation_engines\\CFA_operations\\visualization_operations.py": [
+      "backend\\Core_calculation_engines\\consolidated_cfa.py",
+      "backend\\Core_calculation_engines\\consolidated_cfa_new.py"
+    ],
+    "backend\\Core_calculation_engines\\keyword_constants.py": [
+      "backend\\Core_calculation_engines\\consolidated_cfa_new.py"
+    ],
+    "backend\\Python-Active-Inactive-Marking\\analyze_python_files.py": [
+      "backend\\Python-Active-Inactive-Marking\\analyze_frontend_ports.py"
+    ]
+  },
+  "portToFile": {
+    "8007": "backend\\Data_processors_and_transformers\\Front_Subtab_Table.py",
+    "8008": "backend\\Data_processors_and_transformers\\Front_Subtab_Plot.py",
+    "8009": "backend\\Data_processors_and_transformers\\Front_Subtab_HTML.py",
+    "8001": "backend\\API_endpoints_and_controllers\\Create_new_batch.py",
+    "7001": "backend\\API_endpoints_and_controllers\\Remove_batch.py",
+    "5007": "backend\\API_endpoints_and_controllers\\Calculations.py",
+    "2500": "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\app.py",
+    "2600": "backend\\API_endpoints_and_controllers\\sense_config_base.py",
+    "2751": "backend\\API_endpoints_and_controllers\\IND2751.py",
+    "5008": "backend\\API_endpoints_and_controllers\\PNG.py",
+    "5009": "backend\\API_endpoints_and_controllers\\Sub.py",
+    "5010": "backend\\Utility_functions\\property_mapping_service.py",
+    "5000": "backend\\API_endpoints_and_controllers\\Load.py",
+    "5002": "backend\\API_endpoints_and_controllers\\DeleteCustomParam.py",
+    "2750": "backend\\API_endpoints_and_controllers\\CalSen.py",
+    "4560": "backend\\cfa_list.py",
+    "8002": "backend\\API_endpoints_and_controllers\\version_service.py",
+    "8010": "backend\\flask_api\\routes\\theme_routes.py",
+    "5011": "backend\\API_endpoints_and_controllers\\subplot_metadata.py"
+  },
+  "fileToPort": {
+    "backend\\Data_processors_and_transformers\\Front_Subtab_Table.py": 8007,
+    "backend\\Data_processors_and_transformers\\Front_Subtab_Plot.py": 8008,
+    "backend\\Data_processors_and_transformers\\Front_Subtab_HTML.py": 8009,
+    "backend\\API_endpoints_and_controllers\\Create_new_batch.py": 8001,
+    "backend\\API_endpoints_and_controllers\\Remove_batch.py": 7001,
+    "backend\\API_endpoints_and_controllers\\Calculations.py": 5007,
+    "backend\\API_endpoints_and_controllers\\Calculations_and_Sensitivity.py": 2500,
+    "backend\\API_endpoints_and_controllers\\sense_config_base.py": 2600,
+    "backend\\API_endpoints_and_controllers\\IND2751.py": 2751,
+    "backend\\API_endpoints_and_controllers\\PNG.py": 5008,
+    "backend\\API_endpoints_and_controllers\\Sub.py": 5009,
+    "backend\\Utility_functions\\property_mapping_service.py": 5010,
+    "backend\\API_endpoints_and_controllers\\Load.py": 5000,
+    "backend\\API_endpoints_and_controllers\\ConfigurationAPI.py": 5002,
+    "backend\\API_endpoints_and_controllers\\CalSen.py": 2750,
+    "backend\\cfa_list.py": 4560,
+    "backend\\API_endpoints_and_controllers\\Version_service.py": 8002,
+    "backend\\flask_api\\routes\\theme_routes.py": 8010,
+    "backend\\API_endpoints_and_controllers\\subplot_metadata.py": 5011,
+    "backend\\API_endpoints_and_controllers\\DeleteCustomParam.py": 5002,
+    "backend\\API_endpoints_and_controllers\\version_service.py": 8002,
+    "backend\\API_endpoints_and_controllers\\Refactorization\\Calculations_and_Sensitivity-LL.py": 2500,
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\app.py": 2500
+  },
+  "fileConnections": {
+    "backend\\cfa_list.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "none"
+    },
+    "backend\\sensitivity_logging.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "none"
+    },
+    "backend\\API_endpoints_and_controllers\\add_axis_labels.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "none"
+    },
+    "backend\\API_endpoints_and_controllers\\Calculations.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [
+        "backend\\Configuration_management\\formatter.py",
+        "backend\\Configuration_management\\module1.py",
+        "backend\\Configuration_management\\config_modules.py",
+        "backend\\Configuration_management\\Table.py",
+        "backend\\Configuration_management\\formatter.py",
+        "backend\\Configuration_management\\module1.py",
+        "backend\\Configuration_management\\config_modules.py",
+        "backend\\Configuration_management\\Table.py",
+        "backend\\Configuration_management\\formatter.py",
+        "backend\\Configuration_management\\module1.py",
+        "backend\\Configuration_management\\config_modules.py",
+        "backend\\Configuration_management\\Table.py",
+        "backend\\Configuration_management\\formatter.py",
+        "backend\\Configuration_management\\module1.py",
+        "backend\\Configuration_management\\config_modules.py",
+        "backend\\Configuration_management\\Table.py",
+        "backend\\Configuration_management\\formatter.py",
+        "backend\\Configuration_management\\module1.py",
+        "backend\\Configuration_management\\config_modules.py",
+        "backend\\Configuration_management\\Table.py"
+      ],
+      "all_subprocess_calls": [
+        "backend\\Configuration_management\\module1.py",
+        "backend\\Configuration_management\\Table.py",
+        "backend\\Configuration_management\\config_modules.py",
+        "backend\\Configuration_management\\formatter.py"
+      ],
+      "connection_level": "medium"
+    },
+    "backend\\API_endpoints_and_controllers\\Calculations_and_Sensitivity.py": {
+      "imports": [
+        "backend\\API_endpoints_and_controllers\\Sensitivity_monitor.py",
+        "backend\\sensitivity_logging.py",
+        "backend\\API_endpoints_and_controllers\\sensitivity_Routes.py"
+      ],
+      "all_imports": [
+        "backend\\API_endpoints_and_controllers\\sensitivity_Routes.py",
+        "backend\\API_endpoints_and_controllers\\Sensitivity_File_Manager.py",
+        "backend\\API_endpoints_and_controllers\\Sensitivity_monitor.py",
+        "backend\\sensitivity_logging.py"
+      ],
+      "subprocess_calls": [
+        "backend\\API_endpoints_and_controllers\\script_econ.py",
+        "backend\\Configuration_management\\formatter.py",
+        "backend\\Configuration_management\\module1.py",
+        "backend\\Configuration_management\\config_modules.py",
+        "backend\\Configuration_management\\Table.py",
+        "backend\\Configuration_management\\formatter.py",
+        "backend\\Configuration_management\\module1.py",
+        "backend\\Configuration_management\\config_modules.py",
+        "backend\\Configuration_management\\Table.py",
+        "backend\\Configuration_management\\formatter.py",
+        "backend\\Configuration_management\\module1.py",
+        "backend\\Configuration_management\\config_modules.py",
+        "backend\\Configuration_management\\Table.py",
+        "backend\\Configuration_management\\formatter.py",
+        "backend\\Configuration_management\\module1.py",
+        "backend\\Configuration_management\\config_modules.py",
+        "backend\\Configuration_management\\Table.py",
+        "backend\\Configuration_management\\formatter.py",
+        "backend\\Configuration_management\\module1.py",
+        "backend\\Configuration_management\\config_modules.py",
+        "backend\\Configuration_management\\Table.py",
+        "backend\\Configuration_management\\formatter.py",
+        "backend\\Configuration_management\\module1.py",
+        "backend\\Configuration_management\\config_modules.py",
+        "backend\\Configuration_management\\Table.py",
+        "backend\\API_endpoints_and_controllers\\script_econ.py",
+        "backend\\Configuration_management\\formatter.py",
+        "backend\\Configuration_management\\module1.py",
+        "backend\\Configuration_management\\config_modules.py",
+        "backend\\Configuration_management\\Table.py",
+        "backend\\API_endpoints_and_controllers\\add_axis_labels.py",
+        "backend\\Configuration_management\\formatter.py",
+        "backend\\Configuration_management\\module1.py",
+        "backend\\Configuration_management\\config_modules.py",
+        "backend\\Configuration_management\\Table.py",
+        "backend\\API_endpoints_and_controllers\\generate_plots.py",
+        "backend\\Configuration_management\\formatter.py",
+        "backend\\Configuration_management\\module1.py",
+        "backend\\Configuration_management\\config_modules.py",
+        "backend\\Configuration_management\\Table.py"
+      ],
+      "all_subprocess_calls": [
+        "backend\\Configuration_management\\module1.py",
+        "backend\\Configuration_management\\config_modules.py",
+        "backend\\API_endpoints_and_controllers\\script_econ.py",
+        "backend\\API_endpoints_and_controllers\\generate_plots.py",
+        "backend\\Configuration_management\\formatter.py",
+        "backend\\Configuration_management\\Table.py",
+        "backend\\API_endpoints_and_controllers\\add_axis_labels.py"
+      ],
+      "connection_level": "high"
+    },
+    "backend\\API_endpoints_and_controllers\\CalSen.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "none"
+    },
+    "backend\\API_endpoints_and_controllers\\ConfigurationAPI.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "none"
+    },
+    "backend\\API_endpoints_and_controllers\\Create_new_batch.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "none"
+    },
+    "backend\\API_endpoints_and_controllers\\DeleteCustomParam.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "none"
+    },
+    "backend\\API_endpoints_and_controllers\\generate_plots.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "none"
+    },
+    "backend\\API_endpoints_and_controllers\\html_album_organizer.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "none"
+    },
+    "backend\\API_endpoints_and_controllers\\IND2751.py": {
+      "imports": [
+        "backend\\API_endpoints_and_controllers\\Sen_Config.py"
+      ],
+      "all_imports": [
+        "backend\\API_endpoints_and_controllers\\Sen_Config.py"
+      ],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "low"
+    },
+    "backend\\API_endpoints_and_controllers\\Load.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "none"
+    },
+    "backend\\API_endpoints_and_controllers\\PNG.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [
+        "backend\\Visualization_generators\\PNG_PLOT.py"
+      ],
+      "all_subprocess_calls": [
+        "backend\\Visualization_generators\\PNG_PLOT.py"
+      ],
+      "connection_level": "medium"
+    },
+    "backend\\API_endpoints_and_controllers\\Remove_batch.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "none"
+    },
+    "backend\\API_endpoints_and_controllers\\script_econ.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "none"
+    },
+    "backend\\API_endpoints_and_controllers\\sense_config_base.py": {
+      "imports": [
+        "backend\\API_endpoints_and_controllers\\Sen_Config.py"
+      ],
+      "all_imports": [
+        "backend\\API_endpoints_and_controllers\\Sen_Config.py"
+      ],
+      "subprocess_calls": [
+        "backend\\API_endpoints_and_controllers\\Sen_Config.py"
+      ],
+      "all_subprocess_calls": [
+        "backend\\API_endpoints_and_controllers\\Sen_Config.py"
+      ],
+      "connection_level": "high"
+    },
+    "backend\\API_endpoints_and_controllers\\sensitivity_api.py": {
+      "imports": [
+        "backend\\API_endpoints_and_controllers\\sensitivity_orchestrator.py",
+        "backend\\API_endpoints_and_controllers\\sensitivity_Routes.py"
+      ],
+      "all_imports": [
+        "backend\\API_endpoints_and_controllers\\sensitivity_Routes.py",
+        "backend\\API_endpoints_and_controllers\\Sensitivity_File_Manager.py",
+        "backend\\API_endpoints_and_controllers\\sensitivity_orchestrator.py"
+      ],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "low"
+    },
+    "backend\\API_endpoints_and_controllers\\Sensitivity_File_Manager.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "none"
+    },
+    "backend\\API_endpoints_and_controllers\\Sensitivity_monitor.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "none"
+    },
+    "backend\\API_endpoints_and_controllers\\sensitivity_orchestrator.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "none"
+    },
+    "backend\\API_endpoints_and_controllers\\sensitivity_Routes.py": {
+      "imports": [
+        "backend\\API_endpoints_and_controllers\\Sensitivity_File_Manager.py"
+      ],
+      "all_imports": [
+        "backend\\API_endpoints_and_controllers\\Sensitivity_File_Manager.py"
+      ],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "low"
+    },
+    "backend\\API_endpoints_and_controllers\\Sen_Config.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "none"
+    },
+    "backend\\API_endpoints_and_controllers\\Sub.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [
+        "backend\\API_endpoints_and_controllers\\html_album_organizer.py",
+        "backend\\Visualization_generators\\AggregatedSubPlots.py",
+        "backend\\Visualization_generators\\AggregatedSubPlots.py",
+        "backend\\API_endpoints_and_controllers\\html_album_organizer.py",
+        "backend\\Visualization_generators\\AggregatedSubPlots.py"
+      ],
+      "all_subprocess_calls": [
+        "backend\\Visualization_generators\\AggregatedSubPlots.py",
+        "backend\\API_endpoints_and_controllers\\html_album_organizer.py"
+      ],
+      "connection_level": "medium"
+    },
+    "backend\\API_endpoints_and_controllers\\subplot_metadata.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "none"
+    },
+    "backend\\API_endpoints_and_controllers\\version_service.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "none"
+    },
+    "backend\\API_endpoints_and_controllers\\Refactorization\\Calculations_and_Sensitivity-LL.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [
+        "backend\\Core_calculation_engines\\CFA.py",
+        "backend\\Core_calculation_engines\\CFA-b.py",
+        "backend\\Core_calculation_engines\\CFA-b.py",
+        "backend\\Core_calculation_engines\\CFA-b.py",
+        "backend\\Configuration_management\\formatter.py",
+        "backend\\Configuration_management\\module1.py",
+        "backend\\Configuration_management\\config_modules.py",
+        "backend\\Configuration_management\\Table.py",
+        "backend\\Core_calculation_engines\\CFA.py",
+        "backend\\Core_calculation_engines\\CFA-b.py",
+        "backend\\Core_calculation_engines\\CFA-b.py",
+        "backend\\Core_calculation_engines\\CFA-b.py",
+        "backend\\Configuration_management\\formatter.py",
+        "backend\\Configuration_management\\module1.py",
+        "backend\\Configuration_management\\config_modules.py",
+        "backend\\Configuration_management\\Table.py",
+        "backend\\Core_calculation_engines\\CFA.py",
+        "backend\\Core_calculation_engines\\CFA-b.py",
+        "backend\\Core_calculation_engines\\CFA-b.py",
+        "backend\\Core_calculation_engines\\CFA-b.py",
+        "backend\\Configuration_management\\formatter.py",
+        "backend\\Configuration_management\\module1.py",
+        "backend\\Configuration_management\\config_modules.py",
+        "backend\\Configuration_management\\Table.py",
+        "backend\\Core_calculation_engines\\CFA.py",
+        "backend\\Core_calculation_engines\\CFA-b.py",
+        "backend\\Core_calculation_engines\\CFA-b.py",
+        "backend\\Core_calculation_engines\\CFA-b.py",
+        "backend\\Configuration_management\\formatter.py",
+        "backend\\Configuration_management\\module1.py",
+        "backend\\Configuration_management\\config_modules.py",
+        "backend\\Configuration_management\\Table.py",
+        "backend\\Core_calculation_engines\\CFA.py",
+        "backend\\Core_calculation_engines\\CFA-b.py",
+        "backend\\Core_calculation_engines\\CFA-b.py",
+        "backend\\Core_calculation_engines\\CFA-b.py",
+        "backend\\Configuration_management\\formatter.py",
+        "backend\\Configuration_management\\module1.py",
+        "backend\\Configuration_management\\config_modules.py",
+        "backend\\Configuration_management\\Table.py",
+        "backend\\Core_calculation_engines\\CFA.py",
+        "backend\\Core_calculation_engines\\CFA-b.py",
+        "backend\\Core_calculation_engines\\CFA-b.py",
+        "backend\\Core_calculation_engines\\CFA-b.py",
+        "backend\\Configuration_management\\formatter.py",
+        "backend\\Configuration_management\\module1.py",
+        "backend\\Configuration_management\\config_modules.py",
+        "backend\\Configuration_management\\Table.py",
+        "backend\\Core_calculation_engines\\CFA.py",
+        "backend\\Core_calculation_engines\\CFA-b.py",
+        "backend\\Core_calculation_engines\\CFA-b.py",
+        "backend\\Core_calculation_engines\\CFA-b.py",
+        "backend\\Configuration_management\\formatter.py",
+        "backend\\Configuration_management\\module1.py",
+        "backend\\Configuration_management\\config_modules.py",
+        "backend\\Configuration_management\\Table.py",
+        "backend\\Core_calculation_engines\\CFA.py",
+        "backend\\Core_calculation_engines\\CFA-b.py",
+        "backend\\Core_calculation_engines\\CFA-b.py",
+        "backend\\Core_calculation_engines\\CFA-b.py",
+        "backend\\Configuration_management\\formatter.py",
+        "backend\\Configuration_management\\module1.py",
+        "backend\\Configuration_management\\config_modules.py",
+        "backend\\Configuration_management\\Table.py",
+        "backend\\Core_calculation_engines\\CFA.py",
+        "backend\\Core_calculation_engines\\CFA-b.py",
+        "backend\\Core_calculation_engines\\CFA-b.py",
+        "backend\\Core_calculation_engines\\CFA-b.py",
+        "backend\\Configuration_management\\formatter.py",
+        "backend\\Configuration_management\\module1.py",
+        "backend\\Configuration_management\\config_modules.py",
+        "backend\\Configuration_management\\Table.py",
+        "backend\\Core_calculation_engines\\CFA.py",
+        "backend\\Core_calculation_engines\\CFA-b.py",
+        "backend\\Core_calculation_engines\\CFA-b.py",
+        "backend\\Core_calculation_engines\\CFA-b.py",
+        "backend\\Configuration_management\\formatter.py",
+        "backend\\Configuration_management\\module1.py",
+        "backend\\Configuration_management\\config_modules.py",
+        "backend\\Configuration_management\\Table.py",
+        "backend\\Core_calculation_engines\\CFA.py",
+        "backend\\Core_calculation_engines\\CFA-b.py",
+        "backend\\Core_calculation_engines\\CFA-b.py",
+        "backend\\Core_calculation_engines\\CFA-b.py",
+        "backend\\Configuration_management\\formatter.py",
+        "backend\\Configuration_management\\module1.py",
+        "backend\\Configuration_management\\config_modules.py",
+        "backend\\Configuration_management\\Table.py",
+        "backend\\Core_calculation_engines\\CFA.py",
+        "backend\\Core_calculation_engines\\CFA-b.py",
+        "backend\\Core_calculation_engines\\CFA-b.py",
+        "backend\\Core_calculation_engines\\CFA-b.py",
+        "backend\\Configuration_management\\formatter.py",
+        "backend\\Configuration_management\\module1.py",
+        "backend\\Configuration_management\\config_modules.py",
+        "backend\\Configuration_management\\Table.py",
+        "backend\\Core_calculation_engines\\CFA.py",
+        "backend\\Core_calculation_engines\\CFA-b.py",
+        "backend\\Core_calculation_engines\\CFA-b.py",
+        "backend\\Core_calculation_engines\\CFA-b.py",
+        "backend\\Configuration_management\\formatter.py",
+        "backend\\Configuration_management\\module1.py",
+        "backend\\Configuration_management\\config_modules.py",
+        "backend\\Configuration_management\\Table.py"
+      ],
+      "all_subprocess_calls": [
+        "backend\\Core_calculation_engines\\CFA.py",
+        "backend\\Configuration_management\\module1.py",
+        "backend\\Configuration_management\\config_modules.py",
+        "backend\\Core_calculation_engines\\CFA-b.py",
+        "backend\\Configuration_management\\formatter.py",
+        "backend\\Configuration_management\\Table.py"
+      ],
+      "connection_level": "medium"
+    },
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\app.py": {
+      "imports": [
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\config.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\logging_config.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\health.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\payload.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\baseline.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\sensitivity.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\runs.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\advanced_sensitivity.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\middleware.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\pipeline.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\state.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\config.py"
+      ],
+      "all_imports": [
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\config.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\decorators.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\sensitivity.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\runs.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\pipeline.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\advanced_sensitivity.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\health.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\baseline.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\payload.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\logging_config.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\state.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\utils.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\middleware.py"
+      ],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "low"
+    },
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\config.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "none"
+    },
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\decorators.py": {
+      "imports": [
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\state.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\logging_config.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\state.py"
+      ],
+      "all_imports": [
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\state.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\logging_config.py"
+      ],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "low"
+    },
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\logging_config.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "none"
+    },
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\middleware.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "none"
+    },
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\pipeline.py": {
+      "imports": [
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\state.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\logging_config.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\state.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\state.py"
+      ],
+      "all_imports": [
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\state.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\logging_config.py"
+      ],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "low"
+    },
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\state.py": {
+      "imports": [
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\logging_config.py"
+      ],
+      "all_imports": [
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\logging_config.py"
+      ],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "low"
+    },
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\utils.py": {
+      "imports": [
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\config.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\logging_config.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\state.py"
+      ],
+      "all_imports": [
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\config.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\state.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\logging_config.py"
+      ],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "low"
+    },
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\advanced_sensitivity.py": {
+      "imports": [
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\config.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\state.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\decorators.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\utils.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\logging_config.py"
+      ],
+      "all_imports": [
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\config.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\decorators.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\logging_config.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\state.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\utils.py"
+      ],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "low"
+    },
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\baseline.py": {
+      "imports": [
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\config.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\state.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\decorators.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\utils.py"
+      ],
+      "all_imports": [
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\config.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\decorators.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\logging_config.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\state.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\utils.py"
+      ],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "low"
+    },
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\health.py": {
+      "imports": [
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\state.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\logging_config.py"
+      ],
+      "all_imports": [
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\state.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\logging_config.py"
+      ],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "low"
+    },
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\payload.py": {
+      "imports": [
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\config.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\state.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\decorators.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\pipeline.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\utils.py"
+      ],
+      "all_imports": [
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\config.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\decorators.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\pipeline.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\logging_config.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\state.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\utils.py"
+      ],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "low"
+    },
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\runs.py": {
+      "imports": [
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\config.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\state.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\decorators.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\utils.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\pipeline.py"
+      ],
+      "all_imports": [
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\config.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\decorators.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\pipeline.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\logging_config.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\state.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\utils.py"
+      ],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "low"
+    },
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\sensitivity.py": {
+      "imports": [
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\config.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\state.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\decorators.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\utils.py"
+      ],
+      "all_imports": [
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\config.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\decorators.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\logging_config.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\state.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\utils.py"
+      ],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "low"
+    },
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\__init__.py": {
+      "imports": [
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\health.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\payload.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\baseline.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\sensitivity.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\runs.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\advanced_sensitivity.py"
+      ],
+      "all_imports": [
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\config.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\decorators.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\sensitivity.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\runs.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\pipeline.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\state.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\advanced_sensitivity.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\baseline.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\payload.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\logging_config.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\health.py",
+        "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\utils.py"
+      ],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "low"
+    },
+    "backend\\Configuration_management\\config_modules.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "none"
+    },
+    "backend\\Configuration_management\\formatter.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "none"
+    },
+    "backend\\Configuration_management\\formatter_extension.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "none"
+    },
+    "backend\\Configuration_management\\module1.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "none"
+    },
+    "backend\\Configuration_management\\module1_extension.py": {
+      "imports": [
+        "backend\\Utility_functions\\common_utils.py"
+      ],
+      "all_imports": [
+        "backend\\Utility_functions\\common_utils.py"
+      ],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "low"
+    },
+    "backend\\Configuration_management\\Table.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "none"
+    },
+    "backend\\Configuration_management\\update_config_modules_with_CFA_extension.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "none"
+    },
+    "backend\\Core_calculation_engines\\CFA-b.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "none"
+    },
+    "backend\\Core_calculation_engines\\CFA.py": {
+      "imports": [
+        "backend\\Core_calculation_engines\\CFA_operations\\utility.py",
+        "backend\\Core_calculation_engines\\consolidated_cfa_new.py"
+      ],
+      "all_imports": [
+        "backend\\Core_calculation_engines\\CFA_operations\\revenue_operations.py",
+        "backend\\Core_calculation_engines\\CFA_operations\\tax_operations.py",
+        "backend\\Core_calculation_engines\\keyword_constants.py",
+        "backend\\Core_calculation_engines\\CFA_operations\\visualization_operations.py",
+        "backend\\Core_calculation_engines\\CFA_operations\\utility.py",
+        "backend\\Core_calculation_engines\\consolidated_cfa_new.py",
+        "backend\\Core_calculation_engines\\CFA_operations\\expense_operations.py",
+        "backend\\Core_calculation_engines\\CFA_operations\\config_operations.py"
+      ],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "low"
+    },
+    "backend\\Core_calculation_engines\\CFA_Sensitivity.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "none"
+    },
+    "backend\\Core_calculation_engines\\consolidated_cfa.py": {
+      "imports": [
+        "backend\\Core_calculation_engines\\CFA_operations\\utility.py",
+        "backend\\Core_calculation_engines\\CFA_operations\\revenue_operations.py",
+        "backend\\Core_calculation_engines\\CFA_operations\\expense_operations.py",
+        "backend\\Core_calculation_engines\\CFA_operations\\tax_operations.py",
+        "backend\\Core_calculation_engines\\CFA_operations\\config_operations.py",
+        "backend\\Core_calculation_engines\\CFA_operations\\visualization_operations.py"
+      ],
+      "all_imports": [
+        "backend\\Core_calculation_engines\\CFA_operations\\revenue_operations.py",
+        "backend\\Core_calculation_engines\\CFA_operations\\tax_operations.py",
+        "backend\\Core_calculation_engines\\CFA_operations\\visualization_operations.py",
+        "backend\\Core_calculation_engines\\CFA_operations\\utility.py",
+        "backend\\Core_calculation_engines\\CFA_operations\\expense_operations.py",
+        "backend\\Core_calculation_engines\\CFA_operations\\config_operations.py"
+      ],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "low"
+    },
+    "backend\\Core_calculation_engines\\consolidated_cfa_new.py": {
+      "imports": [
+        "backend\\Core_calculation_engines\\keyword_constants.py",
+        "backend\\Core_calculation_engines\\CFA_operations\\utility.py",
+        "backend\\Core_calculation_engines\\CFA_operations\\revenue_operations.py",
+        "backend\\Core_calculation_engines\\CFA_operations\\expense_operations.py",
+        "backend\\Core_calculation_engines\\CFA_operations\\tax_operations.py",
+        "backend\\Core_calculation_engines\\CFA_operations\\config_operations.py",
+        "backend\\Core_calculation_engines\\CFA_operations\\visualization_operations.py"
+      ],
+      "all_imports": [
+        "backend\\Core_calculation_engines\\CFA_operations\\revenue_operations.py",
+        "backend\\Core_calculation_engines\\CFA_operations\\tax_operations.py",
+        "backend\\Core_calculation_engines\\keyword_constants.py",
+        "backend\\Core_calculation_engines\\CFA_operations\\visualization_operations.py",
+        "backend\\Core_calculation_engines\\CFA_operations\\utility.py",
+        "backend\\Core_calculation_engines\\CFA_operations\\expense_operations.py",
+        "backend\\Core_calculation_engines\\CFA_operations\\config_operations.py"
+      ],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "low"
+    },
+    "backend\\Core_calculation_engines\\keyword_constants.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "none"
+    },
+    "backend\\Core_calculation_engines\\Old_Script.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "none"
+    },
+    "backend\\Core_calculation_engines\\CFA_operations\\config_operations.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "none"
+    },
+    "backend\\Core_calculation_engines\\CFA_operations\\expense_operations.py": {
+      "imports": [
+        "backend\\Core_calculation_engines\\CFA_operations\\utility.py"
+      ],
+      "all_imports": [
+        "backend\\Core_calculation_engines\\CFA_operations\\utility.py"
+      ],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "low"
+    },
+    "backend\\Core_calculation_engines\\CFA_operations\\revenue_operations.py": {
+      "imports": [
+        "backend\\Core_calculation_engines\\CFA_operations\\utility.py"
+      ],
+      "all_imports": [
+        "backend\\Core_calculation_engines\\CFA_operations\\utility.py"
+      ],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "low"
+    },
+    "backend\\Core_calculation_engines\\CFA_operations\\tax_operations.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "none"
+    },
+    "backend\\Core_calculation_engines\\CFA_operations\\utility.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "none"
+    },
+    "backend\\Core_calculation_engines\\CFA_operations\\visualization_operations.py": {
+      "imports": [
+        "backend\\Core_calculation_engines\\CFA_operations\\utility.py"
+      ],
+      "all_imports": [
+        "backend\\Core_calculation_engines\\CFA_operations\\utility.py"
+      ],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "low"
+    },
+    "backend\\Core_calculation_engines\\CFA_operations\\__init__.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "none"
+    },
+    "backend\\Data_processors_and_transformers\\Front_Subtab_HTML.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "none"
+    },
+    "backend\\Data_processors_and_transformers\\Front_Subtab_Plot.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "none"
+    },
+    "backend\\Data_processors_and_transformers\\Front_Subtab_Table.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "none"
+    },
+    "backend\\flask_api\\routes\\theme_routes.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "none"
+    },
+    "backend\\Python-Active-Inactive-Marking\\analyze_frontend_ports.py": {
+      "imports": [
+        "backend\\Python-Active-Inactive-Marking\\analyze_python_files.py"
+      ],
+      "all_imports": [
+        "backend\\Python-Active-Inactive-Marking\\analyze_python_files.py"
+      ],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "low"
+    },
+    "backend\\Python-Active-Inactive-Marking\\analyze_python_files.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "none"
+    },
+    "backend\\Utility_functions\\common_utils.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "none"
+    },
+    "backend\\Utility_functions\\property_mapping_service.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [
+        "backend\\Utility_functions\\common_utils.py"
+      ],
+      "all_subprocess_calls": [
+        "backend\\Utility_functions\\common_utils.py"
+      ],
+      "connection_level": "medium"
+    },
+    "backend\\Visualization_generators\\AggregatedSubPlots.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "none"
+    },
+    "backend\\Visualization_generators\\cfa_plotting.py": {
+      "imports": [],
+      "all_imports": [],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "none"
+    },
+    "backend\\Visualization_generators\\PNG_PLOT.py": {
+      "imports": [
+        "backend\\Utility_functions\\common_utils.py"
+      ],
+      "all_imports": [
+        "backend\\Utility_functions\\common_utils.py"
+      ],
+      "subprocess_calls": [],
+      "all_subprocess_calls": [],
+      "connection_level": "low"
+    }
+  },
+  "subprocessCalls": {
+    "backend\\cfa_list.py": [],
+    "backend\\sensitivity_logging.py": [],
+    "backend\\API_endpoints_and_controllers\\add_axis_labels.py": [],
+    "backend\\API_endpoints_and_controllers\\Calculations.py": [
+      "backend\\Configuration_management\\formatter.py",
+      "backend\\Configuration_management\\module1.py",
+      "backend\\Configuration_management\\config_modules.py",
+      "backend\\Configuration_management\\Table.py",
+      "backend\\Configuration_management\\formatter.py",
+      "backend\\Configuration_management\\module1.py",
+      "backend\\Configuration_management\\config_modules.py",
+      "backend\\Configuration_management\\Table.py",
+      "backend\\Configuration_management\\formatter.py",
+      "backend\\Configuration_management\\module1.py",
+      "backend\\Configuration_management\\config_modules.py",
+      "backend\\Configuration_management\\Table.py",
+      "backend\\Configuration_management\\formatter.py",
+      "backend\\Configuration_management\\module1.py",
+      "backend\\Configuration_management\\config_modules.py",
+      "backend\\Configuration_management\\Table.py",
+      "backend\\Configuration_management\\formatter.py",
+      "backend\\Configuration_management\\module1.py",
+      "backend\\Configuration_management\\config_modules.py",
+      "backend\\Configuration_management\\Table.py"
+    ],
+    "backend\\API_endpoints_and_controllers\\Calculations_and_Sensitivity.py": [
+      "backend\\API_endpoints_and_controllers\\script_econ.py",
+      "backend\\Configuration_management\\formatter.py",
+      "backend\\Configuration_management\\module1.py",
+      "backend\\Configuration_management\\config_modules.py",
+      "backend\\Configuration_management\\Table.py",
+      "backend\\Configuration_management\\formatter.py",
+      "backend\\Configuration_management\\module1.py",
+      "backend\\Configuration_management\\config_modules.py",
+      "backend\\Configuration_management\\Table.py",
+      "backend\\Configuration_management\\formatter.py",
+      "backend\\Configuration_management\\module1.py",
+      "backend\\Configuration_management\\config_modules.py",
+      "backend\\Configuration_management\\Table.py",
+      "backend\\Configuration_management\\formatter.py",
+      "backend\\Configuration_management\\module1.py",
+      "backend\\Configuration_management\\config_modules.py",
+      "backend\\Configuration_management\\Table.py",
+      "backend\\Configuration_management\\formatter.py",
+      "backend\\Configuration_management\\module1.py",
+      "backend\\Configuration_management\\config_modules.py",
+      "backend\\Configuration_management\\Table.py",
+      "backend\\Configuration_management\\formatter.py",
+      "backend\\Configuration_management\\module1.py",
+      "backend\\Configuration_management\\config_modules.py",
+      "backend\\Configuration_management\\Table.py",
+      "backend\\API_endpoints_and_controllers\\script_econ.py",
+      "backend\\Configuration_management\\formatter.py",
+      "backend\\Configuration_management\\module1.py",
+      "backend\\Configuration_management\\config_modules.py",
+      "backend\\Configuration_management\\Table.py",
+      "backend\\API_endpoints_and_controllers\\add_axis_labels.py",
+      "backend\\Configuration_management\\formatter.py",
+      "backend\\Configuration_management\\module1.py",
+      "backend\\Configuration_management\\config_modules.py",
+      "backend\\Configuration_management\\Table.py",
+      "backend\\API_endpoints_and_controllers\\generate_plots.py",
+      "backend\\Configuration_management\\formatter.py",
+      "backend\\Configuration_management\\module1.py",
+      "backend\\Configuration_management\\config_modules.py",
+      "backend\\Configuration_management\\Table.py"
+    ],
+    "backend\\API_endpoints_and_controllers\\CalSen.py": [],
+    "backend\\API_endpoints_and_controllers\\ConfigurationAPI.py": [],
+    "backend\\API_endpoints_and_controllers\\Create_new_batch.py": [],
+    "backend\\API_endpoints_and_controllers\\DeleteCustomParam.py": [],
+    "backend\\API_endpoints_and_controllers\\generate_plots.py": [],
+    "backend\\API_endpoints_and_controllers\\html_album_organizer.py": [],
+    "backend\\API_endpoints_and_controllers\\IND2751.py": [],
+    "backend\\API_endpoints_and_controllers\\Load.py": [],
+    "backend\\API_endpoints_and_controllers\\PNG.py": [
+      "backend\\Visualization_generators\\PNG_PLOT.py"
+    ],
+    "backend\\API_endpoints_and_controllers\\Remove_batch.py": [],
+    "backend\\API_endpoints_and_controllers\\script_econ.py": [],
+    "backend\\API_endpoints_and_controllers\\sense_config_base.py": [
+      "backend\\API_endpoints_and_controllers\\Sen_Config.py"
+    ],
+    "backend\\API_endpoints_and_controllers\\sensitivity_api.py": [],
+    "backend\\API_endpoints_and_controllers\\Sensitivity_File_Manager.py": [],
+    "backend\\API_endpoints_and_controllers\\Sensitivity_monitor.py": [],
+    "backend\\API_endpoints_and_controllers\\sensitivity_orchestrator.py": [],
+    "backend\\API_endpoints_and_controllers\\sensitivity_Routes.py": [],
+    "backend\\API_endpoints_and_controllers\\Sen_Config.py": [],
+    "backend\\API_endpoints_and_controllers\\Sub.py": [
+      "backend\\API_endpoints_and_controllers\\html_album_organizer.py",
+      "backend\\Visualization_generators\\AggregatedSubPlots.py",
+      "backend\\Visualization_generators\\AggregatedSubPlots.py",
+      "backend\\API_endpoints_and_controllers\\html_album_organizer.py",
+      "backend\\Visualization_generators\\AggregatedSubPlots.py"
+    ],
+    "backend\\API_endpoints_and_controllers\\subplot_metadata.py": [],
+    "backend\\API_endpoints_and_controllers\\version_service.py": [],
+    "backend\\API_endpoints_and_controllers\\Refactorization\\Calculations_and_Sensitivity-LL.py": [
+      "backend\\Core_calculation_engines\\CFA.py",
+      "backend\\Core_calculation_engines\\CFA-b.py",
+      "backend\\Core_calculation_engines\\CFA-b.py",
+      "backend\\Core_calculation_engines\\CFA-b.py",
+      "backend\\Configuration_management\\formatter.py",
+      "backend\\Configuration_management\\module1.py",
+      "backend\\Configuration_management\\config_modules.py",
+      "backend\\Configuration_management\\Table.py",
+      "backend\\Core_calculation_engines\\CFA.py",
+      "backend\\Core_calculation_engines\\CFA-b.py",
+      "backend\\Core_calculation_engines\\CFA-b.py",
+      "backend\\Core_calculation_engines\\CFA-b.py",
+      "backend\\Configuration_management\\formatter.py",
+      "backend\\Configuration_management\\module1.py",
+      "backend\\Configuration_management\\config_modules.py",
+      "backend\\Configuration_management\\Table.py",
+      "backend\\Core_calculation_engines\\CFA.py",
+      "backend\\Core_calculation_engines\\CFA-b.py",
+      "backend\\Core_calculation_engines\\CFA-b.py",
+      "backend\\Core_calculation_engines\\CFA-b.py",
+      "backend\\Configuration_management\\formatter.py",
+      "backend\\Configuration_management\\module1.py",
+      "backend\\Configuration_management\\config_modules.py",
+      "backend\\Configuration_management\\Table.py",
+      "backend\\Core_calculation_engines\\CFA.py",
+      "backend\\Core_calculation_engines\\CFA-b.py",
+      "backend\\Core_calculation_engines\\CFA-b.py",
+      "backend\\Core_calculation_engines\\CFA-b.py",
+      "backend\\Configuration_management\\formatter.py",
+      "backend\\Configuration_management\\module1.py",
+      "backend\\Configuration_management\\config_modules.py",
+      "backend\\Configuration_management\\Table.py",
+      "backend\\Core_calculation_engines\\CFA.py",
+      "backend\\Core_calculation_engines\\CFA-b.py",
+      "backend\\Core_calculation_engines\\CFA-b.py",
+      "backend\\Core_calculation_engines\\CFA-b.py",
+      "backend\\Configuration_management\\formatter.py",
+      "backend\\Configuration_management\\module1.py",
+      "backend\\Configuration_management\\config_modules.py",
+      "backend\\Configuration_management\\Table.py",
+      "backend\\Core_calculation_engines\\CFA.py",
+      "backend\\Core_calculation_engines\\CFA-b.py",
+      "backend\\Core_calculation_engines\\CFA-b.py",
+      "backend\\Core_calculation_engines\\CFA-b.py",
+      "backend\\Configuration_management\\formatter.py",
+      "backend\\Configuration_management\\module1.py",
+      "backend\\Configuration_management\\config_modules.py",
+      "backend\\Configuration_management\\Table.py",
+      "backend\\Core_calculation_engines\\CFA.py",
+      "backend\\Core_calculation_engines\\CFA-b.py",
+      "backend\\Core_calculation_engines\\CFA-b.py",
+      "backend\\Core_calculation_engines\\CFA-b.py",
+      "backend\\Configuration_management\\formatter.py",
+      "backend\\Configuration_management\\module1.py",
+      "backend\\Configuration_management\\config_modules.py",
+      "backend\\Configuration_management\\Table.py",
+      "backend\\Core_calculation_engines\\CFA.py",
+      "backend\\Core_calculation_engines\\CFA-b.py",
+      "backend\\Core_calculation_engines\\CFA-b.py",
+      "backend\\Core_calculation_engines\\CFA-b.py",
+      "backend\\Configuration_management\\formatter.py",
+      "backend\\Configuration_management\\module1.py",
+      "backend\\Configuration_management\\config_modules.py",
+      "backend\\Configuration_management\\Table.py",
+      "backend\\Core_calculation_engines\\CFA.py",
+      "backend\\Core_calculation_engines\\CFA-b.py",
+      "backend\\Core_calculation_engines\\CFA-b.py",
+      "backend\\Core_calculation_engines\\CFA-b.py",
+      "backend\\Configuration_management\\formatter.py",
+      "backend\\Configuration_management\\module1.py",
+      "backend\\Configuration_management\\config_modules.py",
+      "backend\\Configuration_management\\Table.py",
+      "backend\\Core_calculation_engines\\CFA.py",
+      "backend\\Core_calculation_engines\\CFA-b.py",
+      "backend\\Core_calculation_engines\\CFA-b.py",
+      "backend\\Core_calculation_engines\\CFA-b.py",
+      "backend\\Configuration_management\\formatter.py",
+      "backend\\Configuration_management\\module1.py",
+      "backend\\Configuration_management\\config_modules.py",
+      "backend\\Configuration_management\\Table.py",
+      "backend\\Core_calculation_engines\\CFA.py",
+      "backend\\Core_calculation_engines\\CFA-b.py",
+      "backend\\Core_calculation_engines\\CFA-b.py",
+      "backend\\Core_calculation_engines\\CFA-b.py",
+      "backend\\Configuration_management\\formatter.py",
+      "backend\\Configuration_management\\module1.py",
+      "backend\\Configuration_management\\config_modules.py",
+      "backend\\Configuration_management\\Table.py",
+      "backend\\Core_calculation_engines\\CFA.py",
+      "backend\\Core_calculation_engines\\CFA-b.py",
+      "backend\\Core_calculation_engines\\CFA-b.py",
+      "backend\\Core_calculation_engines\\CFA-b.py",
+      "backend\\Configuration_management\\formatter.py",
+      "backend\\Configuration_management\\module1.py",
+      "backend\\Configuration_management\\config_modules.py",
+      "backend\\Configuration_management\\Table.py",
+      "backend\\Core_calculation_engines\\CFA.py",
+      "backend\\Core_calculation_engines\\CFA-b.py",
+      "backend\\Core_calculation_engines\\CFA-b.py",
+      "backend\\Core_calculation_engines\\CFA-b.py",
+      "backend\\Configuration_management\\formatter.py",
+      "backend\\Configuration_management\\module1.py",
+      "backend\\Configuration_management\\config_modules.py",
+      "backend\\Configuration_management\\Table.py"
+    ],
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\app.py": [],
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\config.py": [],
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\decorators.py": [],
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\logging_config.py": [],
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\middleware.py": [],
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\pipeline.py": [],
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\state.py": [],
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\utils.py": [],
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\advanced_sensitivity.py": [],
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\baseline.py": [],
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\health.py": [],
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\payload.py": [],
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\runs.py": [],
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\sensitivity.py": [],
+    "backend\\API_endpoints_and_controllers\\Refactorization\\modular_sensitivity\\blueprints\\__init__.py": [],
+    "backend\\Configuration_management\\config_modules.py": [],
+    "backend\\Configuration_management\\formatter.py": [],
+    "backend\\Configuration_management\\formatter_extension.py": [],
+    "backend\\Configuration_management\\module1.py": [],
+    "backend\\Configuration_management\\module1_extension.py": [],
+    "backend\\Configuration_management\\Table.py": [],
+    "backend\\Configuration_management\\update_config_modules_with_CFA_extension.py": [],
+    "backend\\Core_calculation_engines\\CFA-b.py": [],
+    "backend\\Core_calculation_engines\\CFA.py": [],
+    "backend\\Core_calculation_engines\\CFA_Sensitivity.py": [],
+    "backend\\Core_calculation_engines\\consolidated_cfa.py": [],
+    "backend\\Core_calculation_engines\\consolidated_cfa_new.py": [],
+    "backend\\Core_calculation_engines\\keyword_constants.py": [],
+    "backend\\Core_calculation_engines\\Old_Script.py": [],
+    "backend\\Core_calculation_engines\\CFA_operations\\config_operations.py": [],
+    "backend\\Core_calculation_engines\\CFA_operations\\expense_operations.py": [],
+    "backend\\Core_calculation_engines\\CFA_operations\\revenue_operations.py": [],
+    "backend\\Core_calculation_engines\\CFA_operations\\tax_operations.py": [],
+    "backend\\Core_calculation_engines\\CFA_operations\\utility.py": [],
+    "backend\\Core_calculation_engines\\CFA_operations\\visualization_operations.py": [],
+    "backend\\Core_calculation_engines\\CFA_operations\\__init__.py": [],
+    "backend\\Data_processors_and_transformers\\Front_Subtab_HTML.py": [],
+    "backend\\Data_processors_and_transformers\\Front_Subtab_Plot.py": [],
+    "backend\\Data_processors_and_transformers\\Front_Subtab_Table.py": [],
+    "backend\\flask_api\\routes\\theme_routes.py": [],
+    "backend\\Python-Active-Inactive-Marking\\analyze_frontend_ports.py": [],
+    "backend\\Python-Active-Inactive-Marking\\analyze_python_files.py": [],
+    "backend\\Utility_functions\\common_utils.py": [],
+    "backend\\Utility_functions\\property_mapping_service.py": [
+      "backend\\Utility_functions\\common_utils.py"
+    ],
+    "backend\\Visualization_generators\\AggregatedSubPlots.py": [],
+    "backend\\Visualization_generators\\cfa_plotting.py": [],
+    "backend\\Visualization_generators\\PNG_PLOT.py": []
+  },
+  "portConnectedFiles": {
+    "8007": {
+      "main_file": "backend\\Data_processors_and_transformers\\Front_Subtab_Table.py",
+      "connected_files": []
+    },
+    "8008": {
+      "main_file": "backend\\Data_processors_and_transformers\\Front_Subtab_Plot.py",
+      "connected_files": []
+    },
+    "8009": {
+      "main_file": "backend\\Data_processors_and_transformers\\Front_Subtab_HTML.py",
+      "connected_files": []
+    },
+    "8001": {
+      "main_file": "backend\\API_endpoints_and_controllers\\Create_new_batch.py",
+      "connected_files": []
+    },
+    "7001": {
+      "main_file": "backend\\API_endpoints_and_controllers\\Remove_batch.py",
+      "connected_files": []
+    },
+    "5007": {
+      "main_file": "backend\\API_endpoints_and_controllers\\Calculations.py",
+      "connected_files": [
+        "backend\\Configuration_management\\formatter.py",
+        "backend\\Configuration_management\\module1.py",
+        "backend\\Configuration_management\\config_modules.py",
+        "backend\\Configuration_management\\Table.py",
+        "backend\\Configuration_management\\formatter_extension.py",
+        "backend\\Configuration_management\\module1_extension.py",
+        "backend\\Configuration_management\\update_config_modules_with_CFA_extension.py",
+        "backend\\Core_calculation_engines\\CFA-b.py",
+        "backend\\Core_calculation_engines\\CFA.py",
+        "backend\\Core_calculation_engines\\CFA_Sensitivity.py",
+        "backend\\Core_calculation_engines\\consolidated_cfa.py",
+        "backend\\Core_calculation_engines\\consolidated_cfa_new.py",
+        "backend\\Core_calculation_engines\\keyword_constants.py",
+        "backend\\Core_calculation_engines\\Old_Script.py",
+        "backend\\Core_calculation_engines\\CFA_operations\\config_operations.py",
+        "backend\\Core_calculation_engines\\CFA_operations\\expense_operations.py",
+        "backend\\Core_calculation_engines\\CFA_operations\\revenue_operations.py",
+        "backend\\Core_calculation_engines\\CFA_operations\\tax_operations.py",
+        "backend\\Core_calculation_engines\\CFA_operations\\utility.py",
+        "backend\\Core_calculation_engines\\CFA_operations\\visualization_operations.py",
+        "backend\\Core_calculation_engines\\CFA_operations\\__init__.py"
+      ]
+    },
+    "2500": {
+      "main_file": "backend\\API_endpoints_and_controllers\\Calculations_and_Sensitivity.py",
+      "connected_files": [
+        "backend\\API_endpoints_and_controllers\\Sensitivity_monitor.py",
+        "backend\\sensitivity_logging.py",
+        "backend\\API_endpoints_and_controllers\\sensitivity_Routes.py",
+        "backend\\API_endpoints_and_controllers\\script_econ.py",
+        "backend\\API_endpoints_and_controllers\\add_axis_labels.py",
+        "backend\\API_endpoints_and_controllers\\generate_plots.py"
+      ]
+    },
+    "2600": {
+      "main_file": "backend\\API_endpoints_and_controllers\\sense_config_base.py",
+      "connected_files": [
+        "backend\\API_endpoints_and_controllers\\Sen_Config.py"
+      ]
+    },
+    "2751": {
+      "main_file": "backend\\API_endpoints_and_controllers\\IND2751.py",
+      "connected_files": []
+    },
+    "5008": {
+      "main_file": "backend\\API_endpoints_and_controllers\\PNG.py",
+      "connected_files": [
+        "backend\\Visualization_generators\\PNG_PLOT.py"
+      ]
+    },
+    "5009": {
+      "main_file": "backend\\API_endpoints_and_controllers\\Sub.py",
+      "connected_files": [
+        "backend\\API_endpoints_and_controllers\\html_album_organizer.py",
+        "backend\\Visualization_generators\\AggregatedSubPlots.py"
+      ]
+    },
+    "5010": {
+      "main_file": "backend\\Utility_functions\\property_mapping_service.py",
+      "connected_files": [
+        "backend\\Utility_functions\\common_utils.py"
+      ]
+    },
+    "5000": {
+      "main_file": "backend\\API_endpoints_and_controllers\\Load.py",
+      "connected_files": []
+    },
+    "5002": {
+      "main_file": "backend\\API_endpoints_and_controllers\\ConfigurationAPI.py",
+      "connected_files": []
+    },
+    "2750": {
+      "main_file": "backend\\API_endpoints_and_controllers\\CalSen.py",
+      "connected_files": []
+    },
+    "4560": {
+      "main_file": "backend\\cfa_list.py",
+      "connected_files": []
+    },
+    "8002": {
+      "main_file": "backend\\API_endpoints_and_controllers\\Version_service.py",
+      "connected_files": []
+    },
+    "8010": {
+      "main_file": "backend\\flask_api\\routes\\theme_routes.py",
+      "connected_files": []
+    },
+    "5011": {
+      "main_file": "backend\\API_endpoints_and_controllers\\subplot_metadata.py",
+      "connected_files": []
+    }
+  }
+}

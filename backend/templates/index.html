@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CFA Version Selection</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .version-list { margin: 20px 0; }
+        .version-item { margin: 5px 0; }
+        .actions { margin-top: 20px; }
+        button { padding: 8px 16px; background: #4CAF50; color: white; border: none; cursor: pointer; }
+        button:hover { background: #45a049; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CFA Version Selection</h1>
+        <div class="version-list">
+            <h2>Available Versions</h2>
+            {% if versions %}
+                {% for version in versions %}
+                <div class="version-item">
+                    <input type="checkbox" id="version-{{ version }}" value="{{ version }}">
+                    <label for="version-{{ version }}">CFA Version {{ version }}</label>
+                </div>
+                {% endfor %}
+            {% else %}
+                <p>No CFA versions found.</p>
+            {% endif %}
+        </div>
+        <div class="actions">
+            <button id="selectBtn">Process Selected Versions</button>
+        </div>
+        <div id="results" class="results"></div>
+    </div>
+    
+    <script>
+        document.getElementById('selectBtn').addEventListener('click', function() {
+            const selected = [];
+            document.querySelectorAll('input[type="checkbox"]:checked').forEach(checkbox => {
+                selected.push(checkbox.value);
+            });
+            
+            fetch('/api/select-versions', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ selected: selected })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    fetch('/api/process-selected')
+                    .then(response => response.json())
+                    .then(result => {
+                        const resultsDiv = document.getElementById('results');
+                        resultsDiv.innerHTML = '<h2>Processing Results</h2>';
+                        
+                        if (result.results.length === 0) {
+                            resultsDiv.innerHTML += '<p>No versions selected or processed.</p>';
+                        } else {
+                            const resultsList = document.createElement('ul');
+                            result.results.forEach(item => {
+                                const listItem = document.createElement('li');
+                                if (item.error) {
+                                    listItem.textContent = `Version ${item.version}: ${item.error}`;
+                                } else {
+                                    listItem.textContent = `Version ${item.version}: Successfully processed ${item.filename} with ${item.data.length} records`;
+                                }
+                                resultsList.appendChild(listItem);
+                            });
+                            resultsDiv.appendChild(resultsList);
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+    

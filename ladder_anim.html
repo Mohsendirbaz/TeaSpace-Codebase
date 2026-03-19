@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Ladder Animation Frame</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    html,body { margin:0; background:#0b1220; }
+    #wrap { width:1200px; height:700px; display:flex; align-items:center; justify-content:center; }
+    canvas { background:transparent; }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
+</head>
+<body>
+  <div id="wrap"><canvas id="ladderChart" width="1200" height="700"></canvas></div>
+  <script>
+    // Read frame progress t from query (?t=0.00..1.00)
+    const params = new URLSearchParams(location.search);
+    const t = Math.max(0, Math.min(1, parseFloat(params.get("t") || "0")));
+
+    const labels = ['2000','2005','2010','2015','2020','2024'];
+    const series = [
+      { label:'Debt Interest', color:'#ff6b6b', data:[223,184,196,223,345,892] },
+      { label:'Defense',       color:'#48dbfb', data:[294,495,693,590,714,822] },
+      { label:'Veterans',      color:'#feca57', data:[47,70,108,160,220,301] },
+      { label:'Education',     color:'#ff9ff3', data:[35,38,53,68,64,80] },
+      { label:'Transportation',color:'#54a0ff', data:[46,67,82,75,87,105] },
+      { label:'Medicare',      color:'#5f27cd', data:[197,298,451,540,769,1000] }
+    ];
+
+    // Reveal points up to cutIndex (global sweep)
+    const maxIdx = labels.length - 1;
+    const cutIndex = Math.floor(t * maxIdx + 1e-8);
+
+    const clipDatasets = series.map((s, di) => {
+      // Optional stagger per series (slight phase so lines don’t overlap perfectly)
+      const phase = 0.04 * di;
+      const tt = Math.max(0, Math.min(1, (t - phase) / (1 - 0.2)));
+      const ci = Math.floor(tt * maxIdx + 1e-8);
+
+      const arr = s.data.map((v,i) => (i <= ci ? v : NaN));
+      return {
+        label: s.label,
+        data: arr,
+        borderColor: s.color,
+        backgroundColor: s.color,
+        borderWidth: 3,
+        tension: 0.35,
+        pointRadius: 0,
+        spanGaps: true,
+        fill: false
+      };
+    });
+
+    // Plugin: fade-in labels near the current tip of each line
+    const tipLabels = {
+      id: 'tipLabels',
+      afterDraw(chart) {
+        const { ctx, chartArea } = chart;
+        ctx.save();
+        ctx.font = '600 16px system-ui, -apple-system, Segoe UI, Roboto, sans-serif';
+        ctx.textBaseline = 'middle';
+
+        chart.data.datasets.forEach((ds, di) => {
+          // last visible point
+          let idx = -1;
+          for (let i = ds.data.length - 1; i >= 0; i--) {
+            if (!Number.isNaN(ds.data[i])) { idx = i; break; }
+          }
+          if (idx < 0) return;
+
+          const meta = chart.getDatasetMeta(di);
+          const pt = meta.data[idx];
+          if (!pt) return;
+
+          // fade labels toward later part of cycle
+          const fade = Math.max(0, Math.min(1, (t - 0.55) / 0.25));
+          ctx.globalAlpha = 0.15 + 0.85 * fade;
+
+          const text = `${ds.label} — $${ds.data[idx]}B`;
+          const x = Math.min(Math.max(pt.x + 10, chartArea.left + 10), chartArea.right - 10);
+          const y = Math.min(Math.max(pt.y,       chartArea.top  + 10), chartArea.bottom - 10);
+
+          // stroke for contrast
+          ctx.strokeStyle = 'rgba(0,0,0,0.45)';
+          ctx.lineWidth = 4;
+          ctx.strokeText(text, x, y);
+
+          ctx.fillStyle = '#fff';
+          ctx.fillText(text, x, y);
+          ctx.globalAlpha = 1;
+        });
+
+        ctx.restore();
+      }
+    };
+
+    const ctx = document.getElementById('ladderChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: { labels, datasets: clipDatasets },
+      options: {
+        animation: false,
+        responsive: false,
+        plugins: {
+          legend: { display: false },
+          title: {
+            display: true,
+            text: 'Debt Interest vs. Major Budget Categories (Billions $)',
+            color: '#fff',
+            font: { size: 20, weight: '600' }
+          },
+          tooltip: { enabled: false }
+        },
+        scales: {
+          x: {
+            grid: { color: 'rgba(255,255,255,0.1)' },
+            ticks: { color: '#fff' },
+            title: { display: true, text: 'Year', color:'#fff' }
+          },
+          y: {
+            beginAtZero: true,
+            grid: { color: 'rgba(255,255,255,0.1)' },
+            ticks: {
+              color: '#fff',
+              callback: (v)=>'$'+v+'B'
+            },
+            title: { display: true, text: 'Billions of Dollars', color:'#fff' }
+          }
+        },
+        elements: { point: { radius: 0 } }
+      },
+      plugins: [tipLabels]
+    });
+  </script>
+</body>
+</html>

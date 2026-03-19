@@ -1,0 +1,756 @@
+{
+  "version": "3",
+  "timestamp": "2025-04-23 18:35:43",
+  "parameters": {
+    "S10": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S11": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S12": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S13": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S14": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S15": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S16": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S17": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S18": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S19": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S20": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S21": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S22": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S23": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S24": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S25": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S26": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S27": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S28": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S29": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S30": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S31": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S32": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S33": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S34": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S35": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S36": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S37": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S38": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S39": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S40": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S41": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S42": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S43": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S44": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S45": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S46": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S47": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S48": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S49": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S50": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S51": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S52": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S53": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S54": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S55": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S56": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S57": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S58": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S59": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S60": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S61": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S62": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S63": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S64": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S65": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S66": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S67": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S68": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S69": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S70": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S71": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S72": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S73": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S74": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S75": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S76": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S77": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S78": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S79": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S80": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S81": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S82": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S83": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    },
+    "S84": {
+      "mode": null,
+      "values": [],
+      "enabled": false,
+      "compareToKey": "",
+      "comparisonType": null,
+      "waterfall": false,
+      "bar": false,
+      "point": false
+    }
+  }
+}

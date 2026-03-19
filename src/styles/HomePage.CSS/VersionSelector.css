@@ -1,0 +1,203 @@
+/* VersionSelector.css - Enhanced & Compatible */
+.version-selector-container {
+  /* Base container - combines both files' properties */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  position: relative;
+  flex: 1 1 45%;
+  min-width: 300px;
+  margin-bottom: var(--model-spacing-md);
+
+  /* CommonSelector compatibility */
+  background: var(--neu-background);
+  padding: calc(var(--model-spacing-md) * 1.2);
+  border-radius: var(--neu-border-radius-lg);
+  box-shadow: var(--neu-shadow-sm);
+  transition: var(--model-transition-medium);
+}
+
+/* Unified pseudo-element styling */
+.version-selector-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--neu-gradient-highlight);
+  border-radius: var(--neu-border-radius-lg);
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Label - enhanced from both */
+.version-selector-container label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: var(--model-spacing-sm);
+  font-size: var(--model-font-size-md);
+  color: var(--text-color);
+  padding-left: var(--model-spacing-sm);
+  position: relative;
+  z-index: 2;
+}
+
+/* Select element - combined properties */
+.version-selector-container select {
+  width: 100%;
+  min-height: calc(var(--model-spacing-md) * 4);
+  padding: var(--model-spacing-sm) var(--model-spacing-md);
+  border: 2px solid transparent;
+  border-radius: var(--neu-border-radius-md);
+  background: var(--neu-background);
+  color: var(--text-color);
+  font-size: var(--model-font-size-md);
+  appearance: none;
+  box-shadow: var(--neu-shadow-sm);
+  transition: var(--model-transition-medium);
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+
+/* Multiple select specific styles */
+.version-selector-container select[multiple] {
+  min-height: calc(var(--model-spacing-md) * 12.5);
+  padding-right: calc(var(--model-spacing-md) * 1.5);
+}
+
+.version-selector-container select[multiple]:focus {
+  overflow-y: auto;
+}
+
+.version-selector-container select[multiple] option:checked {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Interactive states - combined */
+.version-selector-container select:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--neu-shadow-md);
+}
+
+.version-selector-container select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: var(--neu-pressed-shadow);
+}
+
+/* Scrollbar - from VersionSelector */
+.version-selector-container select::-webkit-scrollbar {
+  width: calc(var(--model-spacing-sm) * 0.75);
+}
+
+.version-selector-container select::-webkit-scrollbar-track {
+  background: var(--neu-background);
+  border-radius: var(--neu-border-radius-sm);
+}
+
+.version-selector-container select::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: var(--neu-border-radius-sm);
+}
+
+.version-selector-container select::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color);
+}
+
+/* Loading states - from CommonSelector */
+.version-selector-container.loading {
+  opacity: 0.7;
+  transform: translateY(10px);
+}
+
+.version-selector-container.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive adjustments - combined */
+@media (min-width: 768px) {
+  .version-selector-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: calc(var(--model-spacing-md) * 1.5);
+  }
+}
+
+@media (max-width: 768px) {
+  .version-selector-container {
+    width: 100%;
+  }
+
+  .version-selector-container select {
+    min-height: calc(var(--model-spacing-md) * 3);
+  }
+}
+
+
+/* New additions for refresh controls */
+.version-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  margin-bottom: var(--model-spacing-sm);
+  position: relative;
+  z-index: 2;
+}
+
+.connection-status {
+  display: inline-block;
+  margin-right: 8px;
+  font-size: 0.8em;
+}
+
+.connection-status[data-status="connected"] {
+  color: var(--success-color);
+}
+
+.connection-status[data-status="error"] {
+  color: var(--danger-color);
+}
+
+.connection-status[data-status="disconnected"] {
+  color: var(--warning-color);
+}
+
+.refresh-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  padding: 2px 5px;
+  border-radius: 4px;
+  transition: all 0.2s;
+  color: var(--text-color);
+}
+
+.refresh-button:hover {
+  background-color: var(--primary-color);
+  transform: scale(1.1);
+}
+
+.refresh-button:active {
+  transform: scale(0.9);
+}
+
+.refresh-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

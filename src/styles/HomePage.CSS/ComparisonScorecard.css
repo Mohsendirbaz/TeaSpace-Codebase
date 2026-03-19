@@ -1,0 +1,132 @@
+/* ComparisonScorecard.css — Phase 5 TEA-MD Overhaul */
+
+.cs-root {
+  padding: 1rem;
+  font-size: 0.875rem;
+  color: var(--text-color, #1f2937);
+}
+
+.cs-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+.cs-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.cs-ref-label {
+  color: var(--muted-text, #6b7280);
+  font-size: 0.875rem;
+}
+
+.cs-total-cells {
+  margin-left: auto;
+  font-size: 0.75rem;
+  color: var(--muted-text, #9ca3af);
+}
+
+.cs-empty {
+  color: var(--muted-text, #6b7280);
+  font-style: italic;
+}
+
+/* ── Table ── */
+
+.cs-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8125rem;
+}
+
+.cs-table th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted-text, #6b7280);
+  padding: 0.375rem 0.5rem;
+  border-bottom: 2px solid var(--border-color, #e5e7eb);
+  white-space: nowrap;
+}
+
+.cs-table td {
+  padding: 0.375rem 0.5rem;
+  border-bottom: 1px solid var(--border-color, #f3f4f6);
+  vertical-align: middle;
+}
+
+/* agent row gets a subtle tint */
+.cs-row-agent td:first-child {
+  border-left: 3px solid #a78bfa;
+}
+.cs-row-human td:first-child {
+  border-left: 3px solid #60a5fa;
+}
+
+/* ── Version cell ── */
+
+.cs-version-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.cs-version-label { font-weight: 500; }
+.cs-version-id    { font-size: 0.7rem; color: var(--muted-text, #9ca3af); }
+
+/* ── Author badge ── */
+
+.cs-badge {
+  display: inline-block;
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+.cs-human { background: #dbeafe; color: #1e40af; }
+.cs-agent { background: #f3e8ff; color: #6b21a8; }
+
+/* ── Delta distribution bar ── */
+
+.cs-bar-cell { min-width: 80px; }
+
+.cs-bar {
+  display: flex;
+  height: 10px;
+  border-radius: 3px;
+  overflow: hidden;
+  background: #f3f4f6;
+  width: 100%;
+  min-width: 60px;
+}
+.cs-bar-pos  { background: #86efac; }
+.cs-bar-same { background: #d1d5db; }
+.cs-bar-neg  { background: #fca5a5; }
+.cs-bar-na   { background: #e5e7eb; }
+
+/* ── Numeric cells ── */
+
+.cs-num {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+.cs-pos  { color: #16a34a; }
+.cs-neg  { color: #dc2626; }
+.cs-same { color: #4b5563; }
+.cs-gov-win  { color: #2563eb; }
+.cs-gov-loss { color: #d97706; }
+
+/* ── Footer ── */
+
+.cs-footer {
+  margin-top: 0.75rem;
+  font-size: 0.72rem;
+  color: var(--muted-text, #9ca3af);
+  font-style: italic;
+}

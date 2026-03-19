@@ -1,0 +1,127 @@
+/* Theme Transition Effects */
+.theme-ribbon {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.theme-ribbon::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.theme-ribbon.theme-transition::before {
+    opacity: 1;
+    animation: moveGlow 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes moveGlow {
+    0% {
+        transform: translate(var(--glow-start-x), var(--glow-start-y));
+    }
+    100% {
+        transform: translate(var(--glow-end-x), var(--glow-end-y));
+    }
+}
+
+.theme-ribbon.to-dark::before {
+    background: radial-gradient(circle, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 70%);
+}
+
+.theme-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.theme-button {
+    padding: 8px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--sidebar-background);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.theme-button.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* Loading States */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--border-color);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Button States */
+.button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Calculation Options */
+.calculation-options {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: var(--sidebar-background);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.calculation-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.calculation-input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.target-row-container {
+    display: flex;
+    align-items: center;
+}
+
+
+/* Property Selector */
+.property-selector-container {
+    margin-top: 15px;
+}

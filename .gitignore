@@ -1,0 +1,68 @@
+# Dependencies
+node_modules/
+jspm_packages/
+bower_components/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Build and coverage artifacts
+lib-cov/
+coverage/
+.nyc_output/
+.grunt/
+build/
+build/Release/
+dist/
+out/
+.cache/
+.next/
+.nuxt/
+.vuepress/dist/
+.serverless/
+.fusebox/
+.dynamodb/
+.vercel/
+
+# Python cache and tooling artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+
+# TypeScript declarations
+typings/
+
+# Package manager and editor caches
+.npm/
+.eslintcache
+.lock-wscript
+.node_repl_history
+*.tgz
+package-lock.json
+
+# Environment files
+.env
+.env.test
+.env*.local
+
+# OS-generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

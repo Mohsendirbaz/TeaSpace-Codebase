@@ -1,0 +1,162 @@
+Your first message should be very short and procedural.
+
+Send this:
+
+```text
+Read `CLAUDE.md` and the 5-prompt file in the repo root. Do not implement yet. First produce:
+1. a repo-grounded execution map,
+2. the exact phase order you will follow,
+3. the files you expect to touch in Phase 1,
+4. the risks/blockers you already see,
+5. the verification steps you will run before Phase 2.
+Then wait for my approval.
+```
+
+That is the best first move because it forces Claude to:
+
+* prove it understood the directive
+* anchor itself to the real `TEA-MD` files
+* show sequencing discipline
+* avoid jumping into edits too early
+
+## Your job as project owner
+
+Your role is not to micromanage implementation. Your role is to govern architecture, sequencing, and acceptance.
+
+You should do five things:
+
+### 1. Approve or correct phase framing
+
+After Claude returns its execution map, check:
+
+* did it target the real files
+* did it understand baseline assembly correctly
+* did it remove zone from the core model
+* did it treat generalized duration as the comparison fabric
+* did it avoid preserving sensitivity as a parallel authoring grammar
+
+If it got any of those wrong, correct that before implementation starts.
+
+### 2. Enforce phase gates
+
+Do not let it sprint across all 5 prompts in one blur.
+
+Your main responsibility is to keep it phase-bound:
+
+* Phase 1 approved
+* then Phase 2
+* then Phase 3
+* and so on
+
+### 3. Judge semantics, not syntax
+
+You are the owner of the conceptual model.
+
+Your best interventions are about:
+
+* what baseline really is
+* what belongs in a version
+* what is derived fact
+* what is participation/admission
+* what comparison should reveal
+* what should disappear from the old app model
+
+Less useful interventions are tiny implementation details unless they break the model.
+
+### 4. Demand proof, not assurances
+
+After each phase, ask for:
+
+* changed files
+* contract changes
+* deprecated semantics
+* build/test result
+* behavioral verification
+* checkpoint update
+
+### 5. Stop drift early
+
+If Claude starts:
+
+* keeping `zone` alive in the core model
+* preserving `S` as the real authoring layer
+* treating generalized duration as just UI
+* leaving baseline assembly implicit
+* keeping summary injection as structural truth
+
+interrupt immediately.
+
+## How many guidances you should provide
+
+Not many.
+
+The ideal pattern is:
+
+* one kickoff message
+* one approval/correction after its execution map
+* one decision per phase gate
+* occasional semantic corrections only when needed
+
+So in practice, about:
+
+* 1 strong kickoff
+* 5 phase-gate responses
+* 0 to 3 corrective interventions if it drifts
+
+That means roughly **6 to 9 meaningful owner messages total** for the whole transformation.
+
+More than that usually creates noise and makes the model reactive instead of disciplined.
+
+## What good owner guidance looks like
+
+Use guidance only for:
+
+* correcting architecture
+* tightening scope
+* clarifying acceptance criteria
+* refusing drift
+* prioritizing a tradeoff
+
+A strong owner message sounds like:
+
+```text
+Proceed with Phase 1 only.
+Do not redesign UI yet.
+Your goal is to replace the fragmented state model, remove zone from the core contract, and define explicit baseline assembly ownership.
+Before coding, show me the exact old-to-new mapping for:
+- version
+- baseline
+- formMatrix
+- scalingGroups
+- finalResults
+- S / V / R / F / RF
+```
+
+Or after a phase:
+
+```text
+Phase 1 is acceptable in principle, but you have not yet proved that baseline assembly is explicit and that zone is no longer a core dependency.
+Patch that, rerun verification, update the checkpoint file, then I will authorize Phase 2.
+```
+
+## What not to do
+
+Do not keep feeding it new design ideas while it is mid-phase unless absolutely necessary.
+Do not ask it to “also do” side features during the transformation.
+Do not approve a phase just because the code compiles.
+Do not let it collapse the 5 prompts into one giant diff without checkpoint discipline.
+
+## Best operating rhythm
+
+Use this rhythm:
+
+1. kickoff
+2. review execution map
+3. approve Phase 1
+4. review Phase 1 gate
+5. approve Phase 2
+6. review Phase 2 gate
+7. continue the same pattern
+
+That is enough.
+
