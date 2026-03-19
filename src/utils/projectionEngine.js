@@ -14,7 +14,7 @@
  *  - Generalized duration is the canonical comparison fabric (not just UI)
  *  - Cell addressing is stable: targetId + durationPath + versionId
  *  - Delta is computed here, not in the render layer
- *  - Zone is collapsed through legacyZoneAdapter — no zone leakage
+ *  - formMatrix[paramId].matrix[versionId] is a direct value (no zone dimension)
  */
 
 import {
@@ -22,11 +22,6 @@ import {
   createComparisonCell,
   cellAddress,
 } from '../model/coreTypes';
-
-import {
-  resolveValue,
-  CANONICAL_ZONE,
-} from '../adapters/legacyZoneAdapter';
 
 import {
   makeDurationContext,
@@ -52,13 +47,13 @@ import {
  * @param {string} [zoneId]
  * @returns {Array} rows ready for computeCell
  */
-export function buildRowsForVersion(formMatrix, versionId, ctx, zoneId = CANONICAL_ZONE) {
+export function buildRowsForVersion(formMatrix, versionId, ctx) {
   const rows = [];
   Object.entries(formMatrix).forEach(([paramId, item]) => {
     if (!item?.efficacyPeriod) return;
 
-    // Get the resolved value for this version using the adapter
-    const rawValue = resolveValue(item, versionId, zoneId);
+    // Direct flat access — no zone dimension
+    const rawValue = item.matrix?.[versionId] ?? null;
 
     // Build a copy of the efficacyPeriod with the version-specific value
     const efficacyWithValue = {
@@ -107,14 +102,13 @@ export function buildRowsForVersion(formMatrix, versionId, ctx, zoneId = CANONIC
  * @param {Object}  formMatrix
  * @param {Object}  ctx                - duration context
  * @param {Array}   columns            - visible columns from buildVisibleColumns
- * @param {string}  [zoneId]
  * @param {Object}  [derivedFacts]     - Phase 3: { workspace: DerivedSummaryFact[] }
  * @returns {import('../model/coreTypes').VersionProjection}
  */
 export function buildVersionProjection(
-  versionId, formMatrix, ctx, columns, zoneId = CANONICAL_ZONE, derivedFacts = null
+  versionId, formMatrix, ctx, columns, derivedFacts = null
 ) {
-  const rows = buildRowsForVersion(formMatrix, versionId, ctx, zoneId);
+  const rows = buildRowsForVersion(formMatrix, versionId, ctx);
 
   // Build lookup: paramId → DerivedSummaryFact (for Amount4-7)
   const factLookup = new Map();
@@ -285,11 +279,11 @@ export function buildComparisonSession({
   const columns = buildVisibleColumns([], expansionPath, ctx);
 
   const referenceProjection = buildVersionProjection(
-    referenceVersionId, formMatrix, ctx, columns, CANONICAL_ZONE, derivedFacts
+    referenceVersionId, formMatrix, ctx, columns, derivedFacts
   );
 
   const rawCandidates = candidateVersionIds.map(vId =>
-    buildVersionProjection(vId, formMatrix, ctx, columns, CANONICAL_ZONE, derivedFacts)
+    buildVersionProjection(vId, formMatrix, ctx, columns, derivedFacts)
   );
 
   const candidateProjections = computeDeltas(referenceProjection, rawCandidates);

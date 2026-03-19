@@ -14,7 +14,6 @@ import {
   createDerivedSummaryFact,
   versionSlotFromLegacy,
 } from './model/coreTypes';
-import { resolveValue, extractFlatValues, CANONICAL_ZONE } from './adapters/legacyZoneAdapter';
 // Phase 4: Mutation ledger
 import { sStateToScopedMutations, buildMutationLedger } from './model/mutationLedger';
 // Phase 5: Agent candidate
@@ -68,17 +67,6 @@ export function useMatrixFormValues() {
     }
   });
 
-  const [zones, setZones] = useState({
-    list: ["z1"],
-    active: "z1",
-    metadata: {
-      "z1": {
-        label: "Local",
-        description: "Local market zone",
-        created: Date.now()
-      }
-    }
-  });
 
   // Main form matrix state - replaces original formValues with matrix structure
   const [formMatrix, setFormMatrix] = useState({});
@@ -260,7 +248,6 @@ export function useMatrixFormValues() {
         placeholder: isNumber ? '0' : '',
         remarks: '',
         versions: {},
-        zones: {},
         matrix: {},
         inheritance: {},
         efficacyPeriod: {
@@ -289,31 +276,18 @@ export function useMatrixFormValues() {
         }
       };
 
-      // Initialize versions
+      // Initialize versions — matrix[versionId] holds the direct value (no zone dimension)
       versions.list.forEach(versionId => {
         initialFormMatrix[paramId].versions[versionId] = {
           label: versions.metadata[versionId].label,
           isActive: versionId === versions.active
         };
 
-        initialFormMatrix[paramId].matrix[versionId] = {};
+        initialFormMatrix[paramId].matrix[versionId] = defaultValue;
         initialFormMatrix[paramId].inheritance[versionId] = {
           source: null,
-          percentage: 100 // Default to no inheritance
+          percentage: 100
         };
-      });
-
-      // Initialize zones
-      zones.list.forEach(zoneId => {
-        initialFormMatrix[paramId].zones[zoneId] = {
-          label: zones.metadata[zoneId].label,
-          isActive: zoneId === zones.active
-        };
-
-        // Initialize matrix values for each version and zone
-        versions.list.forEach(versionId => {
-          initialFormMatrix[paramId].matrix[versionId][zoneId] = defaultValue;
-        });
       });
     });
 
@@ -424,32 +398,20 @@ export function useMatrixFormValues() {
           isActive: false
         };
 
-        // Initialize matrix for this version
-        param.matrix[versionId] = {};
-
-        // Set inheritance configuration
+        // Set inheritance configuration and initialize matrix value
         if (baseVersion) {
           param.inheritance[versionId] = {
             source: baseVersion,
-            percentage: 70 // Default to 70% inheritance
+            percentage: 70
           };
-
-          // Copy values from base version with inheritance
-          Object.keys(param.matrix[baseVersion] || {}).forEach(zoneId => {
-            param.matrix[versionId][zoneId] = param.matrix[baseVersion][zoneId];
-          });
+          // Copy value from base version directly
+          param.matrix[versionId] = param.matrix[baseVersion] ?? (defaultValues[paramId] ?? '');
         } else {
           param.inheritance[versionId] = {
             source: null,
-            percentage: 100 // No inheritance
+            percentage: 100
           };
-
-          // Initialize with default values
-          zones.list.forEach(zoneId => {
-            param.matrix[versionId][zoneId] = defaultValues[paramId] !== undefined 
-              ? defaultValues[paramId] 
-              : '';
-          });
+          param.matrix[versionId] = defaultValues[paramId] ?? '';
         }
 
         newMatrix[paramId] = param;
@@ -459,7 +421,7 @@ export function useMatrixFormValues() {
     });
 
     return versionId;
-  }, [versions, zones.list]);
+  }, [versions]);
 
   /**
    * Set the active version
@@ -509,19 +471,15 @@ export function useMatrixFormValues() {
    * @param {string} zoneId - Optional zone ID (defaults to active)
    * @returns {any} Parameter value
    */
-  const getParameterValue = useCallback((paramId, versionId = null, zoneId = null) => {
+  const getParameterValue = useCallback((paramId, versionId = null) => {
     if (!formMatrix[paramId]) return null;
 
     const param = formMatrix[paramId];
     const targetVersion = versionId || versions.active;
-    const targetZone = zoneId || zones.active;
 
-    if (!param.matrix[targetVersion] || !param.matrix[targetVersion][targetZone]) {
-      return null;
-    }
-
-    return param.matrix[targetVersion][targetZone];
-  }, [formMatrix, versions.active, zones.active]);
+    const val = param.matrix[targetVersion];
+    return val === undefined ? null : val;
+  }, [formMatrix, versions.active]);
 
   /**
    * Update parameter value for specified version and zone
@@ -531,44 +489,27 @@ export function useMatrixFormValues() {
    * @param {string} zoneId - Optional zone ID (defaults to active)
    * @returns {boolean} Success indicator
    */
-  const updateParameterValue = useCallback((paramId, value, versionId = null, zoneId = null) => {
+  const updateParameterValue = useCallback((paramId, value, versionId = null) => {
     if (!formMatrix[paramId]) return false;
 
-    // Use active version/zone if not specified
     const targetVersion = versionId || versions.active;
-    const targetZone = zoneId || zones.active;
 
-    // Update form matrix
     setFormMatrix(prevMatrix => {
       const newMatrix = { ...prevMatrix };
       const param = { ...newMatrix[paramId] };
 
-      // Initialize matrix structure if needed
-      if (!param.matrix[targetVersion]) {
-        param.matrix[targetVersion] = {};
-      }
+      param.matrix[targetVersion] = value;
 
-      // Update value
-      param.matrix[targetVersion][targetZone] = value;
-
-      // Apply inheritance if needed
+      // Apply inheritance to child versions
       Object.keys(param.inheritance).forEach(ver => {
         const inheritance = param.inheritance[ver];
         if (inheritance.source === targetVersion && inheritance.percentage < 100) {
-          // Skip if this version doesn't have the zone yet
-          if (!param.matrix[ver] || !param.matrix[ver][targetZone]) return;
-
-          const sourceValue = value;
-          const currentValue = param.matrix[ver][targetZone];
+          const currentValue = param.matrix[ver];
+          if (currentValue === undefined) return;
           const inheritPercent = inheritance.percentage / 100;
-
-          // Calculate new value based on inheritance
-          // inherited value = (current * (1 - inherit%)) + (source * inherit%)
-          const newValue = typeof currentValue === 'number' && typeof sourceValue === 'number'
-            ? (currentValue * (1 - inheritPercent)) + (sourceValue * inheritPercent)
-            : sourceValue;
-
-          param.matrix[ver][targetZone] = newValue;
+          param.matrix[ver] = typeof currentValue === 'number' && typeof value === 'number'
+            ? (currentValue * (1 - inheritPercent)) + (value * inheritPercent)
+            : value;
         }
       });
 
@@ -577,7 +518,7 @@ export function useMatrixFormValues() {
     });
 
     return true;
-  }, [formMatrix, versions.active, zones.active]);
+  }, [formMatrix, versions.active]);
 
   /**
    * Get effective value based on parameter status
@@ -586,15 +527,13 @@ export function useMatrixFormValues() {
    * @param {string} zoneId - Optional zone ID (defaults to active)
    * @returns {any} Effective parameter value (considering active/inactive status)
    */
-  const getEffectiveValue = useCallback((paramId, versionId = null, zoneId = null) => {
+  const getEffectiveValue = useCallback((paramId, versionId = null) => {
     if (!formMatrix[paramId]) return null;
 
     const param = formMatrix[paramId];
     const targetVersion = versionId || versions.active;
-    const targetZone = zoneId || zones.active;
 
-    // Get the base value
-    const baseValue = param.matrix[targetVersion]?.[targetZone];
+    const baseValue = param.matrix[targetVersion];
     if (baseValue === undefined) return null;
 
     // Check if parameter is active
@@ -636,7 +575,7 @@ export function useMatrixFormValues() {
     }
 
     return baseValue;
-  }, [formMatrix, versions.active, zones.active]);
+  }, [formMatrix, versions.active]);
 
   /**
    * Check if parameter is active based on state (V, R, F, RF)
@@ -682,7 +621,7 @@ export function useMatrixFormValues() {
     if (!formMatrix[paramId]) return false;
 
     // Get plant lifetime for validation
-    const plantLifetime = formMatrix['plantLifetimeAmount10']?.matrix[versions.active]?.[zones.active] || 20;
+    const plantLifetime = formMatrix['plantLifetimeAmount10']?.matrix[versions.active] || 20;
 
     // Validate start and end values
     const validStart = Math.max(0, Math.min(start, end, plantLifetime));
@@ -703,7 +642,7 @@ export function useMatrixFormValues() {
     });
 
     return true;
-  }, [formMatrix, versions.active, zones.active]);
+  }, [formMatrix, versions.active]);
 
   //=========================================================================
   // INPUT HANDLERS
@@ -729,11 +668,7 @@ export function useMatrixFormValues() {
       // Handle different field types
       switch (fieldType) {
         case 'value':
-          // Update value in the matrix for active version and zone
-          if (!item.matrix[versions.active]) {
-            item.matrix[versions.active] = {};
-          }
-          item.matrix[versions.active][zones.active] = value;
+          item.matrix[versions.active] = value;
           break;
 
         case 'label':
@@ -774,7 +709,7 @@ export function useMatrixFormValues() {
       newMatrix[itemId] = item;
       return newMatrix;
     });
-  }, [formMatrix, versions.active, zones.active]);
+  }, [formMatrix, versions.active]);
 
   /**
    * Toggle V parameter status (on/off)
@@ -1068,7 +1003,6 @@ export function useMatrixFormValues() {
       const payload = {
         formMatrix,
         versions,
-        zones,
         V, R, F, RF, S,
         subDynamicPlots,
         scalingGroups,
@@ -1088,7 +1022,7 @@ export function useMatrixFormValues() {
     } finally {
       setIsSyncing(false);
     }
-  }, [formMatrix, versions, zones, V, R, F, RF, S, subDynamicPlots, scalingGroups, finalResults]);
+  }, [formMatrix, versions, V, R, F, RF, S, subDynamicPlots, scalingGroups, finalResults]);
 
   /**
    * Load state from backend services
@@ -1105,7 +1039,6 @@ export function useMatrixFormValues() {
         const {
           formMatrix: loadedFormMatrix,
           versions: loadedVersions,
-          zones: loadedZones,
           V: loadedV,
           R: loadedR,
           F: loadedF,
@@ -1116,17 +1049,11 @@ export function useMatrixFormValues() {
           finalResults: loadedFinalResults
         } = response.data.state;
 
-        // Update state
         setFormMatrix(loadedFormMatrix || {});
         setVersions(loadedVersions || {
           list: ["v1"],
           active: "v1",
           metadata: { "v1": { label: "Base Case", description: "Default financial case", created: Date.now(), modified: Date.now() } }
-        });
-        setZones(loadedZones || {
-          list: ["z1"],
-          active: "z1",
-          metadata: { "z1": { label: "Local", description: "Local market zone", created: Date.now() } }
         });
         setV(loadedV || {});
         setR(loadedR || {});
@@ -1162,7 +1089,6 @@ export function useMatrixFormValues() {
         state: {
           formMatrix,
           versions,
-          zones,
           V, R, F, RF, S,
           subDynamicPlots,
           scalingGroups,
@@ -1188,7 +1114,7 @@ export function useMatrixFormValues() {
     } catch (error) {
       console.error('Error exporting matrix state:', error);
     }
-  }, [formMatrix, versions, zones, V, R, F, RF, S, subDynamicPlots, scalingGroups, finalResults]);
+  }, [formMatrix, versions, V, R, F, RF, S, subDynamicPlots, scalingGroups, finalResults]);
 
   /**
    * Import matrix state from JSON file
@@ -1211,7 +1137,6 @@ export function useMatrixFormValues() {
       const {
         formMatrix: importedFormMatrix,
         versions: importedVersions,
-        zones: importedZones,
         V: importedV,
         R: importedR,
         F: importedF,
@@ -1222,17 +1147,11 @@ export function useMatrixFormValues() {
         finalResults: importedFinalResults
       } = importData.state;
 
-      // Update state
       setFormMatrix(importedFormMatrix || {});
       setVersions(importedVersions || {
         list: ["v1"],
         active: "v1",
         metadata: { "v1": { label: "Base Case", description: "Default financial case", created: Date.now(), modified: Date.now() } }
-      });
-      setZones(importedZones || {
-        list: ["z1"],
-        active: "z1",
-        metadata: { "z1": { label: "Local", description: "Local market zone", created: Date.now() } }
       });
       setV(importedV || {});
       setR(importedR || {});
@@ -1279,7 +1198,8 @@ export function useMatrixFormValues() {
     // 1. Assemble the baseline (calls assembleBaseline defined in Phase 1 section)
     // We call it inline here since assembleBaseline is defined later in the same hook scope.
     // The assembly is also stored in versionSlots by assembleBaseline().
-    const flatValues = extractFlatValues(formMatrix, versionId, CANONICAL_ZONE);
+    const flatValues = {};
+    Object.entries(formMatrix).forEach(([pid, p]) => { flatValues[pid] = p.matrix?.[versionId] ?? null; });
 
     // Partition direct inputs
     const projectConfig = {};
@@ -1443,7 +1363,8 @@ export function useMatrixFormValues() {
    */
   const assembleBaseline = useCallback((versionId) => {
     // 1. Extract all flat values for this version
-    const flatValues = extractFlatValues(formMatrix, versionId, CANONICAL_ZONE);
+    const flatValues = {};
+    Object.entries(formMatrix).forEach(([pid, p]) => { flatValues[pid] = p.matrix?.[versionId] ?? null; });
 
     // 2. Partition into direct inputs
     const projectConfig = {};
@@ -1531,8 +1452,6 @@ export function useMatrixFormValues() {
     formMatrix,
     setFormMatrix,
     versions,
-    /** @deprecated zone — use VersionSlot model; kept for backward compat only */
-    zones,
 
     // Value accessors
     getParameterValue,

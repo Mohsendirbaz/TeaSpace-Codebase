@@ -21,7 +21,9 @@
       "Bash(rm -f src/components/modules/EfficacyMapContainer.js src/components/modules/TimeParameterMatrix.js)",
       "Bash(rm -rf src/services)",
       "Bash(rm -rf src/managers src/components/tabs src/components/forms)",
-      "Bash(rm -f src/utils/component_graph.js src/utils/insight_generator.js src/utils/react_parser.js src/utils/dependency_mapper.js src/utils/scalingImportExport.js src/utils/serverUtils.js src/utils/historyUtils.js src/centered-perspective-demo.js)"
+      "Bash(rm -f src/utils/component_graph.js src/utils/insight_generator.js src/utils/react_parser.js src/utils/dependency_mapper.js src/utils/scalingImportExport.js src/utils/serverUtils.js src/utils/historyUtils.js src/centered-perspective-demo.js)",
+      "Bash(rm src/adapters/legacyZoneAdapter.js)",
+      "Bash(rmdir src/adapters)"
     ],
     "deny": []
   }

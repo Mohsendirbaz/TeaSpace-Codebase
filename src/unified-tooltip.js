@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAtom } from 'jotai';
 import { efficacyAwareScalingGroupsAtom } from './atoms/efficacyMatrix';
-import { versionsAtom, zonesAtom } from './atoms/matrixFormValues';
+import { versionsAtom } from './atoms/matrixFormValues';
 import './UnifiedTooltip.css';
 
 /**
@@ -48,7 +48,6 @@ const UnifiedTooltip = ({
 
   // Value tooltip state (only used if itemId is provided)
   const [versions] = useAtom(versionsAtom);
-  const [zones] = useAtom(zonesAtom);
   const [efficacyGroups] = useAtom(efficacyAwareScalingGroupsAtom);
 
   // Find the item in the efficacy groups for value tooltips
@@ -878,10 +877,6 @@ const UnifiedTooltip = ({
                 <span className="matrix-value">{versions.metadata[versions.active]?.label || versions.active}</span>
               </div>
 
-              <div className="matrix-row">
-                <span className="matrix-label">Zone:</span>
-                <span className="matrix-value">{zones.metadata[zones.active]?.label || zones.active}</span>
-              </div>
             </div>
           </div>
         )}
