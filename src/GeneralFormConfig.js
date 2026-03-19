@@ -19,8 +19,6 @@ const GeneralFormConfig = ({
                              handleInputChange: propHandleInputChange,
                              version,
                              filterKeyword,
-                             V: propV, toggleV: propToggleV,
-                             R: propR, toggleR: propToggleR,
                              F: propF, toggleF: propToggleF,
                              RF: propRF, toggleRF: propToggleRF,
                              setVersion,
@@ -31,12 +29,11 @@ const GeneralFormConfig = ({
   // Use matrix-based state management or props
   const formValues = propFormValues || (matrixFormValues && matrixFormValues.formMatrix) || {};
   const handleInputChange = propHandleInputChange || (matrixFormValues && matrixFormValues.handleInputChange);
-  const V = propV || (matrixFormValues && matrixFormValues.V) || {};
-  const R = propR || (matrixFormValues && matrixFormValues.R) || {};
   const F = propF || (matrixFormValues && matrixFormValues.F) || {};
   const RF = propRF || (matrixFormValues && matrixFormValues.RF) || {};
-  const toggleV = propToggleV || (matrixFormValues && matrixFormValues.toggleV);
-  const toggleR = propToggleR || (matrixFormValues && matrixFormValues.toggleR);
+  // V/R participation state lives in formMatrix[paramId].dynamicAppendix.itemState.status
+  const toggleV = matrixFormValues && matrixFormValues.toggleV;
+  const toggleR = matrixFormValues && matrixFormValues.toggleR;
   const toggleF = propToggleF || (matrixFormValues && matrixFormValues.toggleF);
   const toggleRF = propToggleRF || (matrixFormValues && matrixFormValues.toggleRF);
 
@@ -463,8 +460,8 @@ const GeneralFormConfig = ({
                       <input
                           type="checkbox"
                           className="custom-checkbox"
-                          checked={V[item.vKey] === 'on'}
-                          onChange={() => toggleV(item.vKey)}
+                          checked={item.dynamicAppendix?.itemState?.status === 'on'}
+                          onChange={() => toggleV && toggleV(item.vKey)}
                       />
                     </div>
                 )}
@@ -474,8 +471,8 @@ const GeneralFormConfig = ({
                       <input
                           type="checkbox"
                           className="custom-checkbox"
-                          checked={R[item.rKey] === 'on'}
-                          onChange={() => toggleR(item.rKey)}
+                          checked={item.dynamicAppendix?.itemState?.status === 'on'}
+                          onChange={() => toggleR && toggleR(item.rKey)}
                       />
                     </div>
                 )}

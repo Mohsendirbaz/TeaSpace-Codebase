@@ -16,6 +16,7 @@ import {
 } from './model/coreTypes';
 // Phase 4: Mutation ledger
 import { sStateToScopedMutations, scopedMutationToSEntry, buildMutationLedger } from './model/mutationLedger';
+// scopedMutationToSEntry is used in buildRunPayload to derive SenParameters for the backend.
 // Phase 5: Agent candidate
 import { agentProposalToMutations, applyAgentMutations } from './model/agentCandidate';
 // ─────────────────────────────────────────────────────────────────────────────
@@ -72,9 +73,8 @@ export function useMatrixFormValues() {
   const [formMatrix, setFormMatrix] = useState({});
 
   // Track special parameter states (factors, participation toggles)
+  // V and R participation state is now stored in formMatrix[paramId].dynamicAppendix.itemState.status
   const [F, setF] = useState({});
-  const [V, setV] = useState({});
-  const [R, setR] = useState({});
   const [RF, setRF] = useState({});
   const [subDynamicPlots, setSubDynamicPlots] = useState({
     SP1: "off",
@@ -100,48 +100,18 @@ export function useMatrixFormValues() {
 
   /**
    * scopedMutations — canonical source of truth for all parameter mutations.
-   * S is derived from this; setS is a backward-compat adapter that writes here.
+   * SensitivityMonitor receives this directly and derives its own S-shaped view locally.
    */
   const [scopedMutations, setScopedMutations] = useState([]);
 
-  /**
-   * S — derived from scopedMutations for backward compat.
-   * SensitivityMonitor and backend payloads read this; they do not need to change.
-   */
-  const S = useMemo(() => {
-    const result = {};
-    scopedMutations.forEach(mut => {
-      const { key, value } = scopedMutationToSEntry(mut);
-      result[key] = value;
-    });
-    return result;
-  }, [scopedMutations]);
-
-  /**
-   * setS — adapter: accepts old S-shaped object or updater function,
-   * converts it to ScopedMutation[] and writes to scopedMutations.
-   */
-  const setS = useCallback((newSOrUpdater) => {
-    setScopedMutations(prev => {
-      const prevS = {};
-      prev.forEach(mut => {
-        const { key, value } = scopedMutationToSEntry(mut);
-        prevS[key] = value;
-      });
-      const resolvedS = typeof newSOrUpdater === 'function'
-        ? newSOrUpdater(prevS)
-        : newSOrUpdater;
-      return sStateToScopedMutations(resolvedS, versions.active, versions.active);
-    });
-  }, [versions.active]);
+  // S and setS adapters removed — SensitivityMonitor now receives scopedMutations directly.
 
   // Reset options popup state
   const [showResetOptions, setShowResetOptions] = useState(false);
   const [resetOptions, setResetOptions] = useState({
     S: true,
     F: true,
-    V: true,
-    R: true
+    VR: true,
   });
 
   // Dynamic plots options popup state
@@ -321,23 +291,14 @@ export function useMatrixFormValues() {
     // Set the initial form matrix
     setFormMatrix(initialFormMatrix);
 
-    // Initialize special parameter states (V, R, F, RF, S)
-    const initialV = {};
-    const initialR = {};
+    // Initialize special parameter states (F, RF, S)
+    // V/R participation state is initialized per-param in formMatrix.dynamicAppendix.itemState.status = 'off'
     const initialF = {};
     const initialRF = {};
     const initialS = {};
 
     Object.entries(initialFormMatrix).forEach(([paramId, param]) => {
       const { dynamicAppendix } = param;
-
-      if (dynamicAppendix.itemState.vKey) {
-        initialV[dynamicAppendix.itemState.vKey] = 'off';
-      }
-
-      if (dynamicAppendix.itemState.rKey) {
-        initialR[dynamicAppendix.itemState.rKey] = 'off';
-      }
 
       if (dynamicAppendix.itemState.fKey) {
         initialF[dynamicAppendix.itemState.fKey] = 'off';
@@ -358,8 +319,6 @@ export function useMatrixFormValues() {
     });
 
     // Set initial states
-    setV(initialV);
-    setR(initialR);
     setF(initialF);
     setRF(initialRF);
     // Write initial sensitivity config directly to scopedMutations (source of truth)
@@ -596,7 +555,7 @@ export function useMatrixFormValues() {
   }, [formMatrix, versions.active]);
 
   /**
-   * Check if parameter is active based on state (V, R, F, RF)
+   * Check if parameter is active based on state (V/R via itemState.status, F, RF)
    * @param {string} paramId - Parameter ID
    * @returns {boolean} True if parameter is active
    */
@@ -605,13 +564,9 @@ export function useMatrixFormValues() {
 
     const { dynamicAppendix } = formMatrix[paramId];
 
-    // Check V parameter status
-    if (dynamicAppendix.itemState.vKey && V[dynamicAppendix.itemState.vKey] === 'off') {
-      return false;
-    }
-
-    // Check R parameter status
-    if (dynamicAppendix.itemState.rKey && R[dynamicAppendix.itemState.rKey] === 'off') {
+    // V/R participation: status lives in itemState.status (no parallel V/R state)
+    if ((dynamicAppendix.itemState.vKey || dynamicAppendix.itemState.rKey) &&
+        dynamicAppendix.itemState.status === 'off') {
       return false;
     }
 
@@ -626,7 +581,7 @@ export function useMatrixFormValues() {
     }
 
     return true;
-  }, [formMatrix, V, R, F, RF]);
+  }, [formMatrix, F, RF]);
 
   /**
    * Update efficacy period for a parameter
@@ -730,25 +685,57 @@ export function useMatrixFormValues() {
   }, [formMatrix, versions.active]);
 
   /**
-   * Toggle V parameter status (on/off)
+   * Toggle V parameter status (on/off).
+   * Participation state is now stored directly in formMatrix[paramId].dynamicAppendix.itemState.status.
    * @param {string} key - V parameter key (e.g., 'V1')
    */
   const toggleV = useCallback((key) => {
-    setV(prev => ({
-      ...prev,
-      [key]: prev[key] === 'on' ? 'off' : 'on'
-    }));
+    setFormMatrix(prev => {
+      const next = { ...prev };
+      Object.entries(next).forEach(([paramId, param]) => {
+        if (param.dynamicAppendix?.itemState?.vKey === key) {
+          const current = param.dynamicAppendix.itemState.status;
+          next[paramId] = {
+            ...param,
+            dynamicAppendix: {
+              ...param.dynamicAppendix,
+              itemState: {
+                ...param.dynamicAppendix.itemState,
+                status: current === 'on' ? 'off' : 'on',
+              },
+            },
+          };
+        }
+      });
+      return next;
+    });
   }, []);
 
   /**
-   * Toggle R parameter status (on/off)
+   * Toggle R parameter status (on/off).
+   * Participation state is now stored directly in formMatrix[paramId].dynamicAppendix.itemState.status.
    * @param {string} key - R parameter key (e.g., 'R1')
    */
   const toggleR = useCallback((key) => {
-    setR(prev => ({
-      ...prev,
-      [key]: prev[key] === 'on' ? 'off' : 'on'
-    }));
+    setFormMatrix(prev => {
+      const next = { ...prev };
+      Object.entries(next).forEach(([paramId, param]) => {
+        if (param.dynamicAppendix?.itemState?.rKey === key) {
+          const current = param.dynamicAppendix.itemState.status;
+          next[paramId] = {
+            ...param,
+            dynamicAppendix: {
+              ...param.dynamicAppendix,
+              itemState: {
+                ...param.dynamicAppendix.itemState,
+                status: current === 'on' ? 'off' : 'on',
+              },
+            },
+          };
+        }
+      });
+      return next;
+    });
   }, []);
 
   /**
@@ -829,25 +816,22 @@ export function useMatrixFormValues() {
       });
     }
 
-    // Reset V parameters
-    if (resetOptions.V) {
-      setV(prev => {
-        const newV = { ...prev };
-        Object.keys(newV).forEach(key => {
-          newV[key] = 'off';
+    // Reset V/R participation state — stored in formMatrix itemState.status
+    if (resetOptions.VR) {
+      setFormMatrix(prev => {
+        const next = { ...prev };
+        Object.entries(next).forEach(([paramId, param]) => {
+          if (param.dynamicAppendix?.itemState?.vKey || param.dynamicAppendix?.itemState?.rKey) {
+            next[paramId] = {
+              ...param,
+              dynamicAppendix: {
+                ...param.dynamicAppendix,
+                itemState: { ...param.dynamicAppendix.itemState, status: 'off' },
+              },
+            };
+          }
         });
-        return newV;
-      });
-    }
-
-    // Reset R parameters
-    if (resetOptions.R) {
-      setR(prev => {
-        const newR = { ...prev };
-        Object.keys(newR).forEach(key => {
-          newR[key] = 'off';
-        });
-        return newR;
+        return next;
       });
     }
 
@@ -968,17 +952,13 @@ export function useMatrixFormValues() {
     const isAmount4or5 = filterKeyword === 'Amount4' || filterKeyword === 'Amount5';
 
     const facts = (summaryItems ?? []).map((item, idx) => {
-      // Determine participation from V/R toggle state
-      const toggleKey = isAmount4or5
-        ? (item.vKey ?? `V${idx + 1}`)
-        : (item.rKey ?? `R${idx + 1}`);
-      const toggleState = isAmount4or5
-        ? V[toggleKey]
-        : R[toggleKey];
-      const isAdmitted = toggleState === 'on';
+      // Participation state lives in formMatrix[paramId].dynamicAppendix.itemState.status
+      const paramId = item.id ?? `${filterKeyword}_${idx}`;
+      const status = formMatrix[paramId]?.dynamicAppendix?.itemState?.status ?? 'off';
+      const isAdmitted = status === 'on';
 
       return createDerivedSummaryFact({
-        paramId:            item.id ?? `${filterKeyword}_${idx}`,
+        paramId,
         versionId:          activeVersionId,
         sourceWorkspace:    filterKeyword,
         label:              item.label ?? item.id ?? `${filterKeyword}[${idx}]`,
@@ -997,7 +977,7 @@ export function useMatrixFormValues() {
       ...prev,
       [filterKeyword]: facts,
     }));
-  }, [versions.active, V, R]);
+  }, [versions.active, formMatrix]);
 
   //=========================================================================
   // BACKEND SYNCHRONIZATION
@@ -1014,7 +994,7 @@ export function useMatrixFormValues() {
       const payload = {
         formMatrix,
         versions,
-        V, R, F, RF, S,
+        F, RF, scopedMutations,
         subDynamicPlots,
         scalingGroups,
         finalResults
@@ -1033,7 +1013,7 @@ export function useMatrixFormValues() {
     } finally {
       setIsSyncing(false);
     }
-  }, [formMatrix, versions, V, R, F, RF, S, subDynamicPlots, scalingGroups, finalResults]);
+  }, [formMatrix, versions, F, RF, scopedMutations, subDynamicPlots, scalingGroups, finalResults]);
 
   /**
    * Load state from backend services
@@ -1050,11 +1030,10 @@ export function useMatrixFormValues() {
         const {
           formMatrix: loadedFormMatrix,
           versions: loadedVersions,
-          V: loadedV,
-          R: loadedR,
           F: loadedF,
           RF: loadedRF,
-          S: loadedS,
+          scopedMutations: loadedScopedMutations,
+          S: loadedS,  // backward compat: old saves may have S instead of scopedMutations
           subDynamicPlots: loadedSubDynamicPlots,
           scalingGroups: loadedScalingGroups,
           finalResults: loadedFinalResults
@@ -1066,11 +1045,13 @@ export function useMatrixFormValues() {
           active: "v1",
           metadata: { "v1": { label: "Base Case", description: "Default financial case", created: Date.now(), modified: Date.now() } }
         });
-        setV(loadedV || {});
-        setR(loadedR || {});
         setF(loadedF || {});
         setRF(loadedRF || {});
-        setS(loadedS || {});
+        // Restore scopedMutations; fall back to converting legacy S if present
+        setScopedMutations(
+          loadedScopedMutations ??
+          sStateToScopedMutations(loadedS || {}, loadedVersions?.active || versions.active, loadedVersions?.active || versions.active)
+        );
         setSubDynamicPlots(loadedSubDynamicPlots || {
           SP1: "off", SP2: "off", SP3: "off", SP4: "off", SP5: "off", SP6: "off", SP7: "off", SP8: "off", SP9: "off"
         });
@@ -1095,12 +1076,12 @@ export function useMatrixFormValues() {
     try {
       // Prepare export data
       const exportData = {
-        version: "1.0.0",
+        version: "2.0.0",
         timestamp: Date.now(),
         state: {
           formMatrix,
           versions,
-          V, R, F, RF, S,
+          F, RF, scopedMutations,
           subDynamicPlots,
           scalingGroups,
           finalResults
@@ -1125,7 +1106,7 @@ export function useMatrixFormValues() {
     } catch (error) {
       console.error('Error exporting matrix state:', error);
     }
-  }, [formMatrix, versions, V, R, F, RF, S, subDynamicPlots, scalingGroups, finalResults]);
+  }, [formMatrix, versions, F, RF, scopedMutations, subDynamicPlots, scalingGroups, finalResults]);
 
   /**
    * Import matrix state from JSON file
@@ -1148,11 +1129,10 @@ export function useMatrixFormValues() {
       const {
         formMatrix: importedFormMatrix,
         versions: importedVersions,
-        V: importedV,
-        R: importedR,
         F: importedF,
         RF: importedRF,
-        S: importedS,
+        scopedMutations: importedScopedMutations,
+        S: importedS,  // backward compat: old exports may have S
         subDynamicPlots: importedSubDynamicPlots,
         scalingGroups: importedScalingGroups,
         finalResults: importedFinalResults
@@ -1164,11 +1144,12 @@ export function useMatrixFormValues() {
         active: "v1",
         metadata: { "v1": { label: "Base Case", description: "Default financial case", created: Date.now(), modified: Date.now() } }
       });
-      setV(importedV || {});
-      setR(importedR || {});
       setF(importedF || {});
       setRF(importedRF || {});
-      setS(importedS || {});
+      setScopedMutations(
+        importedScopedMutations ??
+        sStateToScopedMutations(importedS || {}, importedVersions?.active || versions.active, importedVersions?.active || versions.active)
+      );
       setSubDynamicPlots(importedSubDynamicPlots || {
         SP1: "off", SP2: "off", SP3: "off", SP4: "off", SP5: "off", SP6: "off", SP7: "off", SP8: "off", SP9: "off"
       });
@@ -1235,16 +1216,14 @@ export function useMatrixFormValues() {
           else excludedFacts.push(f);
         });
       } else {
-        // Fall back to raw finalResults with V/R state check (same as assembleBaseline)
+        // Fall back to raw finalResults with formMatrix itemState.status check
         const raw = finalResults[workspace] ?? [];
-        const isAmount4or5 = workspace === 'Amount4' || workspace === 'Amount5';
         raw.forEach((item, idx) => {
-          const toggleKey = isAmount4or5
-            ? (item.vKey ?? `V${idx + 1}`)
-            : (item.rKey ?? `R${idx + 1}`);
-          const isAdmitted = (isAmount4or5 ? V[toggleKey] : R[toggleKey]) === 'on';
+          const rawParamId = item.id ?? `${workspace}_${idx}`;
+          const itemStatus = formMatrix[rawParamId]?.dynamicAppendix?.itemState?.status ?? 'off';
+          const isAdmitted = itemStatus === 'on';
           const fact = createDerivedSummaryFact({
-            paramId:            item.id ?? `${workspace}_${idx}`,
+            paramId:            rawParamId,
             versionId,
             sourceWorkspace:    workspace,
             label:              item.label ?? item.id ?? '',
@@ -1294,15 +1273,31 @@ export function useMatrixFormValues() {
         }));
     });
 
+    // Derive selectedV/selectedR from formMatrix for backend payload
+    const derivedSelectedV = {};
+    const derivedSelectedR = {};
+    Object.entries(formMatrix).forEach(([pid, p]) => {
+      const { vKey, rKey, status } = p.dynamicAppendix?.itemState ?? {};
+      if (vKey) derivedSelectedV[vKey] = status ?? 'off';
+      if (rKey) derivedSelectedR[rKey] = status ?? 'off';
+    });
+
+    // Derive S-format SenParameters from scopedMutations for backend payload
+    const senParameters = {};
+    scopedMutations.forEach(mut => {
+      const { key, value } = scopedMutationToSEntry(mut);
+      senParameters[key] = value;
+    });
+
     const payload = {
       selectedVersions: extraParams.selectedVersions ?? [versionId],
-      selectedV:        extraParams.V ?? V,
+      selectedV:        extraParams.V ?? derivedSelectedV,
       selectedF:        extraParams.F ?? F,
-      selectedR:        extraParams.R ?? R,
+      selectedR:        extraParams.R ?? derivedSelectedR,
       selectedRF:       extraParams.RF ?? RF,
       selectedCalculationOption: extraParams.selectedCalculationOption,
       targetRow:        extraParams.targetRow,
-      SenParameters:    extraParams.S ?? S,
+      SenParameters:    extraParams.S ?? senParameters,
       formValues:       runFormValues,
       summaryItems,
       includeRemarks:       extraParams.includeRemarks ?? false,
@@ -1318,7 +1313,7 @@ export function useMatrixFormValues() {
     };
 
     return { payload, assembly };
-  }, [formMatrix, finalResults, derivedFacts, V, R, F, RF, S, versions.active]);
+  }, [formMatrix, finalResults, derivedFacts, F, RF, scopedMutations, versions.active]);
 
   //=========================================================================
   // PHASE 1 — VERSION-CENTRIC MODEL SURFACE
@@ -1404,11 +1399,8 @@ export function useMatrixFormValues() {
         // Determine participation from V/R toggle state
         // For Amount4/5 → V keys; for Amount6/7 → R keys
         const paramId = result.id ?? result.paramId ?? `${workspace}_${idx}`;
-        const isAmount4or5 = workspace === 'Amount4' || workspace === 'Amount5';
-        const toggleState = isAmount4or5
-          ? V[result.vKey ?? `V${idx + 1}`]
-          : R[result.rKey ?? `R${idx + 1}`];
-        const isAdmitted = toggleState === 'on';
+        const itemStatus = formMatrix[paramId]?.dynamicAppendix?.itemState?.status ?? 'off';
+        const isAdmitted = itemStatus === 'on';
 
         const fact = createDerivedSummaryFact({
           paramId,
@@ -1452,7 +1444,7 @@ export function useMatrixFormValues() {
     });
 
     return assembly;
-  }, [formMatrix, finalResults, V, R]);
+  }, [formMatrix, finalResults]);
 
   //=========================================================================
   // RETURN VALUES FOR HOOK
@@ -1472,11 +1464,11 @@ export function useMatrixFormValues() {
     // Reset functionality
     handleReset,
 
-    // Special parameters
-    S, setS,
+    // Special parameters — S/setS removed; use scopedMutations/setScopedMutations directly
+    // V/R removed as parallel state; participation lives in formMatrix[id].dynamicAppendix.itemState.status
     F, setF, toggleF,
-    V, setV, toggleV,
-    R, setR, toggleR,
+    toggleV,
+    toggleR,
     RF, setRF, toggleRF,
 
     // Dynamic plots
@@ -1573,12 +1565,13 @@ export function useMatrixFormValues() {
 
     // ── Phase 4: Unified mutation model ──────────────────────────────────────
     /**
-     * scopedMutations — ScopedMutation[] bridged from S state.
-     * Updated automatically whenever S changes.
+     * scopedMutations — ScopedMutation[] canonical source of truth for all mutations.
+     * SensitivityMonitor reads/writes this directly.
      * This is the unified representation of branch/version differences.
      * @type {import('./model/coreTypes').ScopedMutation[]}
      */
     scopedMutations,
+    setScopedMutations,
 
     /**
      * Get the linear mutation ledger for the current scopedMutations.

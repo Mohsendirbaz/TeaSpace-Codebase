@@ -2,22 +2,48 @@ import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import '../../styles/HomePage.CSS/HCSS.css';
 import '../../styles/HomePage.CSS/SensitivityMonitor.css';
 import { useMatrixFormValues } from '../../Consolidated2';
+import { scopedMutationToSEntry, sStateToScopedMutations } from '../../model/mutationLedger';
 
 /**
- * SensitivityMonitor component for configuring and managing sensitivity analysis parameters
+ * SensitivityMonitor component for configuring and managing sensitivity analysis parameters.
  *
  * @param {Object} props
- * @param {Object} props.S - Sensitivity parameters state object
- * @param {Function} props.setS - Function to update sensitivity parameters
- * @param {string} props.version - Current version number
+ * @param {import('../../model/coreTypes').ScopedMutation[]} props.scopedMutations - canonical mutations state
+ * @param {Function} props.setScopedMutations - setter for scopedMutations
+ * @param {string} props.version - Current version identifier
  * @param {string} props.activeTab - Currently active application tab
  */
 // Create a ref to store the parameter actions for external access
-const sensitivityActionRef = { current: null };
+export const sensitivityActionRef = { current: null };
 
-const SensitivityMonitor = ({ S, setS, version, activeTab }) => {
+const SensitivityMonitor = ({ scopedMutations, setScopedMutations, version, activeTab }) => {
   // Get form values
   const { formMatrix: formValues } = useMatrixFormValues();
+
+  // Derive S-shaped view locally from scopedMutations
+  const S = useMemo(() => {
+    const result = {};
+    (scopedMutations || []).forEach(mut => {
+      const { key, value } = scopedMutationToSEntry(mut);
+      result[key] = value;
+    });
+    return result;
+  }, [scopedMutations]);
+
+  // Local setS adapter that writes through to setScopedMutations
+  const setS = useCallback((newSOrUpdater) => {
+    setScopedMutations(prev => {
+      const prevS = {};
+      (prev || []).forEach(mut => {
+        const { key, value } = scopedMutationToSEntry(mut);
+        prevS[key] = value;
+      });
+      const resolvedS = typeof newSOrUpdater === 'function'
+        ? newSOrUpdater(prevS)
+        : newSOrUpdater;
+      return sStateToScopedMutations(resolvedS, version || 'v1', version || 'v1');
+    });
+  }, [setScopedMutations, version]);
 
   // Component state
   const [isExpanded, setIsExpanded] = useState(true);
@@ -748,4 +774,4 @@ const SensitivityMonitor = ({ S, setS, version, activeTab }) => {
   );
 };
 
-export { SensitivityMonitor as default, sensitivityActionRef };
+export default SensitivityMonitor;

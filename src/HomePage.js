@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { VersionStateProvider, useVersionState } from './contexts/VersionStateContext';
@@ -190,19 +190,13 @@ const HomePageContent = () => {
         setFormMatrix: setFormValues,
         handleInputChange,
         handleReset,
-        S,
-        setS,
         F,
         setF,
         toggleF,
-        V,
-        setV,
         toggleV,
         subDynamicPlots,
         setSubDynamicPlots,
         toggleSubDynamicPlot,
-        R,
-        setR,
         toggleR,
         RF,
         setRF,
@@ -235,14 +229,35 @@ const HomePageContent = () => {
         // Phase 3: explicit payload builder
         buildRunPayload,
         derivedFacts,
-        // Phase 4: unified mutation model
+        // Phase 4: unified mutation model — canonical source of truth
         scopedMutations,
+        setScopedMutations,
         getMutationLedger,
     } = useMatrixFormValues();
 
     const [batchRunning, setBatchRunning] = useState(false);
     const [analysisRunning, setAnalysisRunning] = useState(false);
     const [runMode, setRunMode] = useState('cfa'); // 'cfa' or 'sensitivity'
+
+    // Derive V/R participation maps from formValues for legacy consumers (SimpleScalingEditor)
+    // V and R no longer exist as separate state — they live in formMatrix[id].dynamicAppendix.itemState.status
+    const derivedV = useMemo(() => {
+        const map = {};
+        Object.values(formValues || {}).forEach(p => {
+            const { vKey, status } = p.dynamicAppendix?.itemState ?? {};
+            if (vKey) map[vKey] = status ?? 'off';
+        });
+        return map;
+    }, [formValues]);
+
+    const derivedR = useMemo(() => {
+        const map = {};
+        Object.values(formValues || {}).forEach(p => {
+            const { rKey, status } = p.dynamicAppendix?.itemState ?? {};
+            if (rKey) map[rKey] = status ?? 'off';
+        });
+        return map;
+    }, [formValues]);
 
     const renderVersionControl = () => (
         <div className="version-control-container" style={{
@@ -1910,8 +1925,6 @@ const HomePageContent = () => {
                         handleInputChange={handleInputChange}
                         version={version}
                         filterKeyword="Amount1"
-                        S={S || {}}
-                        setS={setS}
                         setVersion={setVersion}
                     />
                 )}
@@ -1921,8 +1934,6 @@ const HomePageContent = () => {
                         handleInputChange={handleInputChange}
                         version={version}
                         filterKeyword="Amount2"
-                        S={S || {}}
-                        setS={setS}
                         setVersion={setVersion}
                     />
                 )}
@@ -1934,8 +1945,6 @@ const HomePageContent = () => {
                         filterKeyword="Amount3"
                         F={F}
                         toggleF={toggleF}
-                        S={S || {}}
-                        setS={setS}
                         setVersion={setVersion}
                     />
                 )}
@@ -1946,14 +1955,6 @@ const HomePageContent = () => {
                             handleInputChange={handleInputChange}
                             version={version}
                             filterKeyword="Amount4"
-                            V={V}
-                            setV={setV}
-                            R={R}
-                            setR={setR}
-                            toggleR={toggleR}
-                            toggleV={toggleV}
-                            S={S || {}}
-                            setS={setS}
                             setVersion={setVersion}
                             summaryItems={finalResults.Amount4} // Pass the stored results
                         />
@@ -1967,8 +1968,8 @@ const HomePageContent = () => {
                                 handleScalingGroupsChange([...otherGroups, ...updatedGroups]);
                             }}
                             filterKeyword="Amount4"
-                            V={V}
-                            R={R}
+                            V={derivedV}
+                            R={derivedR}
                             toggleV={toggleV}
                             toggleR={toggleR}
                             onFinalResultsGenerated={handleFinalResultsGenerated} // Add this callback
@@ -1984,14 +1985,6 @@ const HomePageContent = () => {
                             handleInputChange={handleInputChange}
                             version={version}
                             filterKeyword="Amount5"
-                            V={V}
-                            setV={setV}
-                            R={R}
-                            setR={setR}
-                            toggleR={toggleR}
-                            toggleV={toggleV}
-                            S={S || {}}
-                            setS={setS}
                             setVersion={setVersion}
                             summaryItems={finalResults.Amount5} // Pass the stored results
                         />
@@ -2005,8 +1998,8 @@ const HomePageContent = () => {
                                 handleScalingGroupsChange([...otherGroups, ...updatedGroups]);
                             }}
                             filterKeyword="Amount5"
-                            V={V}
-                            R={R}
+                            V={derivedV}
+                            R={derivedR}
                             toggleV={toggleV}
                             toggleR={toggleR}
                             onFinalResultsGenerated={handleFinalResultsGenerated} // Add this callback
@@ -2022,14 +2015,6 @@ const HomePageContent = () => {
                             handleInputChange={handleInputChange}
                             version={version}
                             filterKeyword="Amount6"
-                            V={V}
-                            setV={setV}
-                            R={R}
-                            setR={setR}
-                            toggleR={toggleR}
-                            toggleV={toggleV}
-                            S={S || {}}
-                            setS={setS}
                             setVersion={setVersion}
                             summaryItems={finalResults.Amount6} // Pass the stored results
                         />
@@ -2043,8 +2028,8 @@ const HomePageContent = () => {
                                 handleScalingGroupsChange([...otherGroups, ...updatedGroups]);
                             }}
                             filterKeyword="Amount6"
-                            V={V}
-                            R={R}
+                            V={derivedV}
+                            R={derivedR}
                             toggleV={toggleV}
                             toggleR={toggleR}
                             onFinalResultsGenerated={handleFinalResultsGenerated} // Add this callback
@@ -2060,14 +2045,6 @@ const HomePageContent = () => {
                             handleInputChange={handleInputChange}
                             version={version}
                             filterKeyword="Amount7"
-                            V={V}
-                            setV={setV}
-                            R={R}
-                            setR={setR}
-                            toggleR={toggleR}
-                            toggleV={toggleV}
-                            S={S || {}}
-                            setS={setS}
                             setVersion={setVersion}
                             summaryItems={finalResults.Amount7} // Pass the stored results
                         />
@@ -2081,8 +2058,8 @@ const HomePageContent = () => {
                                 handleScalingGroupsChange([...otherGroups, ...updatedGroups]);
                             }}
                             filterKeyword="Amount7"
-                            V={V}
-                            R={R}
+                            V={derivedV}
+                            R={derivedR}
                             toggleV={toggleV}
                             toggleR={toggleR}
                             onFinalResultsGenerated={handleFinalResultsGenerated} // Add this callback
@@ -2107,8 +2084,8 @@ const HomePageContent = () => {
                                     handleScalingGroupsChange([...otherGroups, ...updatedGroups]);
                                 }}
                                 filterKeyword={filterKeyword}
-                                V={V}
-                                R={R}
+                                V={derivedV}
+                                R={derivedR}
                                 toggleV={toggleV}
                                 toggleR={toggleR}
                                 onFinalResultsGenerated={handleFinalResultsGenerated}
@@ -2131,8 +2108,6 @@ const HomePageContent = () => {
                         RF={RF}
                         setRF={setRF}
                         toggleRF={toggleRF}
-                        S={S || {}}
-                        setS={setS}
                         setVersion={setVersion}
                     />
                 )}
@@ -2526,8 +2501,8 @@ const HomePageContent = () => {
                                     handleScalingGroupsChange([...otherGroups, ...updatedGroups]);
                                 }}
                                 filterKeyword={filterKeyword}
-                                V={V}
-                                R={R}
+                                V={derivedV}
+                                R={derivedR}
                                 toggleV={toggleV}
                                 toggleR={toggleR}
                                 onFinalResultsGenerated={handleFinalResultsGenerated}
@@ -2718,8 +2693,8 @@ const HomePageContent = () => {
                      activeTab !== 'DurationMatrix' && (
                         <>
                             <SensitivityMonitor
-                                S={S}
-                                setS={setS}
+                                scopedMutations={scopedMutations}
+                                setScopedMutations={setScopedMutations}
                                 version={version}
                                 activeTab={activeTab}
                             />
