@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { atom, useAtom } from 'jotai';
 import axios from 'axios';
 import * as math from 'mathjs';
@@ -15,7 +15,7 @@ import {
   versionSlotFromLegacy,
 } from './model/coreTypes';
 // Phase 4: Mutation ledger
-import { sStateToScopedMutations, buildMutationLedger } from './model/mutationLedger';
+import { sStateToScopedMutations, scopedMutationToSEntry, buildMutationLedger } from './model/mutationLedger';
 // Phase 5: Agent candidate
 import { agentProposalToMutations, applyAgentMutations } from './model/agentCandidate';
 // ─────────────────────────────────────────────────────────────────────────────
@@ -71,8 +71,7 @@ export function useMatrixFormValues() {
   // Main form matrix state - replaces original formValues with matrix structure
   const [formMatrix, setFormMatrix] = useState({});
 
-  // Track special parameter states (sensitivity, factors, etc.)
-  const [S, setS] = useState({});
+  // Track special parameter states (factors, participation toggles)
   const [F, setF] = useState({});
   const [V, setV] = useState({});
   const [R, setR] = useState({});
@@ -96,17 +95,45 @@ export function useMatrixFormValues() {
 
   /**
    * derivedFacts — Phase 3: typed DerivedSummaryFact[] per workspace.
-   * This is the canonical scaling output for baseline assembly.
-   * { 'Amount4': DerivedSummaryFact[], 'Amount5': ..., 'Amount6': ..., 'Amount7': ... }
    */
   const [derivedFacts, setDerivedFacts] = useState({});
 
   /**
-   * scopedMutations — Phase 4: ScopedMutation[] derived from S state.
-   * These are the unified mutation representations for branch/version differences.
-   * S is kept as the operational authoring surface; scopedMutations is its typed form.
+   * scopedMutations — canonical source of truth for all parameter mutations.
+   * S is derived from this; setS is a backward-compat adapter that writes here.
    */
   const [scopedMutations, setScopedMutations] = useState([]);
+
+  /**
+   * S — derived from scopedMutations for backward compat.
+   * SensitivityMonitor and backend payloads read this; they do not need to change.
+   */
+  const S = useMemo(() => {
+    const result = {};
+    scopedMutations.forEach(mut => {
+      const { key, value } = scopedMutationToSEntry(mut);
+      result[key] = value;
+    });
+    return result;
+  }, [scopedMutations]);
+
+  /**
+   * setS — adapter: accepts old S-shaped object or updater function,
+   * converts it to ScopedMutation[] and writes to scopedMutations.
+   */
+  const setS = useCallback((newSOrUpdater) => {
+    setScopedMutations(prev => {
+      const prevS = {};
+      prev.forEach(mut => {
+        const { key, value } = scopedMutationToSEntry(mut);
+        prevS[key] = value;
+      });
+      const resolvedS = typeof newSOrUpdater === 'function'
+        ? newSOrUpdater(prevS)
+        : newSOrUpdater;
+      return sStateToScopedMutations(resolvedS, versions.active, versions.active);
+    });
+  }, [versions.active]);
 
   // Reset options popup state
   const [showResetOptions, setShowResetOptions] = useState(false);
@@ -335,22 +362,13 @@ export function useMatrixFormValues() {
     setR(initialR);
     setF(initialF);
     setRF(initialRF);
-    setS(initialS);
+    // Write initial sensitivity config directly to scopedMutations (source of truth)
+    setScopedMutations(sStateToScopedMutations(initialS, versions.active, versions.active));
 
-  }, []);
-
-  //=========================================================================
-  // PHASE 4 — S → ScopedMutation bridge
-  // Keep scopedMutations in sync whenever S changes.
-  //=========================================================================
-  useEffect(() => {
-    const activeVersionId = versions.active;
-    const mutations = sStateToScopedMutations(S, activeVersionId, activeVersionId);
-    setScopedMutations(mutations);
-  }, [S, versions.active]);
+  }, []); // eslint-disable-line
 
   //=========================================================================
-  // VERSION & ZONE MANAGEMENT
+  // VERSION MANAGEMENT
   //=========================================================================
 
   /**
@@ -793,18 +811,11 @@ export function useMatrixFormValues() {
    * Handle reset confirmation
    */
   const handleResetConfirm = useCallback(() => {
-    // Reset S parameters
+    // Deactivate all mutations (sets precedenceStatus to 'suppressed')
     if (resetOptions.S) {
-      setS(prev => {
-        const newS = { ...prev };
-        Object.keys(newS).forEach(key => {
-          newS[key] = {
-            ...newS[key],
-            status: 'off'
-          };
-        });
-        return newS;
-      });
+      setScopedMutations(prev =>
+        prev.map(m => ({ ...m, precedenceStatus: 'suppressed' }))
+      );
     }
 
     // Reset F parameters
