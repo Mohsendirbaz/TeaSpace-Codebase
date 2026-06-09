@@ -10,15 +10,14 @@
 ## 🧭 Why TEA Space?
 
 <p align="center">
-  ![Debt Interest vs Major Budget Categories — why TEA Space matters](assets/why/Why.PNG)
+  <img src="assets/screenshots/us-federal-government-spending.png" alt="U.S. Federal Government Spending - Medicare, Defense, Transportation, Debt Interest, Veterans, Education (2000-2024)" width="800">
 </p>
 
-<sub><i>A static snapshot of the motivating signal: interest costs rising faster than future-facing investments.</i></sub>
-
+<sub><i>A critical trend in government economics: interest costs on federal debt rising faster than investments in defense, healthcare, transportation, and veteran services. TEA Space provides the analytical framework to understand and model these complex fiscal dynamics.</i></sub>
 
 ## 🌟 Overview
 
-TEA Space is a modern environment for techno-economic analysis that turns complex process economics into a structured, defensible narrative. Built on a matrix-native backbone, it treats time and u[...]
+TEA Space is a modern environment for techno-economic analysis that turns complex process economics into a structured, defensible narrative. Built on a matrix-native backbone, it treats time and uncertainty as first-class parameters for scenario-based financial modeling.
 
 ### 🎯 Key Features
 
