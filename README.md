@@ -10,9 +10,7 @@
 ## 🧭 Why TEA Space?
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Mohsendirbaz/TeaSpace-Codebase/main-e1690e4d/assets/why/Why.png"
-       alt="Debt Interest vs Major Budget Categories — why TEA Space matters"
-       width="900">
+  ![Debt Interest vs Major Budget Categories — why TEA Space matters](assets/why/Why.PNG)
 </p>
 
 <sub><i>A static snapshot of the motivating signal: interest costs rising faster than future-facing investments.</i></sub>
