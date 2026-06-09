@@ -9,11 +9,15 @@
 
 ## 🧭 Why TEA Space?
 
-<p align="center">
-  <img src="assets/screenshots/us-federal-government-spending.png" alt="U.S. Federal Government Spending - Medicare, Defense, Transportation, Debt Interest, Veterans, Education (2000-2024)" width="800">
-</p>
+<div align="center">
+  
+![U.S. Federal Government Spending - Medicare, Defense, Transportation, Debt Interest, Veterans, Education (2000-2024)](https://raw.githubusercontent.com/Mohsendirbaz/TeaSpace-Codebase/main-e1690e4d/assets/screenshots/us-federal-government-spending.png)
 
-<sub><i>A critical trend in government economics: interest costs on federal debt rising faster than investments in defense, healthcare, transportation, and veteran services. TEA Space provides the analytical framework to understand and model these complex fiscal dynamics.</i></sub>
+</div>
+
+<p align="center">
+  <sub><i>A critical trend in government economics: interest costs on federal debt rising faster than investments in defense, healthcare, transportation, and veteran services. TEA Space provides the analytical framework to understand and model these complex fiscal dynamics.</i></sub>
+</p>
 
 ## 🌟 Overview
 
